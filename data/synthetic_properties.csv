@@ -1,0 +1,501 @@
+location,size_sqft,property_type,age_years,floor,market_price
+Mumbai,2511,Independent House,10,20,46101960.0
+Ahmedabad,737,Villa,24,14,13442880.0
+Ahmedabad,4462,Independent House,37,24,91359450.0
+Ahmedabad,3571,Independent House,13,26,63378108.0
+Bangalore,3692,Apartment,26,28,53275560.0
+Ahmedabad,2995,Apartment,13,7,54197520.0
+Kolkata,4778,Apartment,15,7,109655100.0
+Mumbai,1496,Villa,37,20,22619520.0
+Ahmedabad,1509,Townhouse,37,16,22816080.0
+Ahmedabad,4936,Independent House,3,14,71818800.0
+Hyderabad,1158,Independent House,9,11,12645360.0
+Hyderabad,1315,Villa,0,15,26300000.0
+Mumbai,1858,Apartment,39,19,20400840.0
+Chennai,410,Apartment,0,13,4920000.0
+Delhi,3830,Townhouse,39,14,42053400.0
+Mumbai,3901,Independent House,36,9,44939520.0
+Kolkata,3394,Townhouse,7,21,73860228.0
+Delhi,762,Independent House,29,4,14607540.0
+Mumbai,3165,Villa,33,6,57254850.0
+Ahmedabad,1626,Townhouse,33,11,19609560.0
+Ahmedabad,2163,Villa,7,9,75434625.0
+Chennai,516,Independent House,27,5,8814312.0
+Delhi,2643,Villa,34,17,31398840.0
+Kolkata,1804,Apartment,39,18,27511000.0
+Ahmedabad,2359,Villa,30,22,28072100.0
+Delhi,2880,Apartment,26,7,41558400.0
+Hyderabad,1449,Apartment,26,17,25734240.0
+Ahmedabad,4681,Townhouse,15,23,119365500.0
+Hyderabad,1149,Independent House,19,11,13960350.0
+Ahmedabad,2148,Townhouse,12,2,30243840.0
+Pune,977,Independent House,38,8,18172200.0
+Mumbai,1699,Independent House,14,29,34190676.0
+Mumbai,1273,Independent House,31,9,15810660.0
+Hyderabad,3050,Independent House,1,7,57974400.0
+Delhi,1292,Villa,16,21,40698000.0
+Kolkata,3088,Villa,31,6,51137280.0
+Bangalore,2481,Independent House,35,9,24189750.0
+Hyderabad,4474,Villa,25,6,43621500.0
+Hyderabad,1954,Independent House,36,24,16257280.0
+Kolkata,3085,Independent House,21,23,47524425.0
+Hyderabad,1079,Independent House,39,4,19745700.0
+Mumbai,4898,Independent House,20,24,61127040.0
+Mumbai,4711,Villa,23,12,69647424.0
+Mumbai,1979,Apartment,39,8,28972560.0
+Bangalore,2724,Villa,11,3,49456944.0
+Delhi,384,Townhouse,12,10,6082560.0
+Bangalore,4166,Apartment,37,19,59053050.0
+Hyderabad,2988,Townhouse,33,21,48047040.0
+Pune,3102,Villa,33,26,46762650.0
+Hyderabad,2558,Apartment,2,15,39106704.0
+Pune,2871,Independent House,28,6,31006800.0
+Chennai,1306,Apartment,23,26,25140500.0
+Ahmedabad,589,Townhouse,30,27,8039850.0
+Bangalore,3661,Townhouse,26,26,81274200.0
+Chennai,867,Villa,33,23,15684030.0
+Pune,3929,Townhouse,32,1,53434400.0
+Pune,4605,Villa,31,18,70221645.0
+Pune,2813,Townhouse,21,14,40000860.0
+Hyderabad,4425,Apartment,39,20,53985000.0
+Delhi,4339,Townhouse,3,9,101011920.0
+Bangalore,4122,Townhouse,25,1,74196000.0
+Bangalore,1121,Apartment,16,4,22599360.0
+Ahmedabad,4435,Townhouse,2,12,83448960.0
+Chennai,4673,Independent House,29,15,79627920.0
+Ahmedabad,3676,Villa,23,11,91991900.0
+Mumbai,3390,Villa,36,6,47948160.0
+Hyderabad,718,Independent House,24,14,11786688.0
+Pune,3178,Independent House,15,2,48623400.0
+Kolkata,480,Independent House,15,3,7344000.0
+Kolkata,4931,Townhouse,8,7,87101184.0
+Ahmedabad,4145,Independent House,29,24,79459650.0
+Hyderabad,1205,Villa,35,13,25455625.0
+Chennai,2397,Townhouse,4,22,55226880.0
+Delhi,3839,Apartment,0,7,69102000.0
+Ahmedabad,3317,Independent House,8,10,67441244.0
+Hyderabad,2969,Independent House,36,20,37053120.0
+Ahmedabad,2357,Villa,0,1,70710000.0
+Kolkata,1213,Townhouse,16,14,22925700.0
+Delhi,2241,Villa,19,18,28317276.0
+Pune,3279,Independent House,20,11,40921920.0
+Kolkata,1237,Villa,25,24,15771750.0
+Pune,465,Townhouse,20,3,6696000.0
+Chennai,2863,Villa,20,3,35730240.0
+Pune,2821,Villa,25,27,45700200.0
+Mumbai,327,Villa,16,5,4285008.0
+Delhi,3822,Townhouse,29,1,42332472.0
+Hyderabad,3537,Apartment,2,24,76604346.0
+Delhi,1519,Apartment,7,8,42380100.0
+Kolkata,3735,Villa,21,14,59013000.0
+Mumbai,519,Independent House,5,11,7691580.0
+Mumbai,1972,Townhouse,11,7,45632080.0
+Ahmedabad,4739,Townhouse,1,28,91486395.0
+Ahmedabad,2775,Apartment,0,20,43290000.0
+Pune,1902,Apartment,25,15,30812400.0
+Ahmedabad,336,Townhouse,34,14,3747744.0
+Pune,550,Townhouse,22,6,7722000.0
+Pune,1390,Independent House,17,23,29419350.0
+Bangalore,2175,Villa,3,16,45570600.0
+Mumbai,3681,Independent House,23,10,55270215.0
+Kolkata,909,Independent House,15,27,11126160.0
+Pune,2226,Townhouse,31,22,18431280.0
+Mumbai,3422,Apartment,25,19,76995000.0
+Chennai,4882,Villa,33,28,39251280.0
+Pune,1554,Apartment,0,3,24864000.0
+Hyderabad,4666,Villa,37,17,95536350.0
+Pune,3715,Apartment,19,3,72219600.0
+Mumbai,1289,Villa,10,6,20881800.0
+Delhi,3010,Villa,37,21,48355650.0
+Kolkata,3214,Independent House,9,20,87742200.0
+Kolkata,392,Villa,21,20,4831008.0
+Kolkata,2221,Villa,36,3,42643200.0
+Chennai,2586,Apartment,1,2,83204550.0
+Chennai,1526,Villa,22,1,15473640.0
+Bangalore,1224,Villa,3,29,21371040.0
+Mumbai,3623,Villa,2,2,92314040.0
+Mumbai,2343,Apartment,32,16,31068180.0
+Hyderabad,3495,Villa,6,15,88703100.0
+Chennai,1341,Townhouse,11,2,24824592.0
+Hyderabad,2306,Villa,30,19,29055600.0
+Kolkata,1824,Townhouse,16,21,45964800.0
+Delhi,3374,Independent House,14,11,64126244.0
+Delhi,1929,Villa,6,4,40073046.0
+Ahmedabad,558,Independent House,38,9,9340920.0
+Pune,2063,Townhouse,38,6,26604448.0
+Chennai,2722,Apartment,37,2,33439770.0
+Pune,4642,Independent House,27,27,74889386.0
+Mumbai,3462,Villa,5,29,39466800.0
+Ahmedabad,3154,Apartment,30,11,55195000.0
+Ahmedabad,2661,Apartment,35,21,31133700.0
+Kolkata,1081,Townhouse,3,20,28311390.0
+Pune,4419,Villa,4,4,101813760.0
+Chennai,1528,Apartment,5,22,27870720.0
+Kolkata,2061,Townhouse,6,13,39521736.0
+Mumbai,2160,Townhouse,37,17,36741600.0
+Delhi,1410,Apartment,0,18,20304000.0
+Kolkata,4004,Villa,1,21,99099000.0
+Delhi,993,Independent House,12,22,16777728.0
+Hyderabad,3142,Townhouse,5,21,35818800.0
+Chennai,3801,Villa,4,23,54734400.0
+Mumbai,2665,Independent House,31,22,55165500.0
+Delhi,3192,Villa,13,1,46931976.0
+Pune,3482,Independent House,7,27,97147800.0
+Bangalore,1937,Independent House,29,12,22004320.0
+Bangalore,4236,Independent House,16,21,64048320.0
+Kolkata,3124,Townhouse,17,23,62230080.0
+Chennai,402,Independent House,16,3,7023744.0
+Delhi,1624,Independent House,17,1,30328200.0
+Pune,3765,Independent House,17,15,70311375.0
+Bangalore,1139,Independent House,28,17,13121280.0
+Chennai,2642,Apartment,2,14,60586344.0
+Bangalore,2470,Villa,10,11,37791000.0
+Ahmedabad,1757,Independent House,9,25,33256496.0
+Pune,4766,Villa,26,24,84644160.0
+Mumbai,3049,Townhouse,21,14,53232491.0
+Mumbai,1697,Apartment,20,14,24436800.0
+Hyderabad,4959,Apartment,15,9,101163600.0
+Mumbai,4103,Townhouse,30,4,48538490.0
+Ahmedabad,426,Independent House,14,6,7327200.0
+Delhi,1859,Villa,18,23,36585120.0
+Pune,1930,Independent House,8,3,53268000.0
+Kolkata,1818,Apartment,7,6,30433320.0
+Kolkata,304,Apartment,5,12,5631600.0
+Mumbai,1703,Townhouse,8,12,25068160.0
+Delhi,4448,Apartment,25,24,80064000.0
+Chennai,2100,Townhouse,5,0,49875000.0
+Pune,4387,Independent House,1,9,86862600.0
+Hyderabad,2372,Townhouse,22,3,35523072.0
+Ahmedabad,2546,Villa,6,15,51693984.0
+Mumbai,4987,Apartment,6,29,79223482.0
+Bangalore,4140,Villa,5,10,80233200.0
+Mumbai,926,Apartment,11,22,20603500.0
+Ahmedabad,4524,Independent House,22,2,42344640.0
+Hyderabad,2333,Apartment,16,20,47033280.0
+Delhi,699,Townhouse,25,9,8178300.0
+Chennai,1729,Apartment,28,1,37346400.0
+Bangalore,1466,Apartment,6,4,41341200.0
+Chennai,785,Apartment,37,8,12611025.0
+Chennai,2946,Townhouse,5,18,50376600.0
+Ahmedabad,846,Villa,23,20,16285500.0
+Pune,426,Townhouse,34,29,4048704.0
+Delhi,1481,Apartment,39,18,11744330.0
+Bangalore,4861,Apartment,20,29,66109600.0
+Hyderabad,4604,Villa,16,8,50275680.0
+Mumbai,4019,Townhouse,37,21,59248098.0
+Delhi,1106,Independent House,33,10,20007540.0
+Mumbai,2139,Independent House,4,8,52362720.0
+Pune,3889,Independent House,30,3,49001400.0
+Kolkata,1313,Villa,21,26,18670860.0
+Bangalore,3047,Independent House,35,7,29708250.0
+Kolkata,3511,Townhouse,39,14,38550780.0
+Hyderabad,3334,Townhouse,15,19,56678000.0
+Hyderabad,1612,Villa,21,3,21649160.0
+Delhi,4727,Apartment,27,23,82817040.0
+Mumbai,3642,Independent House,8,27,53610240.0
+Delhi,937,Townhouse,31,9,10926357.0
+Pune,806,Apartment,19,5,12534912.0
+Chennai,3357,Townhouse,39,18,47917818.0
+Bangalore,2328,Townhouse,11,22,37294560.0
+Delhi,589,Apartment,27,21,8771388.0
+Delhi,614,Villa,39,11,8988960.0
+Pune,448,Townhouse,8,24,11128320.0
+Hyderabad,3756,Apartment,27,5,43870080.0
+Delhi,2654,Villa,31,6,59515950.0
+Kolkata,4327,Villa,11,2,73939776.0
+Chennai,1309,Independent House,9,10,22870848.0
+Mumbai,1642,Villa,26,22,21871440.0
+Kolkata,2792,Apartment,30,24,29316000.0
+Hyderabad,4926,Apartment,3,9,143346600.0
+Ahmedabad,2523,Independent House,29,21,30273477.0
+Hyderabad,3420,Townhouse,4,1,78796800.0
+Chennai,372,Villa,28,28,6428160.0
+Pune,3189,Villa,20,21,48983040.0
+Ahmedabad,1308,Villa,37,25,17140032.0
+Delhi,1044,Townhouse,13,2,20072988.0
+Pune,2074,Townhouse,28,23,30462912.0
+Mumbai,2218,Independent House,17,10,46943970.0
+Ahmedabad,4250,Townhouse,13,27,120168750.0
+Ahmedabad,2276,Apartment,16,3,24853920.0
+Ahmedabad,1929,Villa,13,27,28529910.0
+Mumbai,2817,Villa,12,19,49579200.0
+Pune,4057,Independent House,10,28,98585100.0
+Bangalore,1083,Apartment,0,23,27616500.0
+Chennai,3998,Apartment,26,6,38460760.0
+Hyderabad,2470,Independent House,8,11,43630080.0
+Pune,2380,Independent House,8,0,37004240.0
+Bangalore,2323,Villa,5,8,52964400.0
+Bangalore,1476,Villa,24,26,29165760.0
+Pune,4925,Apartment,26,8,118446250.0
+Chennai,2424,Independent House,20,19,39559680.0
+Pune,2005,Villa,37,8,34105050.0
+Kolkata,3214,Apartment,36,4,39493632.0
+Ahmedabad,3771,Independent House,12,29,47786112.0
+Delhi,3720,Townhouse,17,11,49401600.0
+Delhi,1459,Apartment,34,7,16273686.0
+Kolkata,4200,Apartment,23,8,42042000.0
+Bangalore,4334,Independent House,6,3,105922960.0
+Ahmedabad,2648,Independent House,27,27,37694280.0
+Ahmedabad,874,Independent House,16,24,15857856.0
+Ahmedabad,2681,Apartment,23,28,42938896.0
+Kolkata,4017,Apartment,13,22,62906220.0
+Bangalore,525,Apartment,6,18,11844000.0
+Bangalore,406,Independent House,10,7,5846400.0
+Hyderabad,3188,Villa,24,27,29074560.0
+Hyderabad,1773,Townhouse,30,10,24822000.0
+Hyderabad,3927,Villa,0,13,70686000.0
+Mumbai,1281,Independent House,17,4,19138140.0
+Mumbai,3926,Townhouse,24,15,76085880.0
+Delhi,2936,Apartment,29,16,52114000.0
+Mumbai,4130,Villa,31,10,51294600.0
+Mumbai,2922,Independent House,21,18,39242460.0
+Mumbai,332,Apartment,26,4,4422240.0
+Ahmedabad,897,Townhouse,5,10,17043000.0
+Mumbai,2008,Independent House,7,23,60691800.0
+Hyderabad,3449,Townhouse,26,29,61254240.0
+Bangalore,2347,Apartment,21,11,41717925.0
+Hyderabad,3393,Apartment,29,8,38544480.0
+Delhi,2233,Villa,32,14,45553200.0
+Pune,2161,Independent House,4,4,43150848.0
+Chennai,1392,Townhouse,5,18,23803200.0
+Mumbai,861,Apartment,17,16,14864304.0
+Delhi,4205,Independent House,10,12,56767500.0
+Delhi,4872,Apartment,10,21,118389600.0
+Mumbai,1743,Apartment,28,2,21208824.0
+Hyderabad,1598,Villa,17,12,20690904.0
+Bangalore,3218,Villa,19,22,40662648.0
+Delhi,2775,Townhouse,26,20,53391000.0
+Mumbai,3269,Independent House,7,25,39522210.0
+Ahmedabad,4402,Townhouse,33,9,47189440.0
+Chennai,2435,Villa,31,27,36291240.0
+Chennai,2224,Villa,37,10,52542000.0
+Mumbai,2492,Apartment,37,24,37679040.0
+Ahmedabad,4826,Townhouse,12,0,106172000.0
+Chennai,3517,Townhouse,10,14,47479500.0
+Delhi,3122,Independent House,0,9,117075000.0
+Bangalore,3186,Villa,17,19,52887600.0
+Hyderabad,2750,Apartment,33,9,22110000.0
+Delhi,2917,Townhouse,19,28,53162325.0
+Kolkata,3758,Apartment,20,1,62533120.0
+Hyderabad,3028,Townhouse,17,3,45238320.0
+Hyderabad,1845,Villa,31,0,22914900.0
+Kolkata,2885,Apartment,12,17,52807040.0
+Pune,2369,Apartment,0,21,55434600.0
+Bangalore,3658,Villa,20,19,74623200.0
+Kolkata,1395,Apartment,26,15,18581400.0
+Hyderabad,2139,Townhouse,17,12,39945825.0
+Delhi,2792,Townhouse,14,0,46821840.0
+Hyderabad,1658,Villa,27,18,18881304.0
+Bangalore,1308,Independent House,0,20,31392000.0
+Pune,1656,Villa,1,16,33444576.0
+Delhi,4711,Independent House,39,20,64658475.0
+Delhi,4678,Apartment,13,8,91571850.0
+Delhi,4555,Apartment,20,27,65592000.0
+Kolkata,2668,Townhouse,8,19,92046000.0
+Delhi,1209,Townhouse,28,9,17409600.0
+Mumbai,4218,Townhouse,22,21,83896020.0
+Ahmedabad,599,Villa,4,4,7475520.0
+Pune,4921,Independent House,32,4,69602624.0
+Mumbai,1266,Villa,3,20,30700500.0
+Ahmedabad,3350,Apartment,14,16,86430000.0
+Chennai,2170,Apartment,9,17,38506650.0
+Kolkata,1604,Apartment,31,21,19921680.0
+Mumbai,1143,Villa,36,24,21945600.0
+Delhi,618,Townhouse,38,10,9579000.0
+Ahmedabad,871,Townhouse,27,3,15259920.0
+Ahmedabad,1547,Townhouse,31,21,16651908.0
+Chennai,1557,Apartment,33,15,20342205.0
+Pune,1002,Townhouse,23,12,14813568.0
+Hyderabad,4681,Villa,37,28,63699048.0
+Kolkata,4384,Townhouse,29,25,80928640.0
+Chennai,2354,Independent House,36,26,48963200.0
+Pune,2636,Apartment,24,7,51085680.0
+Delhi,3980,Apartment,5,0,60496000.0
+Hyderabad,1641,Apartment,20,15,29538000.0
+Bangalore,4406,Apartment,18,5,65032560.0
+Hyderabad,1431,Townhouse,27,18,25071120.0
+Bangalore,4958,Independent House,22,24,85466004.0
+Chennai,2809,Villa,13,27,91643625.0
+Mumbai,2911,Villa,32,4,44538300.0
+Delhi,622,Villa,17,25,12390240.0
+Chennai,432,Apartment,4,0,10368000.0
+Kolkata,2297,Villa,10,12,77523750.0
+Bangalore,2058,Villa,19,14,43341480.0
+Hyderabad,573,Apartment,17,27,9511800.0
+Ahmedabad,1719,Apartment,28,25,22278240.0
+Chennai,1552,Villa,26,13,43068000.0
+Bangalore,3620,Townhouse,22,27,44048160.0
+Chennai,820,Apartment,39,2,7803120.0
+Ahmedabad,1784,Townhouse,5,5,43217400.0
+Pune,4633,Townhouse,34,13,55040040.0
+Mumbai,377,Villa,17,23,5288179.0
+Mumbai,2890,Independent House,33,14,37757850.0
+Hyderabad,368,Independent House,16,6,5564160.0
+Hyderabad,4398,Independent House,9,25,80043600.0
+Hyderabad,4336,Townhouse,30,16,36422400.0
+Ahmedabad,1506,Apartment,16,27,15180480.0
+Chennai,4233,Villa,5,20,68362950.0
+Mumbai,2927,Villa,21,1,69369900.0
+Bangalore,1949,Villa,25,28,36543750.0
+Pune,1849,Independent House,20,25,28844400.0
+Hyderabad,730,Villa,15,26,7446000.0
+Hyderabad,2275,Villa,10,22,36855000.0
+Delhi,397,Townhouse,23,19,7153146.0
+Mumbai,2946,Independent House,4,14,91915200.0
+Pune,1694,Apartment,3,19,49295400.0
+Chennai,2130,Apartment,37,16,32205600.0
+Pune,3212,Villa,6,9,61593312.0
+Ahmedabad,4918,Townhouse,38,15,59458620.0
+Pune,4875,Independent House,13,7,76342500.0
+Hyderabad,1236,Independent House,23,19,21033012.0
+Hyderabad,1376,Independent House,0,18,32198400.0
+Delhi,3453,Independent House,10,29,48480120.0
+Ahmedabad,1625,Townhouse,0,12,36562500.0
+Bangalore,3614,Townhouse,10,17,87820200.0
+Ahmedabad,1611,Villa,30,25,21990150.0
+Bangalore,4386,Independent House,5,25,108334200.0
+Delhi,4661,Independent House,25,10,50338800.0
+Ahmedabad,548,Villa,29,23,8404128.0
+Ahmedabad,1712,Townhouse,36,25,19722240.0
+Ahmedabad,3935,Independent House,7,26,82339875.0
+Chennai,3458,Independent House,19,0,36412740.0
+Mumbai,1806,Apartment,4,14,38316096.0
+Ahmedabad,4746,Apartment,8,7,89072928.0
+Pune,2475,Villa,26,2,54945000.0
+Mumbai,2382,Townhouse,3,14,33271776.0
+Bangalore,2748,Villa,10,5,49464000.0
+Bangalore,3610,Villa,5,6,71333600.0
+Bangalore,4049,Independent House,13,28,95111010.0
+Pune,2143,Townhouse,11,8,51496290.0
+Pune,1101,Villa,30,1,13872600.0
+Mumbai,1315,Villa,11,24,28088400.0
+Pune,1009,Townhouse,24,25,19171000.0
+Chennai,2115,Apartment,1,5,37689300.0
+Kolkata,1016,Villa,20,13,9753600.0
+Mumbai,457,Independent House,1,3,9048600.0
+Mumbai,752,Townhouse,34,24,12904320.0
+Hyderabad,653,Villa,27,27,9295455.0
+Mumbai,4503,Independent House,27,27,65743800.0
+Bangalore,4015,Townhouse,6,7,84917250.0
+Hyderabad,4311,Townhouse,9,3,117690300.0
+Kolkata,2544,Apartment,21,3,38587392.0
+Kolkata,3665,Independent House,32,25,32398600.0
+Chennai,2437,Villa,19,8,31583520.0
+Hyderabad,2915,Apartment,0,8,45474000.0
+Hyderabad,3345,Independent House,24,13,61012800.0
+Chennai,373,Apartment,12,1,6302208.0
+Chennai,4562,Independent House,26,14,60765840.0
+Hyderabad,3958,Villa,29,2,42152700.0
+Mumbai,2263,Apartment,33,7,37905250.0
+Hyderabad,1125,Villa,1,0,24057000.0
+Delhi,1557,Independent House,37,16,14125104.0
+Chennai,2327,Independent House,38,21,31884554.0
+Bangalore,4620,Townhouse,35,14,39039000.0
+Pune,4215,Townhouse,18,3,51844500.0
+Mumbai,3332,Independent House,20,13,42649600.0
+Hyderabad,833,Independent House,15,10,19117350.0
+Kolkata,4189,Independent House,18,17,75913058.0
+Mumbai,1579,Townhouse,11,19,31619475.0
+Delhi,3744,Townhouse,23,9,43243200.0
+Ahmedabad,975,Villa,7,29,34003125.0
+Hyderabad,3264,Villa,33,28,39363840.0
+Mumbai,901,Villa,34,13,12368928.0
+Mumbai,625,Apartment,30,0,14218750.0
+Pune,3764,Townhouse,24,26,61789824.0
+Delhi,605,Independent House,31,29,8140275.0
+Mumbai,4322,Apartment,6,21,81253600.0
+Delhi,488,Independent House,25,22,7320000.0
+Pune,4679,Townhouse,22,18,87590880.0
+Kolkata,3688,Villa,3,25,71547200.0
+Chennai,2224,Townhouse,34,19,28182528.0
+Ahmedabad,4901,Independent House,39,27,80719470.0
+Delhi,416,Apartment,22,10,7787520.0
+Chennai,2216,Apartment,14,23,42879600.0
+Chennai,1190,Apartment,5,19,17635800.0
+Bangalore,622,Independent House,34,1,8374608.0
+Hyderabad,3821,Villa,2,16,56168700.0
+Hyderabad,916,Apartment,31,8,16433040.0
+Pune,4006,Apartment,28,3,86529600.0
+Mumbai,4758,Independent House,30,26,59950800.0
+Chennai,3437,Villa,39,11,32706492.0
+Chennai,4607,Townhouse,35,6,112295625.0
+Hyderabad,4867,Townhouse,13,13,76217220.0
+Pune,3670,Villa,6,5,80725320.0
+Kolkata,707,Independent House,28,28,10384416.0
+Delhi,3761,Villa,8,5,62282160.0
+Mumbai,475,Townhouse,35,29,10034375.0
+Pune,1838,Villa,2,13,43229760.0
+Bangalore,1150,Independent House,29,20,15921750.0
+Chennai,1129,Independent House,31,10,9348120.0
+Bangalore,4675,Independent House,16,10,70686000.0
+Chennai,570,Independent House,38,1,6891300.0
+Kolkata,3707,Apartment,39,3,58793020.0
+Kolkata,3391,Apartment,19,4,57131568.0
+Ahmedabad,3022,Apartment,29,0,27893060.0
+Hyderabad,737,Villa,16,18,12876864.0
+Mumbai,1709,Townhouse,13,29,38657580.0
+Pune,1727,Villa,13,18,31251792.0
+Ahmedabad,2374,Townhouse,9,25,54008500.0
+Chennai,4915,Apartment,11,23,83987520.0
+Pune,2303,Apartment,27,4,20174280.0
+Kolkata,4216,Townhouse,38,11,52278400.0
+Ahmedabad,4906,Apartment,35,2,53892410.0
+Delhi,4084,Independent House,4,1,76452480.0
+Ahmedabad,4382,Townhouse,7,14,103919130.0
+Ahmedabad,4389,Townhouse,11,26,70311780.0
+Bangalore,722,Villa,15,27,9573720.0
+Pune,3812,Independent House,29,5,32478240.0
+Kolkata,4582,Townhouse,10,29,85775040.0
+Ahmedabad,4762,Villa,23,28,70401408.0
+Chennai,1145,Villa,10,7,26277750.0
+Pune,1220,Apartment,8,12,36478000.0
+Hyderabad,4931,Apartment,37,2,68654313.0
+Pune,1040,Townhouse,15,16,22100000.0
+Chennai,2991,Villa,12,20,47377440.0
+Ahmedabad,2967,Villa,19,10,37491012.0
+Delhi,4836,Villa,5,29,59724600.0
+Ahmedabad,1002,Independent House,32,26,13627200.0
+Pune,4694,Apartment,13,6,91885050.0
+Ahmedabad,4503,Villa,34,27,53495640.0
+Ahmedabad,4170,Independent House,2,28,122598000.0
+Mumbai,4375,Villa,11,13,56070000.0
+Delhi,984,Apartment,13,24,15409440.0
+Ahmedabad,1670,Apartment,37,13,17885700.0
+Pune,3869,Apartment,11,8,67146495.0
+Mumbai,3365,Apartment,21,24,47850300.0
+Delhi,860,Villa,38,21,15996000.0
+Hyderabad,3410,Villa,7,9,60888960.0
+Bangalore,523,Apartment,9,4,9137856.0
+Hyderabad,3728,Townhouse,12,2,49209600.0
+Mumbai,4985,Independent House,3,24,81719105.0
+Hyderabad,4853,Villa,10,29,74250900.0
+Ahmedabad,386,Townhouse,16,6,6322680.0
+Bangalore,4951,Villa,22,5,55609632.0
+Pune,3340,Villa,25,0,50100000.0
+Mumbai,3431,Townhouse,34,22,44156970.0
+Bangalore,4869,Villa,6,22,82383480.0
+Kolkata,333,Villa,36,14,3324672.0
+Bangalore,478,Independent House,9,24,11091990.0
+Mumbai,3042,Townhouse,18,29,50886576.0
+Delhi,1800,Apartment,10,8,32400000.0
+Mumbai,1172,Townhouse,28,13,21096000.0
+Ahmedabad,2576,Villa,29,22,29263360.0
+Mumbai,1599,Townhouse,33,20,20890935.0
+Delhi,4448,Independent House,4,12,83266560.0
+Pune,3265,Townhouse,29,21,69544500.0
+Kolkata,1387,Independent House,33,1,24161540.0
+Kolkata,4974,Independent House,19,21,83801952.0
+Bangalore,4663,Townhouse,35,19,54557100.0
+Pune,430,Apartment,5,6,9804000.0
+Kolkata,4581,Townhouse,0,29,109944000.0
+Kolkata,1030,Independent House,12,14,17674800.0
+Pune,2082,Townhouse,0,27,78075000.0
+Delhi,448,Independent House,23,28,7623616.0
+Pune,1076,Villa,2,22,22776768.0
+Pune,2334,Villa,23,12,42054012.0
+Ahmedabad,4670,Apartment,23,18,46746700.0
+Pune,1392,Independent House,25,3,18792000.0
+Ahmedabad,4034,Independent House,32,28,102867000.0
+Kolkata,792,Townhouse,10,0,26730000.0
+Ahmedabad,1719,Apartment,5,5,41642775.0
+Delhi,1204,Apartment,12,2,23415392.0
