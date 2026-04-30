@@ -1,501 +1,501 @@
-location,size_sqft,property_type,age_years,floor,market_price
-Mumbai,2511,Independent House,10,20,46101960.0
-Ahmedabad,737,Villa,24,14,13442880.0
-Ahmedabad,4462,Independent House,37,24,91359450.0
-Ahmedabad,3571,Independent House,13,26,63378108.0
-Bangalore,3692,Apartment,26,28,53275560.0
-Ahmedabad,2995,Apartment,13,7,54197520.0
-Kolkata,4778,Apartment,15,7,109655100.0
-Mumbai,1496,Villa,37,20,22619520.0
-Ahmedabad,1509,Townhouse,37,16,22816080.0
-Ahmedabad,4936,Independent House,3,14,71818800.0
-Hyderabad,1158,Independent House,9,11,12645360.0
-Hyderabad,1315,Villa,0,15,26300000.0
-Mumbai,1858,Apartment,39,19,20400840.0
-Chennai,410,Apartment,0,13,4920000.0
-Delhi,3830,Townhouse,39,14,42053400.0
-Mumbai,3901,Independent House,36,9,44939520.0
-Kolkata,3394,Townhouse,7,21,73860228.0
-Delhi,762,Independent House,29,4,14607540.0
-Mumbai,3165,Villa,33,6,57254850.0
-Ahmedabad,1626,Townhouse,33,11,19609560.0
-Ahmedabad,2163,Villa,7,9,75434625.0
-Chennai,516,Independent House,27,5,8814312.0
-Delhi,2643,Villa,34,17,31398840.0
-Kolkata,1804,Apartment,39,18,27511000.0
-Ahmedabad,2359,Villa,30,22,28072100.0
-Delhi,2880,Apartment,26,7,41558400.0
-Hyderabad,1449,Apartment,26,17,25734240.0
-Ahmedabad,4681,Townhouse,15,23,119365500.0
-Hyderabad,1149,Independent House,19,11,13960350.0
-Ahmedabad,2148,Townhouse,12,2,30243840.0
-Pune,977,Independent House,38,8,18172200.0
-Mumbai,1699,Independent House,14,29,34190676.0
-Mumbai,1273,Independent House,31,9,15810660.0
-Hyderabad,3050,Independent House,1,7,57974400.0
-Delhi,1292,Villa,16,21,40698000.0
-Kolkata,3088,Villa,31,6,51137280.0
-Bangalore,2481,Independent House,35,9,24189750.0
-Hyderabad,4474,Villa,25,6,43621500.0
-Hyderabad,1954,Independent House,36,24,16257280.0
-Kolkata,3085,Independent House,21,23,47524425.0
-Hyderabad,1079,Independent House,39,4,19745700.0
-Mumbai,4898,Independent House,20,24,61127040.0
-Mumbai,4711,Villa,23,12,69647424.0
-Mumbai,1979,Apartment,39,8,28972560.0
-Bangalore,2724,Villa,11,3,49456944.0
-Delhi,384,Townhouse,12,10,6082560.0
-Bangalore,4166,Apartment,37,19,59053050.0
-Hyderabad,2988,Townhouse,33,21,48047040.0
-Pune,3102,Villa,33,26,46762650.0
-Hyderabad,2558,Apartment,2,15,39106704.0
-Pune,2871,Independent House,28,6,31006800.0
-Chennai,1306,Apartment,23,26,25140500.0
-Ahmedabad,589,Townhouse,30,27,8039850.0
-Bangalore,3661,Townhouse,26,26,81274200.0
-Chennai,867,Villa,33,23,15684030.0
-Pune,3929,Townhouse,32,1,53434400.0
-Pune,4605,Villa,31,18,70221645.0
-Pune,2813,Townhouse,21,14,40000860.0
-Hyderabad,4425,Apartment,39,20,53985000.0
-Delhi,4339,Townhouse,3,9,101011920.0
-Bangalore,4122,Townhouse,25,1,74196000.0
-Bangalore,1121,Apartment,16,4,22599360.0
-Ahmedabad,4435,Townhouse,2,12,83448960.0
-Chennai,4673,Independent House,29,15,79627920.0
-Ahmedabad,3676,Villa,23,11,91991900.0
-Mumbai,3390,Villa,36,6,47948160.0
-Hyderabad,718,Independent House,24,14,11786688.0
-Pune,3178,Independent House,15,2,48623400.0
-Kolkata,480,Independent House,15,3,7344000.0
-Kolkata,4931,Townhouse,8,7,87101184.0
-Ahmedabad,4145,Independent House,29,24,79459650.0
-Hyderabad,1205,Villa,35,13,25455625.0
-Chennai,2397,Townhouse,4,22,55226880.0
-Delhi,3839,Apartment,0,7,69102000.0
-Ahmedabad,3317,Independent House,8,10,67441244.0
-Hyderabad,2969,Independent House,36,20,37053120.0
-Ahmedabad,2357,Villa,0,1,70710000.0
-Kolkata,1213,Townhouse,16,14,22925700.0
-Delhi,2241,Villa,19,18,28317276.0
-Pune,3279,Independent House,20,11,40921920.0
-Kolkata,1237,Villa,25,24,15771750.0
-Pune,465,Townhouse,20,3,6696000.0
-Chennai,2863,Villa,20,3,35730240.0
-Pune,2821,Villa,25,27,45700200.0
-Mumbai,327,Villa,16,5,4285008.0
-Delhi,3822,Townhouse,29,1,42332472.0
-Hyderabad,3537,Apartment,2,24,76604346.0
-Delhi,1519,Apartment,7,8,42380100.0
-Kolkata,3735,Villa,21,14,59013000.0
-Mumbai,519,Independent House,5,11,7691580.0
-Mumbai,1972,Townhouse,11,7,45632080.0
-Ahmedabad,4739,Townhouse,1,28,91486395.0
-Ahmedabad,2775,Apartment,0,20,43290000.0
-Pune,1902,Apartment,25,15,30812400.0
-Ahmedabad,336,Townhouse,34,14,3747744.0
-Pune,550,Townhouse,22,6,7722000.0
-Pune,1390,Independent House,17,23,29419350.0
-Bangalore,2175,Villa,3,16,45570600.0
-Mumbai,3681,Independent House,23,10,55270215.0
-Kolkata,909,Independent House,15,27,11126160.0
-Pune,2226,Townhouse,31,22,18431280.0
-Mumbai,3422,Apartment,25,19,76995000.0
-Chennai,4882,Villa,33,28,39251280.0
-Pune,1554,Apartment,0,3,24864000.0
-Hyderabad,4666,Villa,37,17,95536350.0
-Pune,3715,Apartment,19,3,72219600.0
-Mumbai,1289,Villa,10,6,20881800.0
-Delhi,3010,Villa,37,21,48355650.0
-Kolkata,3214,Independent House,9,20,87742200.0
-Kolkata,392,Villa,21,20,4831008.0
-Kolkata,2221,Villa,36,3,42643200.0
-Chennai,2586,Apartment,1,2,83204550.0
-Chennai,1526,Villa,22,1,15473640.0
-Bangalore,1224,Villa,3,29,21371040.0
-Mumbai,3623,Villa,2,2,92314040.0
-Mumbai,2343,Apartment,32,16,31068180.0
-Hyderabad,3495,Villa,6,15,88703100.0
-Chennai,1341,Townhouse,11,2,24824592.0
-Hyderabad,2306,Villa,30,19,29055600.0
-Kolkata,1824,Townhouse,16,21,45964800.0
-Delhi,3374,Independent House,14,11,64126244.0
-Delhi,1929,Villa,6,4,40073046.0
-Ahmedabad,558,Independent House,38,9,9340920.0
-Pune,2063,Townhouse,38,6,26604448.0
-Chennai,2722,Apartment,37,2,33439770.0
-Pune,4642,Independent House,27,27,74889386.0
-Mumbai,3462,Villa,5,29,39466800.0
-Ahmedabad,3154,Apartment,30,11,55195000.0
-Ahmedabad,2661,Apartment,35,21,31133700.0
-Kolkata,1081,Townhouse,3,20,28311390.0
-Pune,4419,Villa,4,4,101813760.0
-Chennai,1528,Apartment,5,22,27870720.0
-Kolkata,2061,Townhouse,6,13,39521736.0
-Mumbai,2160,Townhouse,37,17,36741600.0
-Delhi,1410,Apartment,0,18,20304000.0
-Kolkata,4004,Villa,1,21,99099000.0
-Delhi,993,Independent House,12,22,16777728.0
-Hyderabad,3142,Townhouse,5,21,35818800.0
-Chennai,3801,Villa,4,23,54734400.0
-Mumbai,2665,Independent House,31,22,55165500.0
-Delhi,3192,Villa,13,1,46931976.0
-Pune,3482,Independent House,7,27,97147800.0
-Bangalore,1937,Independent House,29,12,22004320.0
-Bangalore,4236,Independent House,16,21,64048320.0
-Kolkata,3124,Townhouse,17,23,62230080.0
-Chennai,402,Independent House,16,3,7023744.0
-Delhi,1624,Independent House,17,1,30328200.0
-Pune,3765,Independent House,17,15,70311375.0
-Bangalore,1139,Independent House,28,17,13121280.0
-Chennai,2642,Apartment,2,14,60586344.0
-Bangalore,2470,Villa,10,11,37791000.0
-Ahmedabad,1757,Independent House,9,25,33256496.0
-Pune,4766,Villa,26,24,84644160.0
-Mumbai,3049,Townhouse,21,14,53232491.0
-Mumbai,1697,Apartment,20,14,24436800.0
-Hyderabad,4959,Apartment,15,9,101163600.0
-Mumbai,4103,Townhouse,30,4,48538490.0
-Ahmedabad,426,Independent House,14,6,7327200.0
-Delhi,1859,Villa,18,23,36585120.0
-Pune,1930,Independent House,8,3,53268000.0
-Kolkata,1818,Apartment,7,6,30433320.0
-Kolkata,304,Apartment,5,12,5631600.0
-Mumbai,1703,Townhouse,8,12,25068160.0
-Delhi,4448,Apartment,25,24,80064000.0
-Chennai,2100,Townhouse,5,0,49875000.0
-Pune,4387,Independent House,1,9,86862600.0
-Hyderabad,2372,Townhouse,22,3,35523072.0
-Ahmedabad,2546,Villa,6,15,51693984.0
-Mumbai,4987,Apartment,6,29,79223482.0
-Bangalore,4140,Villa,5,10,80233200.0
-Mumbai,926,Apartment,11,22,20603500.0
-Ahmedabad,4524,Independent House,22,2,42344640.0
-Hyderabad,2333,Apartment,16,20,47033280.0
-Delhi,699,Townhouse,25,9,8178300.0
-Chennai,1729,Apartment,28,1,37346400.0
-Bangalore,1466,Apartment,6,4,41341200.0
-Chennai,785,Apartment,37,8,12611025.0
-Chennai,2946,Townhouse,5,18,50376600.0
-Ahmedabad,846,Villa,23,20,16285500.0
-Pune,426,Townhouse,34,29,4048704.0
-Delhi,1481,Apartment,39,18,11744330.0
-Bangalore,4861,Apartment,20,29,66109600.0
-Hyderabad,4604,Villa,16,8,50275680.0
-Mumbai,4019,Townhouse,37,21,59248098.0
-Delhi,1106,Independent House,33,10,20007540.0
-Mumbai,2139,Independent House,4,8,52362720.0
-Pune,3889,Independent House,30,3,49001400.0
-Kolkata,1313,Villa,21,26,18670860.0
-Bangalore,3047,Independent House,35,7,29708250.0
-Kolkata,3511,Townhouse,39,14,38550780.0
-Hyderabad,3334,Townhouse,15,19,56678000.0
-Hyderabad,1612,Villa,21,3,21649160.0
-Delhi,4727,Apartment,27,23,82817040.0
-Mumbai,3642,Independent House,8,27,53610240.0
-Delhi,937,Townhouse,31,9,10926357.0
-Pune,806,Apartment,19,5,12534912.0
-Chennai,3357,Townhouse,39,18,47917818.0
-Bangalore,2328,Townhouse,11,22,37294560.0
-Delhi,589,Apartment,27,21,8771388.0
-Delhi,614,Villa,39,11,8988960.0
-Pune,448,Townhouse,8,24,11128320.0
-Hyderabad,3756,Apartment,27,5,43870080.0
-Delhi,2654,Villa,31,6,59515950.0
-Kolkata,4327,Villa,11,2,73939776.0
-Chennai,1309,Independent House,9,10,22870848.0
-Mumbai,1642,Villa,26,22,21871440.0
-Kolkata,2792,Apartment,30,24,29316000.0
-Hyderabad,4926,Apartment,3,9,143346600.0
-Ahmedabad,2523,Independent House,29,21,30273477.0
-Hyderabad,3420,Townhouse,4,1,78796800.0
-Chennai,372,Villa,28,28,6428160.0
-Pune,3189,Villa,20,21,48983040.0
-Ahmedabad,1308,Villa,37,25,17140032.0
-Delhi,1044,Townhouse,13,2,20072988.0
-Pune,2074,Townhouse,28,23,30462912.0
-Mumbai,2218,Independent House,17,10,46943970.0
-Ahmedabad,4250,Townhouse,13,27,120168750.0
-Ahmedabad,2276,Apartment,16,3,24853920.0
-Ahmedabad,1929,Villa,13,27,28529910.0
-Mumbai,2817,Villa,12,19,49579200.0
-Pune,4057,Independent House,10,28,98585100.0
-Bangalore,1083,Apartment,0,23,27616500.0
-Chennai,3998,Apartment,26,6,38460760.0
-Hyderabad,2470,Independent House,8,11,43630080.0
-Pune,2380,Independent House,8,0,37004240.0
-Bangalore,2323,Villa,5,8,52964400.0
-Bangalore,1476,Villa,24,26,29165760.0
-Pune,4925,Apartment,26,8,118446250.0
-Chennai,2424,Independent House,20,19,39559680.0
-Pune,2005,Villa,37,8,34105050.0
-Kolkata,3214,Apartment,36,4,39493632.0
-Ahmedabad,3771,Independent House,12,29,47786112.0
-Delhi,3720,Townhouse,17,11,49401600.0
-Delhi,1459,Apartment,34,7,16273686.0
-Kolkata,4200,Apartment,23,8,42042000.0
-Bangalore,4334,Independent House,6,3,105922960.0
-Ahmedabad,2648,Independent House,27,27,37694280.0
-Ahmedabad,874,Independent House,16,24,15857856.0
-Ahmedabad,2681,Apartment,23,28,42938896.0
-Kolkata,4017,Apartment,13,22,62906220.0
-Bangalore,525,Apartment,6,18,11844000.0
-Bangalore,406,Independent House,10,7,5846400.0
-Hyderabad,3188,Villa,24,27,29074560.0
-Hyderabad,1773,Townhouse,30,10,24822000.0
-Hyderabad,3927,Villa,0,13,70686000.0
-Mumbai,1281,Independent House,17,4,19138140.0
-Mumbai,3926,Townhouse,24,15,76085880.0
-Delhi,2936,Apartment,29,16,52114000.0
-Mumbai,4130,Villa,31,10,51294600.0
-Mumbai,2922,Independent House,21,18,39242460.0
-Mumbai,332,Apartment,26,4,4422240.0
-Ahmedabad,897,Townhouse,5,10,17043000.0
-Mumbai,2008,Independent House,7,23,60691800.0
-Hyderabad,3449,Townhouse,26,29,61254240.0
-Bangalore,2347,Apartment,21,11,41717925.0
-Hyderabad,3393,Apartment,29,8,38544480.0
-Delhi,2233,Villa,32,14,45553200.0
-Pune,2161,Independent House,4,4,43150848.0
-Chennai,1392,Townhouse,5,18,23803200.0
-Mumbai,861,Apartment,17,16,14864304.0
-Delhi,4205,Independent House,10,12,56767500.0
-Delhi,4872,Apartment,10,21,118389600.0
-Mumbai,1743,Apartment,28,2,21208824.0
-Hyderabad,1598,Villa,17,12,20690904.0
-Bangalore,3218,Villa,19,22,40662648.0
-Delhi,2775,Townhouse,26,20,53391000.0
-Mumbai,3269,Independent House,7,25,39522210.0
-Ahmedabad,4402,Townhouse,33,9,47189440.0
-Chennai,2435,Villa,31,27,36291240.0
-Chennai,2224,Villa,37,10,52542000.0
-Mumbai,2492,Apartment,37,24,37679040.0
-Ahmedabad,4826,Townhouse,12,0,106172000.0
-Chennai,3517,Townhouse,10,14,47479500.0
-Delhi,3122,Independent House,0,9,117075000.0
-Bangalore,3186,Villa,17,19,52887600.0
-Hyderabad,2750,Apartment,33,9,22110000.0
-Delhi,2917,Townhouse,19,28,53162325.0
-Kolkata,3758,Apartment,20,1,62533120.0
-Hyderabad,3028,Townhouse,17,3,45238320.0
-Hyderabad,1845,Villa,31,0,22914900.0
-Kolkata,2885,Apartment,12,17,52807040.0
-Pune,2369,Apartment,0,21,55434600.0
-Bangalore,3658,Villa,20,19,74623200.0
-Kolkata,1395,Apartment,26,15,18581400.0
-Hyderabad,2139,Townhouse,17,12,39945825.0
-Delhi,2792,Townhouse,14,0,46821840.0
-Hyderabad,1658,Villa,27,18,18881304.0
-Bangalore,1308,Independent House,0,20,31392000.0
-Pune,1656,Villa,1,16,33444576.0
-Delhi,4711,Independent House,39,20,64658475.0
-Delhi,4678,Apartment,13,8,91571850.0
-Delhi,4555,Apartment,20,27,65592000.0
-Kolkata,2668,Townhouse,8,19,92046000.0
-Delhi,1209,Townhouse,28,9,17409600.0
-Mumbai,4218,Townhouse,22,21,83896020.0
-Ahmedabad,599,Villa,4,4,7475520.0
-Pune,4921,Independent House,32,4,69602624.0
-Mumbai,1266,Villa,3,20,30700500.0
-Ahmedabad,3350,Apartment,14,16,86430000.0
-Chennai,2170,Apartment,9,17,38506650.0
-Kolkata,1604,Apartment,31,21,19921680.0
-Mumbai,1143,Villa,36,24,21945600.0
-Delhi,618,Townhouse,38,10,9579000.0
-Ahmedabad,871,Townhouse,27,3,15259920.0
-Ahmedabad,1547,Townhouse,31,21,16651908.0
-Chennai,1557,Apartment,33,15,20342205.0
-Pune,1002,Townhouse,23,12,14813568.0
-Hyderabad,4681,Villa,37,28,63699048.0
-Kolkata,4384,Townhouse,29,25,80928640.0
-Chennai,2354,Independent House,36,26,48963200.0
-Pune,2636,Apartment,24,7,51085680.0
-Delhi,3980,Apartment,5,0,60496000.0
-Hyderabad,1641,Apartment,20,15,29538000.0
-Bangalore,4406,Apartment,18,5,65032560.0
-Hyderabad,1431,Townhouse,27,18,25071120.0
-Bangalore,4958,Independent House,22,24,85466004.0
-Chennai,2809,Villa,13,27,91643625.0
-Mumbai,2911,Villa,32,4,44538300.0
-Delhi,622,Villa,17,25,12390240.0
-Chennai,432,Apartment,4,0,10368000.0
-Kolkata,2297,Villa,10,12,77523750.0
-Bangalore,2058,Villa,19,14,43341480.0
-Hyderabad,573,Apartment,17,27,9511800.0
-Ahmedabad,1719,Apartment,28,25,22278240.0
-Chennai,1552,Villa,26,13,43068000.0
-Bangalore,3620,Townhouse,22,27,44048160.0
-Chennai,820,Apartment,39,2,7803120.0
-Ahmedabad,1784,Townhouse,5,5,43217400.0
-Pune,4633,Townhouse,34,13,55040040.0
-Mumbai,377,Villa,17,23,5288179.0
-Mumbai,2890,Independent House,33,14,37757850.0
-Hyderabad,368,Independent House,16,6,5564160.0
-Hyderabad,4398,Independent House,9,25,80043600.0
-Hyderabad,4336,Townhouse,30,16,36422400.0
-Ahmedabad,1506,Apartment,16,27,15180480.0
-Chennai,4233,Villa,5,20,68362950.0
-Mumbai,2927,Villa,21,1,69369900.0
-Bangalore,1949,Villa,25,28,36543750.0
-Pune,1849,Independent House,20,25,28844400.0
-Hyderabad,730,Villa,15,26,7446000.0
-Hyderabad,2275,Villa,10,22,36855000.0
-Delhi,397,Townhouse,23,19,7153146.0
-Mumbai,2946,Independent House,4,14,91915200.0
-Pune,1694,Apartment,3,19,49295400.0
-Chennai,2130,Apartment,37,16,32205600.0
-Pune,3212,Villa,6,9,61593312.0
-Ahmedabad,4918,Townhouse,38,15,59458620.0
-Pune,4875,Independent House,13,7,76342500.0
-Hyderabad,1236,Independent House,23,19,21033012.0
-Hyderabad,1376,Independent House,0,18,32198400.0
-Delhi,3453,Independent House,10,29,48480120.0
-Ahmedabad,1625,Townhouse,0,12,36562500.0
-Bangalore,3614,Townhouse,10,17,87820200.0
-Ahmedabad,1611,Villa,30,25,21990150.0
-Bangalore,4386,Independent House,5,25,108334200.0
-Delhi,4661,Independent House,25,10,50338800.0
-Ahmedabad,548,Villa,29,23,8404128.0
-Ahmedabad,1712,Townhouse,36,25,19722240.0
-Ahmedabad,3935,Independent House,7,26,82339875.0
-Chennai,3458,Independent House,19,0,36412740.0
-Mumbai,1806,Apartment,4,14,38316096.0
-Ahmedabad,4746,Apartment,8,7,89072928.0
-Pune,2475,Villa,26,2,54945000.0
-Mumbai,2382,Townhouse,3,14,33271776.0
-Bangalore,2748,Villa,10,5,49464000.0
-Bangalore,3610,Villa,5,6,71333600.0
-Bangalore,4049,Independent House,13,28,95111010.0
-Pune,2143,Townhouse,11,8,51496290.0
-Pune,1101,Villa,30,1,13872600.0
-Mumbai,1315,Villa,11,24,28088400.0
-Pune,1009,Townhouse,24,25,19171000.0
-Chennai,2115,Apartment,1,5,37689300.0
-Kolkata,1016,Villa,20,13,9753600.0
-Mumbai,457,Independent House,1,3,9048600.0
-Mumbai,752,Townhouse,34,24,12904320.0
-Hyderabad,653,Villa,27,27,9295455.0
-Mumbai,4503,Independent House,27,27,65743800.0
-Bangalore,4015,Townhouse,6,7,84917250.0
-Hyderabad,4311,Townhouse,9,3,117690300.0
-Kolkata,2544,Apartment,21,3,38587392.0
-Kolkata,3665,Independent House,32,25,32398600.0
-Chennai,2437,Villa,19,8,31583520.0
-Hyderabad,2915,Apartment,0,8,45474000.0
-Hyderabad,3345,Independent House,24,13,61012800.0
-Chennai,373,Apartment,12,1,6302208.0
-Chennai,4562,Independent House,26,14,60765840.0
-Hyderabad,3958,Villa,29,2,42152700.0
-Mumbai,2263,Apartment,33,7,37905250.0
-Hyderabad,1125,Villa,1,0,24057000.0
-Delhi,1557,Independent House,37,16,14125104.0
-Chennai,2327,Independent House,38,21,31884554.0
-Bangalore,4620,Townhouse,35,14,39039000.0
-Pune,4215,Townhouse,18,3,51844500.0
-Mumbai,3332,Independent House,20,13,42649600.0
-Hyderabad,833,Independent House,15,10,19117350.0
-Kolkata,4189,Independent House,18,17,75913058.0
-Mumbai,1579,Townhouse,11,19,31619475.0
-Delhi,3744,Townhouse,23,9,43243200.0
-Ahmedabad,975,Villa,7,29,34003125.0
-Hyderabad,3264,Villa,33,28,39363840.0
-Mumbai,901,Villa,34,13,12368928.0
-Mumbai,625,Apartment,30,0,14218750.0
-Pune,3764,Townhouse,24,26,61789824.0
-Delhi,605,Independent House,31,29,8140275.0
-Mumbai,4322,Apartment,6,21,81253600.0
-Delhi,488,Independent House,25,22,7320000.0
-Pune,4679,Townhouse,22,18,87590880.0
-Kolkata,3688,Villa,3,25,71547200.0
-Chennai,2224,Townhouse,34,19,28182528.0
-Ahmedabad,4901,Independent House,39,27,80719470.0
-Delhi,416,Apartment,22,10,7787520.0
-Chennai,2216,Apartment,14,23,42879600.0
-Chennai,1190,Apartment,5,19,17635800.0
-Bangalore,622,Independent House,34,1,8374608.0
-Hyderabad,3821,Villa,2,16,56168700.0
-Hyderabad,916,Apartment,31,8,16433040.0
-Pune,4006,Apartment,28,3,86529600.0
-Mumbai,4758,Independent House,30,26,59950800.0
-Chennai,3437,Villa,39,11,32706492.0
-Chennai,4607,Townhouse,35,6,112295625.0
-Hyderabad,4867,Townhouse,13,13,76217220.0
-Pune,3670,Villa,6,5,80725320.0
-Kolkata,707,Independent House,28,28,10384416.0
-Delhi,3761,Villa,8,5,62282160.0
-Mumbai,475,Townhouse,35,29,10034375.0
-Pune,1838,Villa,2,13,43229760.0
-Bangalore,1150,Independent House,29,20,15921750.0
-Chennai,1129,Independent House,31,10,9348120.0
-Bangalore,4675,Independent House,16,10,70686000.0
-Chennai,570,Independent House,38,1,6891300.0
-Kolkata,3707,Apartment,39,3,58793020.0
-Kolkata,3391,Apartment,19,4,57131568.0
-Ahmedabad,3022,Apartment,29,0,27893060.0
-Hyderabad,737,Villa,16,18,12876864.0
-Mumbai,1709,Townhouse,13,29,38657580.0
-Pune,1727,Villa,13,18,31251792.0
-Ahmedabad,2374,Townhouse,9,25,54008500.0
-Chennai,4915,Apartment,11,23,83987520.0
-Pune,2303,Apartment,27,4,20174280.0
-Kolkata,4216,Townhouse,38,11,52278400.0
-Ahmedabad,4906,Apartment,35,2,53892410.0
-Delhi,4084,Independent House,4,1,76452480.0
-Ahmedabad,4382,Townhouse,7,14,103919130.0
-Ahmedabad,4389,Townhouse,11,26,70311780.0
-Bangalore,722,Villa,15,27,9573720.0
-Pune,3812,Independent House,29,5,32478240.0
-Kolkata,4582,Townhouse,10,29,85775040.0
-Ahmedabad,4762,Villa,23,28,70401408.0
-Chennai,1145,Villa,10,7,26277750.0
-Pune,1220,Apartment,8,12,36478000.0
-Hyderabad,4931,Apartment,37,2,68654313.0
-Pune,1040,Townhouse,15,16,22100000.0
-Chennai,2991,Villa,12,20,47377440.0
-Ahmedabad,2967,Villa,19,10,37491012.0
-Delhi,4836,Villa,5,29,59724600.0
-Ahmedabad,1002,Independent House,32,26,13627200.0
-Pune,4694,Apartment,13,6,91885050.0
-Ahmedabad,4503,Villa,34,27,53495640.0
-Ahmedabad,4170,Independent House,2,28,122598000.0
-Mumbai,4375,Villa,11,13,56070000.0
-Delhi,984,Apartment,13,24,15409440.0
-Ahmedabad,1670,Apartment,37,13,17885700.0
-Pune,3869,Apartment,11,8,67146495.0
-Mumbai,3365,Apartment,21,24,47850300.0
-Delhi,860,Villa,38,21,15996000.0
-Hyderabad,3410,Villa,7,9,60888960.0
-Bangalore,523,Apartment,9,4,9137856.0
-Hyderabad,3728,Townhouse,12,2,49209600.0
-Mumbai,4985,Independent House,3,24,81719105.0
-Hyderabad,4853,Villa,10,29,74250900.0
-Ahmedabad,386,Townhouse,16,6,6322680.0
-Bangalore,4951,Villa,22,5,55609632.0
-Pune,3340,Villa,25,0,50100000.0
-Mumbai,3431,Townhouse,34,22,44156970.0
-Bangalore,4869,Villa,6,22,82383480.0
-Kolkata,333,Villa,36,14,3324672.0
-Bangalore,478,Independent House,9,24,11091990.0
-Mumbai,3042,Townhouse,18,29,50886576.0
-Delhi,1800,Apartment,10,8,32400000.0
-Mumbai,1172,Townhouse,28,13,21096000.0
-Ahmedabad,2576,Villa,29,22,29263360.0
-Mumbai,1599,Townhouse,33,20,20890935.0
-Delhi,4448,Independent House,4,12,83266560.0
-Pune,3265,Townhouse,29,21,69544500.0
-Kolkata,1387,Independent House,33,1,24161540.0
-Kolkata,4974,Independent House,19,21,83801952.0
-Bangalore,4663,Townhouse,35,19,54557100.0
-Pune,430,Apartment,5,6,9804000.0
-Kolkata,4581,Townhouse,0,29,109944000.0
-Kolkata,1030,Independent House,12,14,17674800.0
-Pune,2082,Townhouse,0,27,78075000.0
-Delhi,448,Independent House,23,28,7623616.0
-Pune,1076,Villa,2,22,22776768.0
-Pune,2334,Villa,23,12,42054012.0
-Ahmedabad,4670,Apartment,23,18,46746700.0
-Pune,1392,Independent House,25,3,18792000.0
-Ahmedabad,4034,Independent House,32,28,102867000.0
-Kolkata,792,Townhouse,10,0,26730000.0
-Ahmedabad,1719,Apartment,5,5,41642775.0
-Delhi,1204,Apartment,12,2,23415392.0
+city,locality,pincode,latitude,longitude,property_type,bhk,sqft,age_years,floor,total_floors,has_lift,ownership_type,circle_rate_sqft,days_on_market,listing_count,metro_distance_km,highway_distance_km,it_park_distance_km,school_distance_km,hospital_distance_km,builder_score,govt_project_nearby,npa_zone,supply_demand_ratio,price_trend_6m,absorption_rate,actual_price_sqft,fraud_flag
+Pune,Baner,411024,18.482509,73.744642,Independent House,2,904,21,24,33,0,freehold,6488,33,131,2.82,3.87,12.24,4.53,5.78,84,1,0,1.34,-1.6,0.35,10100.0,0
+Mumbai,Malad,400044,19.011149,72.764594,Villa,3,1404,2,13,15,1,freehold,20667,21,393,9.23,7.16,2.93,7.39,0.81,58,1,0,1.88,-6.9,0.11,23900.0,0
+Bangalore,Koramangala,560030,13.146593,77.514038,Villa,2,1173,5,12,18,1,freehold,19199,175,56,0.41,9.33,3.84,5.86,1.47,64,1,0,1.84,11.4,0.32,28100.0,0
+Mumbai,Andheri,400041,19.060466,72.719857,Independent House,2,1122,6,21,29,1,leasehold,27035,46,155,5.79,2.52,15.03,4.36,6.03,67,1,1,0.86,14.9,0.22,39500.0,0
+Pune,Baner,411028,18.432895,73.825489,Independent House,3,1732,19,3,10,1,leasehold,14669,74,303,7.6,12.98,0.72,5.79,5.52,74,1,1,0.63,2.0,0.2,15700.0,0
+Bangalore,Hebbal,560098,12.871461,77.673788,Independent House,1,552,26,21,30,1,freehold,10646,148,418,9.98,13.88,18.41,4.83,4.01,47,1,1,0.9,-2.5,0.24,10500.0,0
+Pune,Hinjewadi,411024,18.545797,73.713843,Independent House,1,464,4,22,30,1,freehold,14645,165,236,4.74,14.48,18.61,6.07,5.58,85,1,1,2.49,6.9,0.19,21600.0,0
+Chennai,Chromepet,600016,12.974372,80.119208,Apartment,2,1367,7,19,23,0,freehold,6964,68,54,7.93,13.63,17.26,0.66,2.06,82,1,0,1.53,8.6,0.36,11000.0,0
+Chennai,Chromepet,600032,13.135386,80.342249,Apartment,1,448,3,22,29,1,freehold,6887,177,350,8.01,1.93,8.35,2.78,6.92,55,0,0,1.53,-4.8,0.1,9400.0,0
+Hyderabad,Miyapur,500010,17.421565,78.64454,Independent House,2,900,1,21,30,1,leasehold,8872,52,228,2.94,7.54,4.67,3.27,0.66,64,0,1,0.96,10.0,0.2,14100.0,0
+Hyderabad,Banjara Hills,500063,17.277398,78.418683,Apartment,3,1893,23,18,19,1,freehold,12811,138,490,7.16,12.86,3.57,7.69,0.82,51,0,0,1.82,-2.6,0.07,11850.0,0
+Chennai,OMR,600075,13.078356,80.285814,Villa,1,698,18,17,23,1,freehold,11147,71,155,5.96,6.24,13.6,2.47,2.67,88,0,0,1.36,15.0,0.4,14400.0,0
+Pune,Kharadi,411007,18.551765,73.726491,Villa,3,1370,28,8,14,1,freehold,14900,87,333,3.67,14.77,16.24,4.28,5.41,75,1,0,2.37,-4.9,0.07,15950.0,0
+Pune,Kharadi,411005,18.481704,73.820966,Independent House,2,1151,6,22,27,1,freehold,6832,33,344,7.76,6.64,5.9,0.13,6.21,80,1,0,1.96,4.7,0.19,10500.0,0
+Pune,Hinjewadi,411003,18.683515,73.838204,Apartment,1,679,1,12,22,1,freehold,6685,88,206,1.51,13.54,16.02,6.9,7.21,53,0,0,1.14,4.9,0.35,10300.0,0
+Chennai,Velachery,600119,13.178964,80.359382,Apartment,3,1722,0,6,12,1,freehold,10065,78,101,2.74,11.92,2.61,6.99,6.9,54,0,1,1.13,10.9,0.35,13900.0,0
+Mumbai,Andheri,400025,19.059386,72.783581,Apartment,4,3980,24,9,15,1,freehold,29570,94,500,4.88,0.9,17.6,2.16,4.73,56,0,0,1.65,-0.0,0.32,34750.0,0
+Hyderabad,Secunderabad,500066,17.257823,78.659802,Apartment,3,1560,1,23,30,0,leasehold,13821,60,206,7.09,6.75,19.0,7.37,5.06,82,0,1,1.46,7.3,0.15,18800.0,0
+Bangalore,Hebbal,560017,12.876736,77.599479,Villa,3,1993,23,6,16,1,freehold,8006,87,166,0.48,3.55,15.82,4.89,2.71,68,1,0,1.47,10.3,0.39,12100.0,0
+Mumbai,Bandra,400037,19.106181,72.889882,Villa,2,895,26,25,29,1,freehold,18525,47,32,8.1,1.17,19.69,4.93,6.19,69,1,0,1.91,0.8,0.18,23450.0,0
+Mumbai,Andheri,400014,19.211368,72.765652,Independent House,4,3060,14,2,11,1,leasehold,26957,44,430,10.15,7.24,10.86,4.52,2.67,88,1,1,2.14,4.6,0.36,32200.0,0
+Hyderabad,HITEC City,500034,17.575888,78.635945,Villa,2,1333,15,21,25,1,freehold,9681,70,159,4.1,5.37,17.91,0.74,1.38,64,0,0,0.53,1.4,0.23,12450.0,0
+Hyderabad,Gachibowli,500027,17.616446,78.455791,Independent House,2,820,27,25,35,1,freehold,10763,86,405,6.86,6.15,17.89,6.7,4.4,87,0,1,0.86,2.0,0.04,11250.0,0
+Bangalore,Bellandur,560093,12.866018,77.540217,Apartment,3,1937,17,1,8,1,freehold,9375,174,239,4.98,2.47,9.5,0.5,3.16,53,1,1,1.11,12.2,0.13,12750.0,0
+Hyderabad,Kukatpally,500011,17.435153,78.59961,Apartment,1,579,7,21,23,1,freehold,5508,73,122,3.26,12.67,12.62,1.98,3.89,47,0,1,1.87,9.6,0.09,8450.0,0
+Chennai,T Nagar,600100,13.14579,80.389416,Apartment,1,696,0,10,20,1,leasehold,12498,60,58,6.53,9.09,16.7,2.02,5.64,59,0,0,1.13,1.9,0.17,15100.0,0
+Chennai,Porur,600002,13.154873,80.346699,Apartment,3,1743,30,12,20,1,freehold,14548,176,158,7.75,9.43,18.43,6.22,3.83,92,1,1,2.19,11.1,0.06,16350.0,0
+Hyderabad,Miyapur,500060,17.484925,78.567275,Villa,3,1329,15,11,14,1,freehold,9232,97,163,4.65,13.26,14.17,2.28,0.28,52,0,0,1.91,3.2,0.31,11350.0,0
+Hyderabad,HITEC City,500058,17.596466,78.337221,Apartment,1,607,22,8,13,1,freehold,13698,98,237,1.38,14.95,11.23,2.88,3.74,59,1,0,0.65,-3.6,0.07,16300.0,0
+Chennai,Velachery,600025,12.964915,80.24526,Independent House,1,668,19,10,12,1,freehold,11912,55,174,7.95,0.71,10.92,2.27,7.8,75,1,0,1.74,9.3,0.07,16600.0,0
+Pune,Magarpatta,411010,18.540819,73.788094,Apartment,2,852,8,16,18,1,freehold,7213,157,342,9.4,10.45,3.46,6.51,7.6,45,0,0,1.57,1.6,0.25,8650.0,0
+Chennai,OMR,600100,13.056772,80.235154,Villa,2,1104,27,19,26,1,freehold,15988,35,410,2.55,3.51,4.61,5.32,1.43,51,0,0,0.41,2.4,0.25,20000.0,0
+Bangalore,Whitefield,560030,12.915242,77.484816,Villa,3,1372,21,8,13,1,freehold,18832,60,237,3.68,2.16,4.88,1.28,2.27,49,0,0,0.75,-0.9,0.31,22300.0,0
+Chennai,Anna Nagar,600057,12.937306,80.306603,Independent House,3,1712,30,9,18,1,freehold,15798,20,475,1.88,6.76,6.79,2.08,0.91,83,0,1,1.61,9.6,0.09,18650.0,0
+Chennai,Chromepet,600118,12.983447,80.399084,Villa,2,1303,2,16,22,1,freehold,7713,51,188,2.3,6.47,10.16,5.33,3.32,88,0,1,0.58,-2.2,0.07,11450.0,0
+Hyderabad,Banjara Hills,500001,17.52883,78.517037,Villa,4,2111,6,17,23,1,freehold,12242,23,124,8.58,4.37,3.05,2.38,7.07,71,0,0,2.44,6.0,0.12,16600.0,0
+Mumbai,Worli,400071,18.90547,72.822397,Apartment,3,2161,29,4,12,1,freehold,17045,137,497,4.95,10.89,10.42,2.26,6.71,70,0,1,1.56,0.8,0.37,16850.0,0
+Chennai,Velachery,600111,12.920943,80.331803,Villa,1,574,29,17,22,1,freehold,10891,160,316,7.27,14.98,10.05,1.27,4.4,62,1,1,1.36,-0.6,0.1,10550.0,0
+Mumbai,Chembur,400050,18.993425,72.932663,Apartment,3,1625,23,16,23,1,freehold,33365,48,273,1.92,14.49,2.96,7.73,2.79,46,1,0,1.5,2.5,0.3,40750.0,0
+Hyderabad,Kondapur,500010,17.434745,78.687681,Villa,4,3276,22,13,15,1,leasehold,13742,107,182,3.98,9.59,17.81,3.95,4.42,79,0,0,1.73,13.2,0.4,17300.0,0
+Pune,Aundh,411004,18.628111,73.840778,Apartment,3,1754,5,23,28,1,freehold,6919,85,203,6.22,5.94,3.34,4.3,4.61,90,0,0,0.77,6.0,0.17,10800.0,0
+Mumbai,Borivali,400019,18.992875,72.891371,Villa,1,530,21,1,9,1,freehold,17176,28,246,9.07,14.21,19.76,2.46,7.7,84,1,1,2.18,-3.4,0.17,17400.0,0
+Hyderabad,Madhapur,500031,17.390682,78.443584,Villa,1,551,0,22,29,1,freehold,5803,165,401,4.61,7.7,18.13,2.36,6.43,78,1,0,1.74,6.3,0.28,10750.0,0
+Mumbai,Bandra,400006,19.023573,72.832247,Independent House,1,586,23,5,7,1,freehold,25615,54,122,0.99,2.42,11.02,7.77,4.34,57,0,1,2.32,13.7,0.39,34600.0,0
+Bangalore,Marathahalli,560103,12.846068,77.688868,Apartment,3,2072,30,8,15,1,leasehold,13992,33,424,5.19,6.22,5.66,1.08,3.07,87,1,1,2.13,13.6,0.07,16350.0,0
+Mumbai,Borivali,400004,19.147819,72.982951,Villa,1,513,20,3,11,1,freehold,25379,39,91,3.32,1.16,1.23,7.97,1.11,55,0,1,1.35,7.4,0.3,32300.0,0
+Chennai,Tambaram,600076,13.122681,80.146357,Villa,2,901,26,16,26,1,leasehold,6536,104,131,10.4,6.93,19.04,6.86,0.97,83,1,1,0.53,-1.7,0.39,6600.0,0
+Hyderabad,Madhapur,500028,17.520852,78.538858,Apartment,3,1351,25,11,15,1,freehold,8362,27,444,10.17,11.59,4.54,1.81,6.98,61,0,0,0.98,14.6,0.4,8300.0,0
+Chennai,Anna Nagar,600103,12.952349,80.298317,Apartment,1,467,0,12,16,1,freehold,10347,23,84,2.59,11.25,10.76,5.99,3.91,89,1,0,1.35,-2.9,0.26,14750.0,0
+Chennai,Anna Nagar,600059,13.093002,80.109345,Villa,2,1211,13,22,24,1,leasehold,7204,30,184,3.17,9.32,1.78,2.27,5.14,75,1,1,2.49,4.2,0.2,10550.0,0
+Chennai,Tambaram,600013,13.137929,80.134324,Independent House,2,1364,23,7,14,1,freehold,11553,126,224,2.58,6.53,2.35,3.47,5.39,63,0,1,0.54,11.1,0.06,13650.0,0
+Pune,Viman Nagar,411026,18.439035,73.711996,Independent House,3,1875,10,22,24,1,leasehold,12929,23,167,10.67,9.21,7.36,4.67,1.86,82,1,0,2.18,0.1,0.24,17100.0,0
+Pune,Hadapsar,411019,18.467848,73.785822,Independent House,2,1370,0,20,25,0,freehold,11062,96,199,7.36,0.59,17.46,4.57,3.33,49,0,0,1.97,-3.1,0.19,14950.0,0
+Bangalore,Electronic City,560048,12.924655,77.497315,Independent House,2,886,28,2,5,1,freehold,19042,30,159,8.04,6.93,8.77,4.9,3.43,53,0,1,1.3,-1.5,0.28,17850.0,0
+Hyderabad,Banjara Hills,500040,17.222709,78.458105,Independent House,3,1356,0,7,12,1,freehold,9186,84,187,5.65,2.24,10.2,3.5,1.21,74,0,1,0.55,11.8,0.05,13950.0,0
+Pune,Pimpri,411003,18.658633,73.815152,Independent House,3,1714,22,21,28,1,freehold,11321,53,430,9.37,14.24,9.47,5.55,3.02,67,0,0,1.31,1.2,0.06,11650.0,0
+Bangalore,Marathahalli,560029,12.933227,77.45044,Independent House,2,916,16,17,21,1,freehold,19917,175,437,9.61,2.64,2.5,2.12,1.55,49,0,0,2.4,6.4,0.2,24650.0,0
+Chennai,Guindy,600058,13.10434,80.364614,Independent House,3,1950,19,11,17,1,freehold,13245,171,175,8.44,12.05,12.03,2.88,0.78,69,1,0,0.52,11.1,0.06,17250.0,0
+Pune,Magarpatta,411020,18.55212,73.792542,Independent House,4,3954,25,24,25,1,leasehold,9084,92,329,6.98,7.4,3.44,0.59,1.01,93,1,0,1.46,-4.0,0.12,11250.0,0
+Hyderabad,HITEC City,500068,17.461374,78.363498,Villa,2,1089,12,14,20,1,freehold,10482,26,188,5.85,1.87,13.73,2.34,5.85,82,0,1,0.57,7.3,0.37,13400.0,0
+Bangalore,Bellandur,560017,13.038016,77.681401,Villa,3,1872,12,21,27,1,freehold,19229,144,67,4.41,9.87,8.76,2.96,3.03,51,0,1,2.39,3.2,0.11,22550.0,0
+Mumbai,Powai,400010,19.018317,72.936436,Independent House,2,1352,26,24,33,0,freehold,32251,43,325,6.47,5.96,3.66,6.67,6.21,91,0,1,0.49,0.4,0.3,37700.0,0
+Hyderabad,Secunderabad,500037,17.576196,78.61352,Apartment,1,673,7,10,18,1,freehold,12218,128,413,4.63,4.59,7.95,4.27,7.74,92,0,0,2.23,-6.8,0.21,15200.0,0
+Bangalore,Hebbal,560014,13.08456,77.554773,Apartment,4,2583,2,25,28,1,leasehold,10414,121,66,6.6,14.22,4.83,3.66,2.93,41,1,0,1.23,0.6,0.17,15150.0,0
+Pune,Viman Nagar,411008,18.408456,73.886165,Independent House,3,1965,10,5,8,0,leasehold,13740,45,408,9.4,10.73,9.25,0.14,0.82,56,0,0,1.55,8.7,0.23,16400.0,0
+Pune,Hadapsar,411008,18.490345,73.70955,Villa,1,634,2,4,12,1,freehold,14443,157,143,7.0,10.92,6.18,0.11,2.95,76,1,0,1.8,-6.0,0.39,16300.0,0
+Pune,Kharadi,411018,18.552198,73.897666,Independent House,3,1320,12,16,17,1,leasehold,10155,14,202,3.88,11.93,7.22,5.89,5.1,89,1,0,0.49,4.6,0.33,14900.0,0
+Mumbai,Borivali,400062,19.152694,72.943449,Apartment,1,634,1,10,14,0,freehold,13373,90,497,6.99,5.0,8.27,6.54,3.89,42,0,1,1.15,10.0,0.35,17450.0,0
+Bangalore,Indiranagar,560016,13.119737,77.531085,Villa,3,2061,14,13,19,1,freehold,16151,104,493,9.4,12.06,5.7,0.75,3.51,67,0,1,1.07,-6.2,0.27,17000.0,0
+Bangalore,Sarjapur,560078,13.087065,77.449993,Villa,2,1159,14,2,8,1,freehold,18477,24,58,9.2,10.23,8.42,4.15,6.05,50,0,0,2.18,7.6,0.19,20200.0,0
+Mumbai,Bandra,400031,19.211406,72.809899,Villa,3,1880,1,20,23,1,leasehold,24190,123,410,5.34,1.61,3.19,3.0,2.65,57,0,0,0.45,-3.7,0.22,31150.0,0
+Chennai,T Nagar,600034,13.132489,80.311211,Apartment,4,3253,9,23,31,1,freehold,7213,125,108,6.6,13.53,9.18,0.79,5.52,94,1,1,1.89,4.6,0.14,10200.0,0
+Bangalore,Electronic City,560092,13.083826,77.610066,Apartment,2,1170,16,8,10,1,freehold,11878,136,33,2.92,5.73,11.66,3.79,7.87,48,0,0,1.05,15.0,0.3,16200.0,0
+Chennai,Tambaram,600099,13.02283,80.27247,Apartment,2,1124,20,3,11,1,freehold,8102,151,347,5.98,9.02,15.47,1.12,4.12,95,0,0,1.49,-1.0,0.09,8250.0,0
+Mumbai,Goregaon,400067,19.25797,72.95378,Villa,4,2402,20,18,23,1,freehold,29481,33,277,7.5,9.79,12.04,4.69,1.54,79,1,0,2.13,-7.3,0.05,31050.0,0
+Chennai,Anna Nagar,600084,12.963243,80.271641,Independent House,4,3308,0,16,25,1,leasehold,13912,72,432,2.03,12.21,8.42,3.68,5.57,50,1,1,1.42,-3.3,0.25,18200.0,0
+Bangalore,Marathahalli,560094,13.195209,77.503611,Villa,3,1433,24,12,21,1,freehold,15642,41,156,5.13,7.02,3.25,0.5,7.57,95,1,0,2.42,12.8,0.33,20900.0,0
+Chennai,Porur,600025,13.128936,80.24948,Independent House,3,1778,15,10,18,0,leasehold,14281,127,143,7.76,3.62,7.38,0.5,4.06,93,1,1,1.53,11.5,0.19,20000.0,0
+Bangalore,Marathahalli,560098,12.961302,77.413573,Apartment,2,1383,17,7,13,1,freehold,16261,125,411,11.01,8.47,16.59,5.02,4.97,48,0,1,1.18,14.7,0.24,20150.0,0
+Bangalore,Electronic City,560026,13.040985,77.520416,Apartment,4,2092,1,5,11,1,freehold,10440,165,477,11.2,7.97,6.9,4.94,1.47,79,1,1,1.47,3.7,0.21,14000.0,0
+Chennai,Anna Nagar,600061,13.144725,80.210507,Independent House,4,2224,13,19,24,1,freehold,6436,162,262,6.85,4.35,13.28,7.78,4.71,54,0,1,0.76,6.5,0.26,8300.0,0
+Hyderabad,Kondapur,500032,17.215785,78.679282,Apartment,2,995,0,15,21,1,freehold,8340,115,276,5.22,11.74,18.45,7.0,5.94,43,0,0,1.58,15.0,0.21,12150.0,0
+Hyderabad,Begumpet,500023,17.429832,78.513251,Independent House,2,1162,21,25,30,1,freehold,9038,81,305,8.7,4.83,18.86,7.86,6.22,85,0,1,1.07,0.0,0.38,10550.0,0
+Bangalore,Indiranagar,560016,13.029391,77.562957,Villa,3,2138,11,25,28,1,freehold,19700,30,197,9.91,13.9,13.29,6.0,1.87,92,1,1,0.69,6.2,0.25,25650.0,0
+Mumbai,Andheri,400068,18.990269,72.769851,Apartment,1,611,10,23,31,1,freehold,12169,150,495,8.64,2.79,13.23,7.06,3.91,81,0,1,1.07,6.9,0.37,16600.0,0
+Pune,Magarpatta,411008,18.560546,73.844624,Apartment,2,979,13,6,7,1,freehold,14116,57,499,5.77,11.36,17.51,2.39,0.49,59,0,1,1.0,14.7,0.23,17750.0,0
+Hyderabad,Kondapur,500065,17.43401,78.377125,Apartment,3,1638,5,24,32,1,freehold,5230,96,424,5.9,4.78,13.65,1.63,4.97,80,1,1,1.48,-6.0,0.28,7650.0,0
+Mumbai,Powai,400062,19.029441,72.774414,Villa,3,1692,7,15,20,1,freehold,30772,12,153,10.56,9.98,14.01,0.59,1.12,59,0,1,1.84,13.2,0.36,40750.0,0
+Bangalore,Koramangala,560082,13.166452,77.488511,Independent House,3,1526,7,5,13,1,freehold,17924,105,232,6.05,10.68,18.3,6.08,6.46,92,0,0,1.83,5.7,0.32,22100.0,0
+Chennai,Chromepet,600068,13.11113,80.123431,Independent House,2,914,1,18,27,1,freehold,8695,93,457,6.38,8.04,2.77,1.72,4.75,45,1,0,1.35,3.8,0.2,11900.0,0
+Pune,Kharadi,411015,18.60183,73.761634,Apartment,2,1205,8,1,5,1,freehold,11644,26,297,4.06,14.91,18.72,0.65,7.48,42,1,1,0.78,-4.9,0.27,13300.0,0
+Hyderabad,Begumpet,500049,17.424269,78.666846,Villa,3,1684,2,22,31,1,leasehold,6943,55,295,3.95,6.2,2.98,7.83,6.71,88,0,1,1.37,8.5,0.19,11000.0,0
+Hyderabad,Miyapur,500032,17.430313,78.362049,Apartment,2,915,1,22,29,1,leasehold,5256,71,125,6.41,1.48,12.08,3.63,5.44,95,0,0,1.96,1.3,0.12,8850.0,0
+Mumbai,Andheri,400018,19.101558,72.786779,Independent House,2,1389,10,19,29,1,leasehold,19762,87,468,5.88,2.58,13.37,1.85,2.54,43,0,1,1.57,-6.9,0.16,21700.0,0
+Hyderabad,Banjara Hills,500041,17.548154,78.463304,Villa,2,1185,5,25,34,1,leasehold,9927,46,432,6.67,7.21,1.62,3.36,3.45,73,0,1,0.91,-3.3,0.27,12100.0,0
+Hyderabad,Begumpet,500012,17.467818,78.631763,Apartment,1,537,12,22,32,1,leasehold,8082,160,390,6.69,10.24,4.73,1.75,7.27,59,0,0,2.37,14.1,0.07,10350.0,0
+Hyderabad,Miyapur,500027,17.398316,78.395732,Villa,3,2094,9,13,21,1,freehold,9285,102,282,5.58,13.3,9.59,6.44,5.83,88,1,0,1.18,1.5,0.24,13450.0,0
+Mumbai,Powai,400003,19.00431,72.980427,Independent House,2,1227,9,5,9,1,freehold,20052,137,301,9.88,9.99,13.85,2.13,6.61,86,1,1,0.75,10.3,0.09,25650.0,0
+Chennai,Chromepet,600024,13.17507,80.262641,Independent House,2,860,16,2,4,0,freehold,12756,45,451,5.72,9.65,1.83,1.29,1.91,69,1,0,1.7,7.3,0.26,14600.0,0
+Hyderabad,HITEC City,500003,17.203306,78.520657,Apartment,2,817,16,24,29,1,freehold,13228,120,432,7.03,14.13,4.0,7.35,4.29,55,0,1,2.11,-1.9,0.18,13700.0,0
+Bangalore,Bellandur,560059,13.026001,77.69707,Apartment,1,553,21,3,4,0,freehold,14179,151,263,3.27,1.31,0.68,1.45,4.1,67,1,0,2.28,13.1,0.12,19150.0,0
+Chennai,Chromepet,600035,12.913969,80.122304,Villa,2,1356,18,22,23,1,leasehold,6256,63,320,9.54,2.59,16.5,6.59,7.45,59,0,0,1.59,11.5,0.28,8500.0,0
+Chennai,Porur,600050,13.126683,80.141985,Independent House,1,440,16,24,30,0,freehold,7245,97,329,4.19,11.65,19.12,3.23,6.23,41,1,1,1.43,0.2,0.38,8500.0,0
+Hyderabad,Kondapur,500075,17.530336,78.334278,Independent House,2,1102,25,8,10,0,freehold,7527,109,182,6.19,5.73,2.28,7.55,3.67,88,1,0,0.68,-3.7,0.2,8350.0,0
+Chennai,Sholinganallur,600053,12.930988,80.126886,Independent House,2,895,19,20,26,1,freehold,12779,109,418,3.68,1.73,18.07,7.25,7.83,76,0,1,0.76,-1.8,0.13,15450.0,0
+Mumbai,Bandra,400022,19.073871,72.826331,Villa,2,878,11,9,13,1,freehold,32207,60,254,3.37,2.05,6.44,7.6,2.79,79,1,1,1.32,1.9,0.33,40850.0,0
+Chennai,Velachery,600039,12.9962,80.384184,Apartment,2,1290,10,6,13,1,freehold,14044,157,420,7.68,4.02,7.83,6.55,3.26,47,0,0,1.83,4.7,0.38,16900.0,0
+Hyderabad,Miyapur,500057,17.598843,78.632513,Apartment,2,1218,21,16,19,1,freehold,7525,118,424,6.22,5.97,9.26,4.82,4.74,74,1,0,2.06,0.3,0.36,9200.0,0
+Chennai,Guindy,600082,13.17432,80.132811,Apartment,3,1973,21,12,15,1,freehold,12547,94,427,4.11,6.74,0.71,2.14,4.18,73,0,1,1.19,2.7,0.28,14650.0,0
+Chennai,Velachery,600045,13.199311,80.244831,Villa,3,1725,29,3,5,1,freehold,11707,89,195,4.48,7.1,4.53,3.92,3.91,68,1,1,0.54,-7.0,0.29,10350.0,0
+Pune,Viman Nagar,411021,18.432809,73.86001,Independent House,2,1049,16,6,15,1,freehold,13570,69,428,6.08,6.37,4.1,5.16,3.57,41,0,1,1.64,0.9,0.29,12900.0,0
+Mumbai,Worli,400009,19.130939,72.939851,Independent House,2,991,11,11,15,1,freehold,28039,145,347,6.34,5.04,8.08,3.2,1.09,62,1,0,2.11,8.2,0.14,36800.0,0
+Chennai,Guindy,600011,13.101633,80.193956,Apartment,2,1112,3,6,12,1,freehold,12852,162,90,2.49,8.83,8.75,3.94,4.39,81,0,0,1.43,-4.8,0.15,16900.0,0
+Hyderabad,Secunderabad,500007,17.632761,78.680737,Villa,4,2279,6,13,22,1,freehold,13056,116,383,6.8,12.68,10.03,0.75,0.44,88,0,1,0.47,-2.8,0.14,14550.0,0
+Hyderabad,Secunderabad,500064,17.474863,78.345284,Apartment,2,1074,24,18,24,1,freehold,12231,149,131,6.28,14.85,2.5,6.66,6.06,59,0,1,0.95,11.8,0.06,14950.0,0
+Pune,Wakad,411007,18.643211,73.817585,Villa,2,1238,5,20,23,1,leasehold,6972,155,199,5.07,8.22,12.14,1.43,7.84,58,1,1,2.4,3.8,0.36,9200.0,0
+Pune,Kothrud,411025,18.635707,73.883754,Villa,2,929,22,5,9,1,freehold,10055,110,270,11.6,2.56,12.83,5.06,3.13,44,0,1,1.48,-1.6,0.38,9900.0,0
+Bangalore,Sarjapur,560063,12.930916,77.400742,Independent House,2,895,23,15,21,1,freehold,14516,65,239,7.03,12.46,10.15,2.65,2.41,75,0,1,2.06,12.6,0.31,16600.0,0
+Pune,Hinjewadi,411021,18.635167,73.791916,Apartment,2,961,14,15,16,1,freehold,8161,176,174,8.06,2.81,18.69,2.26,5.31,56,0,1,1.8,6.9,0.05,9250.0,0
+Bangalore,HSR Layout,560055,13.062194,77.611109,Apartment,4,2437,15,3,6,1,freehold,15291,12,24,8.98,10.59,16.43,7.91,3.49,48,1,0,0.88,-5.9,0.33,15900.0,0
+Pune,Viman Nagar,411012,18.664297,73.727426,Apartment,2,946,2,17,27,0,freehold,13210,99,389,4.14,3.59,15.09,7.37,5.01,68,0,0,2.28,-4.8,0.08,17100.0,0
+Hyderabad,Begumpet,500055,17.357252,78.355932,Villa,2,886,7,18,28,1,freehold,5439,178,468,2.52,4.87,10.6,4.13,6.03,58,0,0,1.44,-5.4,0.21,7800.0,0
+Chennai,T Nagar,600068,13.166617,80.10362,Villa,3,1624,4,13,23,1,freehold,8830,130,414,11.86,1.56,11.95,0.21,1.88,43,1,1,1.72,3.5,0.18,11850.0,0
+Hyderabad,Madhapur,500069,17.468828,78.361072,Apartment,2,1117,2,17,21,1,freehold,10353,110,320,6.9,9.7,16.77,5.48,0.72,84,1,0,0.52,-6.0,0.19,14150.0,0
+Hyderabad,Secunderabad,500008,17.354645,78.596677,Independent House,3,1479,3,1,4,0,freehold,10680,143,284,5.4,11.85,14.55,1.42,1.19,89,1,0,2.02,-7.3,0.33,12600.0,0
+Bangalore,Hebbal,560009,12.90518,77.692515,Independent House,2,878,15,15,24,1,freehold,17287,52,208,5.95,2.78,15.58,7.16,5.46,47,0,0,0.49,11.8,0.12,22850.0,0
+Hyderabad,Begumpet,500050,17.660113,78.371584,Apartment,3,1866,25,23,30,1,freehold,10241,79,442,5.8,1.63,7.77,4.07,7.24,51,0,0,2.4,-6.4,0.2,10650.0,0
+Bangalore,Indiranagar,560042,12.834554,77.537024,Villa,2,1005,9,19,24,1,freehold,14033,161,272,8.21,14.97,15.63,5.89,4.46,90,0,0,0.41,1.4,0.12,17150.0,0
+Bangalore,Whitefield,560043,12.800585,77.597191,Independent House,1,557,3,7,16,1,freehold,8981,46,384,0.86,4.56,1.36,1.93,6.79,66,1,1,2.45,-6.0,0.07,12100.0,0
+Mumbai,Malad,400010,19.136758,72.718685,Independent House,2,933,7,10,15,1,leasehold,24876,93,182,2.84,7.06,5.06,7.55,1.26,89,0,0,0.62,2.3,0.15,31100.0,0
+Pune,Kharadi,411012,18.68939,73.741527,Villa,3,1774,8,4,6,1,freehold,6660,65,447,3.09,12.92,3.39,5.72,7.75,65,0,1,0.95,14.8,0.04,8850.0,0
+Hyderabad,HITEC City,500072,17.574039,78.399941,Villa,2,904,25,5,7,0,leasehold,8641,43,121,8.46,12.44,7.76,5.08,5.23,77,1,0,0.45,-6.5,0.36,7350.0,0
+Hyderabad,Kondapur,500012,17.652539,78.631742,Villa,2,925,1,15,16,1,freehold,11471,137,35,10.2,6.05,8.82,2.9,7.28,57,1,1,2.26,-7.2,0.26,14050.0,0
+Mumbai,Worli,400064,19.064797,72.865207,Apartment,3,1389,8,13,16,1,freehold,29229,73,342,3.93,14.91,11.1,0.25,3.18,85,1,1,1.54,3.1,0.37,37650.0,0
+Chennai,Porur,600050,12.981131,80.107819,Independent House,3,1524,0,25,30,0,leasehold,14674,101,412,9.15,8.97,5.04,1.36,2.13,55,1,0,2.0,13.8,0.24,22450.0,0
+Hyderabad,Begumpet,500023,17.28805,78.537008,Independent House,2,1167,29,19,20,1,freehold,7328,154,116,4.84,12.63,16.3,7.77,4.43,51,1,0,0.59,-2.6,0.11,6550.0,0
+Chennai,Chromepet,600001,12.99952,80.28424,Apartment,2,1148,22,6,12,0,freehold,8320,38,453,3.13,8.13,7.62,0.67,5.7,82,1,0,1.11,-0.6,0.39,8900.0,0
+Hyderabad,HITEC City,500041,17.287101,78.687497,Independent House,3,1928,25,12,16,1,leasehold,11199,88,395,5.92,10.48,2.98,5.86,7.6,76,1,0,0.78,-0.7,0.33,12350.0,0
+Chennai,OMR,600082,13.069665,80.381006,Apartment,1,569,23,3,7,1,freehold,7453,173,393,6.76,13.36,9.21,2.2,2.15,44,1,1,2.05,8.6,0.05,6900.0,0
+Hyderabad,Ameerpet,500022,17.642276,78.497233,Villa,2,1159,17,13,15,1,freehold,8695,51,251,7.29,1.57,16.99,2.43,2.69,46,0,1,0.76,0.6,0.3,8900.0,0
+Chennai,T Nagar,600044,13.078209,80.284093,Villa,3,2021,0,14,17,1,freehold,6877,35,189,7.98,3.48,4.2,5.61,5.83,86,1,1,1.02,-5.8,0.18,10950.0,0
+Chennai,Chromepet,600020,12.916351,80.101145,Apartment,2,1101,26,22,32,1,freehold,9390,53,346,3.22,4.73,2.1,6.77,2.61,65,1,1,2.28,-1.9,0.27,11250.0,0
+Hyderabad,Kondapur,500048,17.642746,78.447761,Villa,3,1345,8,15,23,1,leasehold,6009,48,405,8.39,10.6,2.39,5.38,6.5,66,0,0,2.17,10.8,0.18,7900.0,0
+Chennai,Chromepet,600074,13.164496,80.242879,Apartment,2,1204,28,23,24,1,leasehold,15363,168,95,7.47,2.24,15.27,1.47,7.88,53,0,0,0.49,-6.2,0.28,16450.0,0
+Mumbai,Powai,400034,19.0279,72.918131,Apartment,4,2178,12,18,25,1,leasehold,29029,127,489,3.52,13.17,15.84,5.02,4.28,66,0,1,0.71,5.0,0.25,36150.0,0
+Pune,Hinjewadi,411019,18.633863,73.857149,Independent House,2,1152,28,14,19,1,freehold,13750,19,108,2.0,4.49,3.31,4.91,5.61,42,1,1,1.85,-6.9,0.21,14000.0,0
+Bangalore,Marathahalli,560003,12.935146,77.638096,Villa,3,1587,26,16,18,1,freehold,12923,123,416,7.69,12.47,5.75,3.39,5.24,52,1,0,2.32,1.4,0.21,12650.0,0
+Chennai,Porur,600106,12.916862,80.337447,Apartment,2,1118,22,17,24,1,leasehold,15317,17,108,7.25,3.3,16.74,6.71,2.15,69,0,1,1.88,-1.7,0.33,16750.0,0
+Chennai,Tambaram,600082,13.176922,80.304352,Apartment,3,1681,15,20,28,1,leasehold,15615,151,199,3.89,5.49,16.83,2.14,6.68,45,1,0,1.21,-4.3,0.24,18800.0,0
+Mumbai,Thane,400029,19.171078,72.780725,Villa,2,1325,0,25,26,1,freehold,17675,163,430,7.28,0.62,5.42,6.46,2.58,85,1,1,2.28,11.6,0.2,26250.0,0
+Mumbai,Borivali,400039,19.170878,72.947293,Villa,3,1898,3,1,10,1,leasehold,24262,153,351,2.23,9.11,6.01,5.51,3.96,61,1,1,2.21,-2.0,0.29,28650.0,0
+Bangalore,HSR Layout,560020,13.006917,77.472091,Apartment,2,1213,21,11,14,1,freehold,12843,76,484,3.48,6.57,8.07,0.38,5.72,76,0,1,1.93,-2.9,0.23,13300.0,0
+Hyderabad,Begumpet,500065,17.350097,78.367995,Independent House,3,2197,17,6,11,0,freehold,9237,153,410,1.46,13.73,18.97,7.21,5.3,54,1,0,1.96,-0.9,0.32,10900.0,0
+Bangalore,Marathahalli,560034,13.034228,77.539128,Apartment,4,2963,1,21,31,1,freehold,15736,59,276,5.34,2.24,13.77,4.29,3.42,95,0,0,2.48,-0.1,0.4,21300.0,0
+Hyderabad,Kondapur,500041,17.631197,78.372143,Apartment,2,1299,10,21,24,1,freehold,12406,80,127,5.83,11.54,3.79,6.14,4.02,88,0,0,1.69,6.6,0.18,16100.0,0
+Hyderabad,Ameerpet,500001,17.218863,78.379766,Villa,3,1314,28,11,20,1,freehold,9076,67,375,8.29,13.22,6.59,0.91,4.13,59,0,0,2.13,-1.1,0.14,7700.0,0
+Chennai,Guindy,600068,13.001351,80.366392,Apartment,2,1150,28,16,22,1,freehold,12609,14,136,1.97,3.75,19.71,1.77,0.37,72,0,0,1.17,7.0,0.04,16550.0,0
+Bangalore,Hebbal,560080,12.819435,77.698404,Independent House,1,455,20,1,2,0,freehold,14230,41,300,4.07,4.16,14.19,1.72,5.55,40,1,1,1.79,7.2,0.13,17000.0,0
+Chennai,Velachery,600054,13.149196,80.131474,Independent House,3,1932,3,10,12,1,freehold,15977,61,418,11.14,4.31,10.7,1.69,5.69,58,0,0,1.55,12.9,0.28,21600.0,0
+Hyderabad,Begumpet,500031,17.201369,78.568653,Apartment,3,2155,18,22,30,1,freehold,13383,29,390,4.04,10.99,18.14,5.19,3.76,58,1,1,0.51,10.7,0.35,16200.0,0
+Bangalore,Marathahalli,560103,13.070707,77.527799,Apartment,3,1397,27,25,26,0,freehold,18603,53,188,2.11,5.68,9.04,5.01,7.05,45,1,1,0.78,1.2,0.39,22100.0,0
+Bangalore,Bellandur,560089,13.140269,77.63997,Independent House,2,970,3,5,6,1,leasehold,9699,116,486,5.96,9.07,16.14,5.46,1.61,64,1,0,2.21,12.2,0.3,13550.0,0
+Mumbai,Borivali,400063,18.945175,72.823385,Apartment,3,1364,8,21,27,0,leasehold,29197,157,390,5.55,8.69,19.57,5.39,2.84,73,0,1,1.79,-2.3,0.16,34400.0,0
+Hyderabad,Kondapur,500072,17.646031,78.545166,Apartment,2,960,16,16,24,1,freehold,13055,92,143,7.34,5.3,5.92,4.1,4.49,64,1,0,0.57,2.2,0.24,16700.0,0
+Pune,Pimpri,411015,18.494818,73.896134,Independent House,2,818,3,13,20,0,freehold,7489,164,336,5.28,9.74,17.86,4.54,5.31,69,1,1,2.13,10.8,0.34,10000.0,0
+Bangalore,Hebbal,560099,13.047903,77.54194,Independent House,3,1672,22,15,17,0,freehold,8035,97,201,10.35,12.53,19.31,2.41,4.27,84,0,0,2.28,3.3,0.33,8100.0,0
+Hyderabad,Madhapur,500033,17.505426,78.375017,Villa,2,1020,14,7,13,1,freehold,7018,125,254,3.05,10.05,19.15,1.16,4.09,73,0,1,2.16,3.1,0.22,6850.0,0
+Mumbai,Chembur,400023,19.192198,72.738515,Villa,2,1129,16,13,20,1,leasehold,20134,80,223,5.61,14.47,19.42,3.68,1.24,66,1,1,1.89,13.5,0.26,25950.0,0
+Mumbai,Thane,400038,19.174645,72.976358,Apartment,3,2027,20,6,15,1,freehold,15781,100,307,7.63,7.47,11.63,5.37,3.46,87,1,1,2.1,4.0,0.04,17800.0,0
+Mumbai,Andheri,400008,18.979961,72.925056,Apartment,4,2586,21,9,12,1,freehold,21671,62,405,8.11,8.35,7.49,3.68,5.01,83,0,1,0.9,10.0,0.33,25850.0,0
+Bangalore,Whitefield,560049,12.955022,77.687011,Independent House,3,1620,30,18,19,0,freehold,18167,123,444,1.73,3.77,12.86,5.71,3.07,77,0,0,1.02,-3.9,0.28,20300.0,0
+Mumbai,Powai,400066,18.947742,72.71219,Villa,3,1869,8,5,8,1,freehold,22831,129,383,3.6,14.09,1.28,7.44,4.86,89,1,1,2.06,4.7,0.06,29550.0,0
+Bangalore,Hebbal,560029,13.182795,77.556182,Independent House,4,2326,13,18,27,1,freehold,11495,179,189,8.53,5.3,6.22,7.61,5.02,70,0,0,1.8,2.3,0.36,13400.0,0
+Chennai,Guindy,600032,13.187669,80.304765,Villa,2,1190,29,4,11,1,freehold,6404,142,440,8.32,11.67,10.53,4.12,4.0,58,0,1,1.48,13.8,0.09,5450.0,0
+Chennai,Sholinganallur,600001,13.08808,80.163234,Independent House,2,1018,27,22,29,1,freehold,13130,175,438,4.51,14.13,15.06,1.31,3.78,61,0,0,0.55,-3.9,0.12,13600.0,0
+Pune,Magarpatta,411027,18.468294,73.75173,Villa,3,1761,20,13,20,1,freehold,7938,146,23,6.07,9.8,12.56,6.07,4.77,84,0,1,2.35,-5.6,0.32,6750.0,0
+Bangalore,JP Nagar,560012,12.912607,77.678007,Villa,1,602,26,22,23,1,freehold,10234,110,427,4.39,12.06,11.14,7.69,1.32,83,1,0,1.56,4.8,0.08,12900.0,0
+Pune,Magarpatta,411020,18.518225,73.809505,Apartment,2,1112,6,24,30,1,leasehold,14397,46,102,8.66,3.17,12.53,2.1,1.09,82,0,1,1.75,-6.3,0.28,17150.0,0
+Bangalore,Koramangala,560026,13.090236,77.546157,Villa,3,1665,4,22,26,1,freehold,11170,91,268,7.62,7.03,12.52,2.51,4.76,76,1,1,2.41,-4.1,0.15,14550.0,0
+Mumbai,Malad,400036,19.236044,72.740292,Independent House,1,569,28,16,24,1,freehold,27957,151,75,7.4,3.05,12.33,6.75,6.9,48,0,1,1.94,6.4,0.3,33050.0,0
+Pune,Kharadi,411021,18.409358,73.816378,Villa,3,2087,18,7,8,1,freehold,14842,130,354,3.43,11.74,7.63,1.86,6.22,86,1,0,1.38,3.7,0.18,18300.0,0
+Chennai,Adyar,600085,12.971664,80.3892,Independent House,2,969,24,17,20,1,freehold,15270,178,466,9.79,14.53,14.85,3.92,3.0,54,1,0,0.53,0.5,0.05,16700.0,0
+Mumbai,Kandivali,400047,19.055237,72.975371,Apartment,2,840,20,11,13,1,freehold,20961,77,316,6.6,8.39,3.89,5.26,3.05,81,0,1,1.19,12.9,0.22,25500.0,0
+Bangalore,Marathahalli,560063,13.117063,77.666152,Apartment,3,1813,28,5,13,1,freehold,18542,81,128,6.79,2.68,3.57,4.86,6.57,82,0,1,2.1,8.6,0.21,21150.0,0
+Hyderabad,HITEC City,500027,17.495395,78.558904,Villa,3,1322,7,2,5,1,freehold,13399,20,476,1.81,8.8,1.59,2.14,1.6,65,0,1,2.39,-3.0,0.25,15250.0,0
+Hyderabad,HITEC City,500022,17.309682,78.464307,Apartment,3,2113,18,25,28,1,freehold,7747,97,492,2.87,7.08,12.02,1.92,3.21,46,0,0,1.5,12.9,0.28,10850.0,0
+Mumbai,Chembur,400013,18.970969,72.970482,Independent House,3,1339,28,18,27,1,freehold,33606,43,481,7.16,9.25,16.64,7.19,6.24,81,1,1,1.18,-7.0,0.23,36300.0,0
+Mumbai,Borivali,400049,19.040207,72.941386,Independent House,1,694,3,14,17,1,freehold,14746,82,326,4.69,13.21,8.47,1.59,5.73,90,0,0,1.49,0.6,0.11,20450.0,0
+Bangalore,Bellandur,560047,12.842633,77.527821,Independent House,3,1559,8,18,25,1,freehold,19151,111,406,8.73,3.45,11.27,4.5,1.59,75,1,1,2.48,5.3,0.32,25400.0,0
+Hyderabad,Kondapur,500016,17.573907,78.478638,Independent House,1,482,3,7,16,1,freehold,5852,51,219,8.42,14.49,0.6,0.82,1.33,78,1,0,0.53,-2.9,0.06,7200.0,0
+Pune,Aundh,411013,18.58419,73.804201,Independent House,2,858,30,25,28,1,freehold,9304,178,496,8.22,12.16,6.08,0.37,4.88,73,0,0,1.82,0.3,0.27,9850.0,0
+Mumbai,Bandra,400036,19.211869,72.805938,Villa,2,1215,18,7,16,0,freehold,14954,150,165,3.01,11.03,11.4,4.71,2.91,92,1,0,1.67,-3.5,0.37,17850.0,0
+Chennai,Adyar,600034,12.95251,80.251871,Independent House,3,1374,16,10,16,1,leasehold,10222,147,436,2.41,12.0,5.38,3.6,3.14,70,0,1,2.42,2.6,0.2,11100.0,0
+Chennai,Adyar,600062,12.93488,80.120266,Independent House,2,1025,21,23,27,1,freehold,11785,142,294,7.48,0.64,16.73,2.06,0.93,83,1,0,1.56,-3.9,0.15,15050.0,0
+Mumbai,Chembur,400035,18.973114,72.923847,Apartment,2,1310,23,7,11,1,leasehold,18775,68,123,10.31,12.61,16.81,2.91,6.28,47,0,1,1.69,9.6,0.23,20850.0,0
+Pune,Pimpri,411012,18.5862,73.798468,Independent House,4,3779,8,16,19,1,leasehold,10591,111,133,10.23,11.38,3.0,4.25,3.5,74,0,1,1.23,7.8,0.09,12450.0,0
+Pune,Kharadi,411015,18.494695,73.701684,Independent House,1,507,12,19,21,1,freehold,10254,57,300,4.91,4.31,5.75,7.67,2.88,51,1,1,0.84,8.1,0.17,14650.0,0
+Hyderabad,Kukatpally,500058,17.289945,78.352456,Independent House,3,2002,7,4,9,1,freehold,11240,60,94,1.7,12.1,14.9,3.84,0.28,66,1,0,2.49,11.5,0.22,16850.0,0
+Bangalore,Sarjapur,560039,12.90039,77.657551,Apartment,3,1707,3,23,26,0,leasehold,15807,171,69,4.38,7.02,7.03,2.95,4.57,91,1,1,0.44,-5.2,0.35,20600.0,0
+Chennai,OMR,600074,13.072768,80.294739,Apartment,1,545,11,11,20,1,freehold,7284,107,334,5.06,4.65,12.82,1.24,1.51,91,1,1,1.73,5.1,0.34,9650.0,0
+Pune,Hinjewadi,411006,18.503088,73.762696,Independent House,2,1098,22,9,19,1,freehold,13289,102,402,4.65,9.01,19.33,3.37,1.63,41,0,0,1.79,13.6,0.29,15550.0,0
+Pune,Wakad,411006,18.519114,73.719111,Villa,3,1861,1,1,8,1,leasehold,7702,77,336,11.24,2.75,13.27,7.1,2.61,55,1,1,1.72,-5.0,0.34,11100.0,0
+Pune,Baner,411022,18.507052,73.883054,Villa,2,1278,27,18,23,1,freehold,14835,55,322,2.74,9.16,12.81,5.12,4.6,73,1,1,1.41,-2.8,0.06,16650.0,0
+Bangalore,Marathahalli,560053,12.903923,77.491072,Apartment,2,1335,26,25,28,1,freehold,8136,135,406,3.49,7.42,0.68,3.5,2.48,54,0,1,0.8,12.3,0.19,9200.0,0
+Mumbai,Powai,400050,19.231371,72.766178,Apartment,4,2864,20,8,17,1,leasehold,34738,79,165,2.78,9.9,10.87,2.22,1.67,44,0,0,1.01,6.6,0.26,42400.0,0
+Bangalore,JP Nagar,560063,12.875116,77.405819,Apartment,4,3985,17,1,4,0,freehold,10048,122,392,8.89,0.62,2.26,0.22,1.89,66,1,1,2.5,2.7,0.32,11850.0,0
+Bangalore,Koramangala,560097,13.180658,77.416812,Villa,2,873,17,16,19,1,leasehold,14251,13,82,3.64,14.63,14.44,3.14,7.8,55,0,0,1.37,9.7,0.22,18600.0,0
+Mumbai,Borivali,400050,19.172577,72.793633,Villa,3,1462,20,24,25,1,freehold,16002,74,266,4.35,9.76,4.38,7.11,6.94,53,0,0,1.73,-0.5,0.09,18350.0,0
+Bangalore,JP Nagar,560016,12.958323,77.472927,Apartment,2,1395,25,23,31,1,freehold,9466,73,100,7.0,7.75,13.88,2.77,7.76,88,0,0,1.15,-4.5,0.23,10250.0,0
+Pune,Kothrud,411016,18.469802,73.896335,Independent House,2,1155,25,15,19,0,freehold,8207,74,480,8.81,1.07,14.28,4.52,4.43,71,0,0,1.54,-0.6,0.2,8200.0,0
+Chennai,Sholinganallur,600021,12.920663,80.146508,Villa,2,1069,17,12,20,0,freehold,12210,57,472,2.74,0.77,17.21,6.23,2.06,86,0,1,0.8,7.7,0.31,17000.0,0
+Mumbai,Chembur,400037,19.02904,72.892271,Apartment,3,1398,16,22,24,0,leasehold,17853,18,123,6.05,2.05,4.24,0.35,5.21,64,1,1,0.5,-2.9,0.3,21550.0,0
+Pune,Wakad,411021,18.547422,73.877953,Apartment,2,1279,25,21,22,1,freehold,12814,104,426,3.45,10.77,16.56,2.2,0.52,44,1,0,2.38,14.1,0.07,15800.0,0
+Mumbai,Kandivali,400050,18.975784,72.857858,Apartment,3,1883,20,6,15,1,freehold,15457,173,315,6.31,5.69,9.45,5.36,7.09,50,0,1,1.46,7.1,0.23,16800.0,0
+Chennai,Chromepet,600046,13.170745,80.265024,Villa,4,3730,11,14,21,1,freehold,9943,154,299,7.38,3.6,15.43,7.42,2.18,68,1,1,0.4,-7.2,0.14,12250.0,0
+Pune,Kharadi,411005,18.698024,73.760368,Villa,2,1027,6,11,12,1,leasehold,10521,151,281,6.44,8.57,18.56,1.32,0.49,62,0,0,0.96,12.5,0.12,13150.0,0
+Bangalore,Indiranagar,560012,13.028195,77.570719,Apartment,3,2051,2,24,30,1,freehold,19298,157,439,8.34,13.66,12.11,2.47,5.9,76,1,0,2.04,13.2,0.15,27400.0,0
+Hyderabad,Ameerpet,500016,17.634893,78.390687,Independent House,2,811,20,25,32,0,freehold,10231,148,309,2.8,2.67,10.3,1.84,0.59,86,1,1,1.98,5.2,0.06,14850.0,0
+Hyderabad,Kukatpally,500051,17.274006,78.434467,Villa,2,1385,23,2,11,1,freehold,13221,121,416,1.94,10.62,15.36,3.9,1.75,65,0,0,0.91,-1.9,0.19,14050.0,0
+Chennai,T Nagar,600015,13.101524,80.227062,Villa,1,497,10,12,22,1,freehold,8773,99,335,6.8,12.41,16.15,5.02,3.64,92,0,0,1.84,-4.4,0.3,9600.0,0
+Pune,Hinjewadi,411024,18.416361,73.889788,Apartment,2,1094,0,11,13,1,freehold,11437,63,398,4.7,8.3,4.47,4.23,2.22,70,0,0,1.19,12.8,0.22,16500.0,0
+Bangalore,Electronic City,560008,12.913605,77.636757,Independent House,2,1077,1,15,16,0,freehold,18862,178,204,9.11,13.03,0.87,6.95,5.27,54,1,0,2.3,3.1,0.25,25150.0,0
+Pune,Kothrud,411007,18.550195,73.791597,Independent House,1,411,1,8,17,1,freehold,8572,14,197,1.51,10.42,7.43,2.49,7.97,72,1,0,1.71,12.2,0.36,13800.0,0
+Pune,Kharadi,411009,18.467675,73.768357,Villa,3,1972,4,3,10,1,freehold,9726,116,143,4.33,8.81,8.82,2.57,4.92,68,0,0,1.77,5.4,0.28,12850.0,0
+Mumbai,Powai,400040,19.175413,72.969593,Apartment,2,1240,29,25,28,1,freehold,17178,91,54,6.37,8.58,19.0,1.04,2.68,49,0,1,2.25,1.5,0.18,16550.0,0
+Hyderabad,Kukatpally,500020,17.589554,78.342709,Apartment,4,2053,24,20,30,1,freehold,8783,162,138,8.76,3.85,1.01,0.73,6.28,48,1,1,0.79,0.9,0.21,10350.0,0
+Mumbai,Thane,400029,18.912892,72.929362,Apartment,4,3895,8,14,18,1,leasehold,18703,26,110,7.62,13.94,19.72,6.95,4.02,60,1,0,1.3,9.9,0.25,24850.0,0
+Hyderabad,Begumpet,500051,17.505752,78.596987,Independent House,2,1349,16,21,22,1,freehold,5694,72,285,4.95,8.3,19.68,0.41,3.22,88,0,0,1.01,1.2,0.14,6850.0,0
+Bangalore,Sarjapur,560022,12.968985,77.58394,Apartment,3,2006,16,5,13,1,freehold,19839,138,77,4.16,3.11,11.92,7.17,4.46,65,1,1,1.35,-3.9,0.25,22900.0,0
+Mumbai,Borivali,400012,19.000033,72.907515,Independent House,2,967,22,24,26,0,freehold,32777,102,63,2.22,8.1,7.99,6.35,4.19,50,1,1,0.49,-4.1,0.15,38550.0,0
+Mumbai,Powai,400019,18.971547,72.913614,Villa,2,1115,9,24,32,1,freehold,16311,61,21,7.96,9.53,5.44,3.72,6.87,74,0,1,0.9,5.5,0.21,20100.0,0
+Hyderabad,HITEC City,500011,17.500608,78.302629,Independent House,2,1084,19,21,30,1,freehold,8028,47,48,4.44,9.97,1.22,6.85,5.4,93,1,1,2.33,-6.9,0.18,8800.0,0
+Mumbai,Powai,400037,19.144436,72.907454,Independent House,3,1886,25,18,21,1,freehold,23802,19,67,4.65,11.64,6.8,7.19,6.6,88,1,0,1.01,-4.9,0.29,27150.0,0
+Bangalore,Marathahalli,560068,12.965503,77.462954,Apartment,2,859,3,19,28,1,freehold,19282,164,498,3.82,11.93,14.28,3.47,6.81,56,1,0,1.69,3.4,0.3,26250.0,0
+Hyderabad,HITEC City,500024,17.641832,78.393089,Villa,3,1498,0,4,5,1,freehold,8396,167,232,9.65,6.5,7.01,4.53,5.17,40,0,1,0.93,-6.4,0.14,8500.0,0
+Chennai,Porur,600099,12.901839,80.305751,Villa,1,602,23,19,29,1,leasehold,9178,94,446,4.83,5.4,13.61,7.34,6.42,81,0,1,0.73,2.6,0.35,11400.0,0
+Bangalore,Sarjapur,560101,13.125667,77.678337,Apartment,2,1333,9,19,25,1,freehold,17460,94,429,2.88,13.78,16.02,0.62,1.36,93,0,1,2.47,6.4,0.34,22750.0,0
+Chennai,Guindy,600050,12.956214,80.135053,Villa,2,1122,22,2,7,1,freehold,9893,105,251,3.04,12.53,6.4,4.25,1.57,63,0,0,2.32,2.2,0.04,10150.0,0
+Hyderabad,Banjara Hills,500020,17.295106,78.669455,Independent House,2,1336,9,25,31,1,leasehold,13456,43,125,9.9,11.01,9.46,5.74,4.27,40,1,0,1.84,5.7,0.06,17550.0,0
+Hyderabad,Gachibowli,500014,17.460289,78.563594,Villa,2,823,18,25,30,1,freehold,8285,59,166,5.83,4.51,6.72,3.58,1.12,49,0,1,0.64,14.0,0.24,11900.0,0
+Pune,Wakad,411018,18.505095,73.763697,Apartment,3,2021,25,10,20,1,freehold,11549,148,247,11.4,1.24,1.07,7.24,0.59,64,0,0,1.3,-3.9,0.25,12050.0,0
+Chennai,Chromepet,600079,13.006687,80.1997,Apartment,2,1346,2,25,33,1,freehold,13672,34,253,7.06,5.0,13.07,6.16,3.87,54,0,1,2.32,1.0,0.29,15950.0,0
+Bangalore,Marathahalli,560059,12.995003,77.41961,Apartment,2,1159,15,15,18,1,freehold,17415,42,280,5.59,1.99,16.44,6.39,2.74,81,0,1,1.52,1.2,0.18,20400.0,0
+Chennai,OMR,600071,12.947706,80.244712,Apartment,2,1148,6,23,33,1,leasehold,15293,97,298,4.55,10.56,3.88,5.39,5.97,85,1,0,1.64,2.6,0.24,20900.0,0
+Hyderabad,Kondapur,500040,17.677942,78.327843,Apartment,2,1188,10,16,17,0,leasehold,5003,47,358,4.48,2.66,10.86,3.18,4.71,52,0,1,1.03,10.3,0.28,7100.0,0
+Hyderabad,Begumpet,500012,17.491363,78.544596,Independent House,2,1213,27,5,10,0,leasehold,5870,10,380,1.43,8.62,19.58,0.97,2.4,41,0,1,1.87,1.1,0.15,5000.0,0
+Hyderabad,Ameerpet,500049,17.417595,78.384486,Apartment,3,1786,4,7,16,1,leasehold,11835,49,167,6.85,14.96,13.57,1.16,0.76,41,0,1,1.78,14.4,0.08,14150.0,0
+Mumbai,Malad,400059,19.257433,72.908617,Villa,3,1938,5,15,24,1,leasehold,24606,100,135,6.32,3.19,12.29,4.67,6.81,55,1,1,2.35,5.3,0.04,31650.0,0
+Pune,Magarpatta,411016,18.611465,73.722633,Villa,2,881,4,24,33,1,leasehold,10578,129,284,5.82,1.63,17.85,0.8,3.89,87,0,1,1.69,12.8,0.23,15900.0,0
+Pune,Pimpri,411015,18.553799,73.793846,Independent House,1,569,13,12,17,1,freehold,10981,154,153,3.69,1.39,9.73,1.44,0.6,58,0,1,1.42,-5.1,0.06,12450.0,0
+Bangalore,Indiranagar,560017,13.046319,77.482565,Villa,2,814,23,4,14,1,freehold,10476,178,248,11.24,5.86,3.92,6.28,2.04,51,0,1,2.47,14.2,0.25,10350.0,0
+Mumbai,Borivali,400053,19.208147,72.771384,Villa,2,971,6,19,25,0,freehold,15800,23,105,6.27,7.23,9.79,3.86,7.6,74,0,1,1.84,1.0,0.13,19500.0,0
+Chennai,Tambaram,600002,12.986638,80.339193,Villa,2,1123,30,17,18,0,freehold,11797,120,332,3.48,13.81,17.24,2.75,2.28,46,1,1,1.37,7.5,0.12,13700.0,0
+Chennai,OMR,600067,13.001222,80.307083,Apartment,3,1620,17,1,2,0,freehold,7600,144,73,5.06,10.44,7.35,5.83,2.16,42,0,0,0.52,5.7,0.36,6800.0,0
+Mumbai,Chembur,400016,19.18323,72.735993,Independent House,3,1433,12,22,32,1,freehold,15632,57,149,6.78,4.77,13.38,0.7,3.74,57,1,1,0.94,10.0,0.13,21450.0,0
+Pune,Aundh,411013,18.499796,73.712012,Villa,3,1482,14,3,11,1,freehold,12432,55,350,2.24,7.63,3.31,6.17,1.9,81,0,1,1.9,-5.6,0.06,13500.0,0
+Chennai,Anna Nagar,600100,13.033765,80.368954,Apartment,2,800,29,2,9,1,freehold,12411,157,21,7.75,7.97,18.83,3.98,3.6,94,0,0,0.41,13.9,0.33,13350.0,0
+Hyderabad,Madhapur,500073,17.467652,78.696641,Villa,2,1110,12,2,4,1,freehold,10571,30,450,4.83,7.16,15.45,5.22,1.58,42,1,0,1.03,1.0,0.07,12550.0,0
+Bangalore,Sarjapur,560011,13.154086,77.531395,Apartment,3,1443,1,7,8,1,freehold,16015,109,52,5.14,11.99,13.05,4.05,7.73,91,1,0,0.48,-6.7,0.32,19900.0,0
+Pune,Aundh,411004,18.463503,73.83077,Independent House,3,1769,30,22,31,1,freehold,7180,19,396,5.55,2.55,13.25,3.82,7.36,42,0,0,0.43,6.6,0.36,7400.0,0
+Pune,Pimpri,411020,18.451207,73.818208,Apartment,2,916,15,20,30,1,leasehold,12983,96,435,8.26,12.62,14.89,3.28,1.14,83,0,1,2.16,10.2,0.31,15150.0,0
+Chennai,Velachery,600043,12.918967,80.182168,Villa,2,972,22,12,21,1,freehold,15535,20,88,7.0,1.95,17.02,4.94,6.27,41,1,0,0.41,-3.9,0.06,17700.0,0
+Chennai,Anna Nagar,600054,13.108051,80.337672,Villa,3,2008,4,7,10,1,freehold,12750,71,500,5.06,3.03,13.99,4.81,5.79,79,0,1,1.13,-7.9,0.12,15150.0,0
+Pune,Kharadi,411004,18.585676,73.872546,Independent House,4,3039,7,15,19,1,freehold,8444,131,274,9.46,3.06,13.57,0.44,5.23,58,0,1,0.93,6.2,0.36,11650.0,0
+Hyderabad,Gachibowli,500014,17.570208,78.669945,Apartment,3,1461,25,1,9,1,freehold,8855,123,323,6.92,8.91,8.67,6.0,7.21,54,0,1,0.88,-2.5,0.18,7550.0,0
+Mumbai,Malad,400029,18.929412,72.875528,Apartment,1,623,4,7,17,1,freehold,16469,127,388,6.08,3.32,7.49,2.23,2.82,42,0,1,0.69,11.6,0.2,21800.0,0
+Mumbai,Goregaon,400029,19.254564,72.881091,Independent House,3,1926,28,6,16,1,leasehold,14833,115,458,0.84,8.07,17.31,1.81,3.89,69,1,0,1.93,8.9,0.12,19100.0,0
+Bangalore,Bellandur,560075,12.888963,77.678244,Apartment,2,1387,28,1,8,1,freehold,15711,139,37,8.09,6.67,8.19,6.5,5.63,46,1,1,0.91,4.8,0.03,15950.0,0
+Hyderabad,Miyapur,500017,17.379203,78.395625,Apartment,2,816,15,22,27,1,freehold,5399,126,257,5.42,11.69,17.55,3.3,6.36,63,1,0,2.21,-6.4,0.36,5950.0,0
+Bangalore,Hebbal,560005,12.918636,77.625866,Independent House,1,677,18,7,9,1,freehold,8898,141,485,9.29,10.28,17.82,0.98,3.05,79,0,1,1.17,6.9,0.29,9450.0,0
+Chennai,OMR,600018,13.194375,80.17159,Apartment,2,1289,23,25,35,1,freehold,9693,92,200,8.2,13.52,10.32,3.44,0.62,63,1,1,1.42,4.1,0.08,11750.0,0
+Chennai,Sholinganallur,600116,12.987679,80.286285,Independent House,3,2009,25,3,7,1,freehold,7313,110,479,4.94,3.09,19.19,0.71,1.49,47,0,1,0.72,-3.3,0.38,6200.0,0
+Pune,Hadapsar,411014,18.690872,73.808287,Apartment,3,1785,11,14,22,1,freehold,9097,26,31,0.95,13.14,5.03,7.58,5.23,66,1,1,1.42,7.3,0.23,13900.0,0
+Chennai,Chromepet,600059,12.991225,80.139586,Villa,1,487,25,9,13,1,leasehold,6775,47,200,1.82,4.62,19.15,4.99,1.45,74,1,0,2.44,11.3,0.29,9150.0,0
+Mumbai,Powai,400031,18.946767,72.998132,Independent House,3,1429,14,9,15,1,freehold,13136,180,182,6.06,14.68,3.38,3.64,7.81,74,1,0,2.33,1.3,0.21,14950.0,0
+Mumbai,Borivali,400041,18.962421,72.991045,Independent House,3,1819,10,21,26,1,freehold,30799,180,95,5.58,12.09,14.71,7.39,2.84,47,1,0,0.69,4.7,0.14,38900.0,0
+Hyderabad,Secunderabad,500029,17.422986,78.336992,Apartment,3,1922,20,7,17,1,freehold,9553,60,31,0.35,1.71,17.06,5.45,7.67,72,1,0,1.43,5.9,0.22,14000.0,0
+Pune,Viman Nagar,411013,18.444384,73.870761,Villa,2,1195,11,1,6,1,freehold,13300,153,64,5.37,3.63,17.81,5.96,3.44,68,1,0,2.09,14.3,0.19,18700.0,0
+Hyderabad,Kondapur,500012,17.27182,78.421292,Independent House,3,1643,2,19,26,0,freehold,9478,116,109,4.71,8.56,14.35,6.07,1.27,51,1,1,1.56,-7.0,0.34,12600.0,0
+Chennai,Anna Nagar,600064,13.067784,80.239036,Apartment,3,2110,0,5,10,1,freehold,13742,41,354,4.06,10.16,6.11,1.52,7.27,81,0,0,0.65,-1.6,0.4,16900.0,0
+Pune,Magarpatta,411024,18.508528,73.796097,Villa,1,532,20,22,30,1,leasehold,12114,141,395,3.41,8.84,16.98,1.39,0.66,60,1,0,1.15,-6.8,0.16,14750.0,0
+Bangalore,Whitefield,560038,12.916666,77.591684,Apartment,3,1826,6,25,28,1,freehold,10738,149,185,6.09,13.15,16.62,5.51,2.55,83,1,0,1.52,0.1,0.08,15600.0,0
+Mumbai,Kandivali,400037,19.049206,72.84547,Villa,2,966,3,7,10,1,leasehold,30306,167,373,7.44,12.56,10.75,4.3,4.5,88,0,1,1.37,-6.2,0.33,33850.0,0
+Pune,Pimpri,411012,18.493472,73.772514,Villa,2,1335,24,11,14,1,freehold,7943,66,85,6.86,12.92,3.28,1.89,1.18,48,0,1,1.85,10.0,0.06,6750.0,0
+Hyderabad,Ameerpet,500006,17.298175,78.313117,Independent House,4,3051,18,2,10,1,freehold,6085,87,361,5.85,0.65,2.38,1.08,4.89,77,0,0,1.81,-7.3,0.08,5700.0,0
+Bangalore,JP Nagar,560045,12.940881,77.656541,Independent House,3,1927,7,17,27,0,leasehold,8229,145,131,5.0,10.88,19.3,1.46,6.08,40,0,0,2.33,11.6,0.21,10700.0,0
+Chennai,Velachery,600057,13.102058,80.132197,Villa,4,2777,13,7,16,1,freehold,11149,41,258,9.08,2.1,3.15,6.12,5.7,75,0,0,1.09,-5.3,0.13,12950.0,0
+Chennai,Anna Nagar,600088,13.192854,80.233187,Independent House,3,1717,9,14,18,1,leasehold,13793,104,111,6.55,0.69,13.65,5.41,3.29,73,0,0,0.7,1.2,0.25,17900.0,0
+Pune,Kothrud,411003,18.509113,73.739817,Apartment,3,1909,27,13,15,1,freehold,14177,81,411,2.49,10.85,11.85,2.26,6.36,81,1,1,1.4,5.9,0.18,17100.0,0
+Hyderabad,Banjara Hills,500036,17.273687,78.481854,Apartment,2,1056,15,16,20,1,freehold,6631,23,445,7.84,1.49,13.72,7.78,3.18,83,1,0,1.04,6.3,0.31,10100.0,0
+Chennai,Chromepet,600102,13.039807,80.188069,Villa,3,1802,16,9,18,1,leasehold,14955,14,411,8.68,0.96,8.89,7.33,3.19,60,1,1,1.37,-7.2,0.24,16800.0,0
+Bangalore,Electronic City,560063,12.972272,77.493738,Villa,2,1299,24,4,14,1,freehold,19229,148,312,7.97,7.31,11.46,1.33,0.63,56,1,1,1.7,0.1,0.39,19850.0,0
+Bangalore,Whitefield,560004,13.036185,77.438459,Villa,2,1157,25,24,34,0,leasehold,13591,107,69,10.41,6.71,19.84,3.35,0.64,55,0,0,1.76,5.6,0.37,15400.0,0
+Pune,Hadapsar,411004,18.501278,73.703942,Villa,3,1338,14,22,29,1,leasehold,10368,15,376,4.65,7.31,0.93,2.6,4.65,60,0,1,0.61,7.5,0.15,12700.0,0
+Chennai,Porur,600022,13.084448,80.209,Villa,2,1006,15,21,23,1,freehold,10708,77,44,8.78,4.81,11.68,6.46,5.07,45,0,1,0.97,5.0,0.23,12750.0,0
+Hyderabad,Miyapur,500045,17.597826,78.560615,Villa,3,1816,25,10,17,1,freehold,11788,112,148,4.21,9.56,9.34,6.13,1.61,41,0,1,0.85,14.1,0.3,13100.0,0
+Hyderabad,Kukatpally,500069,17.604467,78.64111,Villa,4,3914,18,24,25,1,freehold,7420,71,97,6.79,11.32,15.43,6.77,3.4,95,0,0,2.18,-1.9,0.14,8200.0,0
+Mumbai,Worli,400031,19.062346,72.734068,Apartment,3,1328,7,10,18,1,leasehold,25828,175,483,9.57,1.04,3.61,1.18,2.22,91,1,0,1.75,-7.0,0.3,30050.0,0
+Pune,Baner,411028,18.668952,73.762781,Villa,3,2187,2,14,20,1,leasehold,12502,45,140,4.24,2.12,14.82,7.47,4.27,93,1,1,2.26,-2.5,0.08,17850.0,0
+Bangalore,Marathahalli,560075,13.094895,77.641752,Independent House,4,2483,29,14,18,1,freehold,12498,122,229,2.88,4.19,11.99,3.97,3.12,47,1,1,1.4,-2.3,0.13,14050.0,0
+Mumbai,Goregaon,400061,19.186268,72.94641,Apartment,4,3321,30,20,21,1,freehold,13791,71,149,6.41,8.51,6.53,7.67,3.03,91,0,0,2.2,0.9,0.37,13850.0,0
+Hyderabad,Kukatpally,500039,17.245125,78.629083,Apartment,3,1604,6,6,14,1,leasehold,11656,18,160,8.62,13.06,16.55,7.53,3.87,66,1,1,2.24,10.9,0.34,15000.0,0
+Bangalore,Hebbal,560009,12.940743,77.580635,Independent House,2,1134,14,23,24,1,freehold,11010,171,247,6.05,11.97,3.15,3.27,5.1,60,0,0,0.73,3.9,0.39,13400.0,0
+Mumbai,Chembur,400053,19.217057,72.79582,Villa,3,2194,23,5,10,1,freehold,22734,82,121,3.62,1.72,7.67,3.21,3.14,93,0,0,2.39,13.2,0.27,30950.0,0
+Mumbai,Bandra,400060,18.979306,72.910378,Apartment,3,1350,12,20,27,1,freehold,24056,53,310,8.51,2.2,14.51,3.54,7.38,69,1,0,0.87,-3.3,0.38,30050.0,0
+Bangalore,Indiranagar,560096,12.997667,77.43906,Apartment,3,1914,6,10,14,1,freehold,10391,17,168,8.56,14.65,5.09,3.66,2.14,77,1,0,0.42,-4.9,0.15,12800.0,0
+Hyderabad,Miyapur,500050,17.554227,78.594442,Villa,2,874,3,18,19,0,leasehold,12715,100,330,9.44,14.12,19.36,4.83,6.04,42,0,1,1.46,0.8,0.39,15450.0,0
+Bangalore,Electronic City,560072,12.81645,77.453812,Apartment,3,1815,15,11,19,1,freehold,16690,120,92,5.7,4.28,6.61,7.83,4.09,93,1,1,2.35,-1.5,0.35,20000.0,0
+Chennai,Anna Nagar,600067,12.993903,80.367802,Villa,3,2054,15,25,28,1,leasehold,13208,23,116,8.65,2.66,4.98,0.38,2.23,85,1,1,0.64,12.6,0.21,20050.0,0
+Hyderabad,Begumpet,500072,17.4426,78.497195,Independent House,3,2187,4,4,10,0,leasehold,7959,53,403,8.73,7.88,5.82,7.14,4.77,77,0,0,1.27,-6.2,0.31,8600.0,0
+Pune,Viman Nagar,411001,18.485284,73.896267,Apartment,3,1703,11,19,21,1,freehold,7328,127,445,4.57,10.76,9.86,5.06,2.3,82,0,1,2.44,7.1,0.38,9500.0,0
+Bangalore,JP Nagar,560017,12.884547,77.414605,Independent House,2,1089,10,2,4,1,freehold,12180,55,142,10.53,14.49,17.38,0.8,6.85,50,1,1,1.0,9.3,0.27,15100.0,0
+Pune,Hadapsar,411016,18.64033,73.847178,Villa,3,2001,19,5,11,1,leasehold,14399,61,270,6.9,6.96,8.07,2.22,4.88,45,1,1,1.69,2.0,0.19,15600.0,0
+Pune,Kharadi,411011,18.691982,73.835288,Independent House,2,958,29,16,25,1,freehold,10762,129,243,8.64,1.65,16.13,2.47,7.88,83,1,0,1.5,-1.2,0.05,12650.0,0
+Pune,Baner,411017,18.43229,73.784983,Apartment,2,1275,21,24,34,1,freehold,7339,138,28,6.48,2.15,13.4,1.52,1.62,65,0,0,1.27,8.2,0.15,9900.0,0
+Hyderabad,HITEC City,500034,17.370667,78.667245,Apartment,2,1016,5,3,13,1,freehold,12107,146,29,5.84,0.58,2.78,1.46,3.92,84,1,1,1.04,10.7,0.26,18300.0,0
+Hyderabad,Kukatpally,500012,17.262545,78.30555,Apartment,2,816,22,7,8,1,freehold,8961,121,451,4.14,9.58,15.91,1.61,2.55,69,0,1,1.29,-5.3,0.36,7600.0,0
+Hyderabad,HITEC City,500061,17.209814,78.479807,Apartment,1,503,9,19,26,0,freehold,12074,116,454,1.93,7.69,11.78,5.88,7.99,42,1,1,1.42,5.6,0.26,17300.0,0
+Hyderabad,Miyapur,500008,17.464154,78.468802,Villa,1,683,2,9,16,1,freehold,10681,124,377,3.21,6.83,3.65,5.84,3.86,68,0,0,1.63,7.8,0.37,15650.0,0
+Hyderabad,Kondapur,500038,17.561498,78.456148,Villa,3,2153,30,22,28,1,freehold,7654,169,126,8.99,4.6,15.11,5.37,1.21,52,0,1,0.61,1.6,0.4,6600.0,0
+Bangalore,HSR Layout,560027,13.022732,77.699778,Villa,3,1567,11,22,25,1,leasehold,16248,18,433,5.6,1.42,8.9,4.98,1.14,54,1,1,2.49,10.1,0.31,22900.0,0
+Chennai,Anna Nagar,600115,12.945354,80.307041,Independent House,3,1918,21,4,5,1,freehold,13489,38,74,3.12,11.83,12.39,6.88,0.99,75,0,0,0.75,-5.3,0.11,14700.0,0
+Bangalore,Electronic City,560094,12.916849,77.532455,Independent House,3,1810,23,4,7,1,freehold,10257,41,454,2.2,3.43,19.41,6.18,0.25,93,1,1,1.0,-4.1,0.13,11800.0,0
+Hyderabad,Begumpet,500032,17.275806,78.601403,Villa,3,2106,7,5,12,1,freehold,12516,142,426,2.42,10.39,18.9,3.6,6.21,85,0,0,1.11,1.2,0.32,16050.0,0
+Hyderabad,Gachibowli,500051,17.579596,78.56407,Independent House,3,1454,28,19,20,1,leasehold,13516,85,234,7.63,6.33,13.78,4.47,2.57,87,1,1,0.42,-1.6,0.23,14650.0,0
+Mumbai,Malad,400058,19.157552,72.966274,Independent House,2,1252,22,12,19,1,leasehold,14761,19,295,6.19,5.35,14.64,5.95,1.18,74,1,0,0.59,4.7,0.22,17050.0,0
+Mumbai,Andheri,400004,19.256128,72.86198,Villa,3,1547,26,25,30,1,leasehold,15618,25,450,5.46,5.91,12.73,2.9,0.57,81,0,1,1.03,8.9,0.2,19500.0,0
+Mumbai,Chembur,400069,19.237798,72.770151,Villa,3,1591,21,23,33,1,freehold,29028,73,73,3.95,5.25,11.86,6.6,3.02,46,0,1,2.14,-6.1,0.05,31150.0,0
+Mumbai,Borivali,400028,19.078466,72.810788,Independent House,1,606,18,18,27,1,leasehold,31146,137,345,3.42,6.64,9.08,7.46,4.02,66,0,0,1.46,3.1,0.2,38100.0,0
+Chennai,Sholinganallur,600016,13.108341,80.23663,Apartment,3,2064,5,18,24,1,freehold,12694,38,81,8.97,5.86,6.15,4.23,1.12,59,1,1,1.02,-7.4,0.08,15050.0,0
+Chennai,Tambaram,600007,13.181046,80.191549,Villa,2,1020,5,24,32,0,freehold,7106,21,233,8.16,7.48,6.54,3.67,2.84,64,1,0,2.0,3.6,0.2,11000.0,0
+Hyderabad,HITEC City,500020,17.633173,78.430087,Independent House,4,3360,19,14,21,1,freehold,13863,21,363,4.48,13.41,14.85,5.2,6.95,85,0,1,1.58,-5.2,0.24,14000.0,0
+Mumbai,Chembur,400070,19.130742,72.715862,Independent House,2,1334,6,25,33,1,freehold,33569,146,112,10.34,14.45,5.86,1.73,6.67,93,1,0,2.09,6.0,0.18,44900.0,0
+Pune,Pimpri,411028,18.680155,73.767991,Apartment,1,612,0,17,23,1,freehold,7627,148,106,3.91,4.64,4.06,6.17,1.4,66,0,0,1.69,-0.5,0.04,11500.0,0
+Pune,Hadapsar,411013,18.429623,73.728492,Villa,3,1564,12,4,5,1,freehold,9874,136,280,11.17,11.41,8.01,1.01,0.67,69,1,0,1.42,1.4,0.12,11600.0,0
+Pune,Hadapsar,411018,18.689042,73.835019,Apartment,3,2081,17,21,24,1,freehold,7374,172,276,7.52,3.45,19.37,3.05,7.89,90,0,1,2.42,4.8,0.05,8500.0,0
+Hyderabad,Secunderabad,500038,17.526529,78.366953,Apartment,1,646,8,20,25,1,freehold,10757,171,128,2.97,8.98,10.45,0.46,5.97,76,0,1,0.59,8.1,0.34,14100.0,0
+Chennai,Anna Nagar,600113,13.029589,80.283134,Villa,3,1998,30,11,16,1,freehold,10473,72,359,6.62,14.75,7.16,3.73,4.88,41,0,0,1.68,-7.9,0.03,8900.0,0
+Mumbai,Malad,400072,19.258107,72.91099,Villa,3,1851,2,21,23,1,leasehold,34007,123,364,6.57,2.29,19.45,3.07,4.89,64,0,0,0.66,0.5,0.1,43250.0,0
+Pune,Wakad,411024,18.405935,73.756227,Independent House,3,1666,6,3,13,1,leasehold,9623,69,272,10.88,14.53,1.22,3.99,5.69,78,0,0,0.81,10.9,0.18,12050.0,0
+Bangalore,JP Nagar,560065,12.997605,77.565536,Independent House,2,1379,21,22,32,1,freehold,10101,26,85,7.49,4.26,11.61,1.9,4.28,90,1,0,2.18,-7.5,0.39,11650.0,0
+Chennai,Guindy,600033,13.104204,80.364931,Apartment,2,1237,20,22,23,1,freehold,12666,80,82,5.31,10.36,9.6,2.96,6.12,86,0,0,0.98,1.7,0.2,14750.0,0
+Pune,Aundh,411007,18.500412,73.87602,Apartment,3,2055,7,23,30,1,leasehold,9225,52,188,1.4,5.01,12.71,0.86,3.94,91,0,1,2.17,-2.3,0.21,13900.0,0
+Bangalore,Whitefield,560043,13.00787,77.471023,Apartment,3,2094,19,20,28,1,freehold,17485,41,63,1.29,14.63,18.38,3.08,7.14,84,0,0,0.53,10.5,0.05,23850.0,0
+Chennai,Tambaram,600009,12.930548,80.116737,Apartment,2,1101,27,13,20,0,freehold,9819,163,423,7.26,10.07,0.71,3.13,6.4,79,0,1,1.77,7.5,0.04,8850.0,0
+Chennai,Porur,600076,12.957744,80.130807,Independent House,1,434,18,7,17,1,freehold,11822,117,266,10.0,11.01,9.17,2.02,6.42,43,0,1,1.63,3.8,0.27,11350.0,0
+Bangalore,Indiranagar,560075,13.154089,77.632649,Apartment,2,1280,9,20,26,1,leasehold,16481,160,356,5.38,10.34,1.62,4.11,6.71,94,0,1,1.12,14.5,0.27,22050.0,0
+Mumbai,Bandra,400044,18.975742,72.842718,Independent House,2,1278,19,23,29,1,freehold,22998,167,173,2.2,6.57,3.66,3.69,6.36,42,1,0,2.33,6.7,0.29,29500.0,0
+Hyderabad,Secunderabad,500028,17.31951,78.593834,Villa,3,2126,23,13,17,1,leasehold,5110,102,25,3.37,1.57,1.09,1.01,2.47,52,1,0,2.45,-3.4,0.14,5850.0,0
+Mumbai,Worli,400023,19.035927,72.866351,Apartment,4,2401,0,6,11,1,freehold,34198,45,214,2.49,10.0,17.76,2.77,1.84,69,0,1,2.1,7.2,0.38,43300.0,0
+Chennai,Tambaram,600113,13.113283,80.135548,Apartment,2,994,6,18,25,1,freehold,13037,172,145,4.99,13.85,15.38,4.74,6.86,58,0,1,0.92,6.5,0.13,17150.0,0
+Mumbai,Kandivali,400063,18.983695,72.724422,Villa,3,2109,21,20,22,1,freehold,33137,140,211,8.42,7.73,9.55,2.64,3.12,84,1,1,1.39,5.4,0.27,39950.0,0
+Chennai,Adyar,600027,12.965858,80.1609,Apartment,4,2810,6,10,17,1,freehold,12129,75,301,6.05,1.73,15.16,2.43,4.25,54,0,1,1.48,-0.3,0.2,15550.0,0
+Hyderabad,Ameerpet,500048,17.602252,78.426808,Villa,2,825,5,15,19,1,freehold,6350,85,451,4.64,7.78,11.16,0.72,2.36,54,0,0,0.55,-7.1,0.1,7850.0,0
+Mumbai,Goregaon,400033,19.021086,72.944669,Independent House,4,3731,8,7,17,1,leasehold,29797,76,24,2.78,11.67,6.0,2.84,7.98,65,0,1,1.77,14.8,0.38,40750.0,0
+Hyderabad,Miyapur,500030,17.561668,78.38395,Apartment,2,1328,18,18,26,1,freehold,6406,90,453,9.01,3.22,15.52,5.61,1.83,68,0,1,0.69,12.1,0.14,9400.0,0
+Pune,Pimpri,411026,18.597654,73.770932,Apartment,3,1729,13,22,29,1,freehold,10909,93,320,3.32,0.84,15.81,7.38,1.4,61,1,1,0.83,1.0,0.23,15750.0,0
+Mumbai,Borivali,400014,19.031537,72.988581,Independent House,3,1611,2,6,8,1,freehold,34577,164,270,8.71,0.89,4.38,7.3,3.21,53,0,1,1.79,-6.4,0.05,38850.0,0
+Chennai,Adyar,600022,12.998032,80.372944,Villa,2,960,3,5,14,1,freehold,12373,62,86,4.56,13.12,6.54,6.56,5.39,50,1,0,1.46,7.8,0.13,16750.0,0
+Pune,Kothrud,411015,18.419191,73.779847,Apartment,3,1838,10,19,27,1,freehold,7492,83,350,7.0,13.27,9.4,5.63,5.75,59,1,0,1.27,-3.9,0.26,9000.0,0
+Hyderabad,HITEC City,500050,17.655417,78.373378,Independent House,4,2195,12,23,24,1,leasehold,9485,170,295,5.7,4.73,18.37,5.61,5.83,53,1,1,2.48,4.7,0.4,12750.0,0
+Pune,Hinjewadi,411017,18.629962,73.765203,Villa,3,1468,8,7,16,0,freehold,13567,107,195,5.7,11.32,17.19,3.23,0.28,47,0,1,1.81,2.7,0.2,15200.0,0
+Pune,Kharadi,411022,18.472688,73.890004,Apartment,3,1782,26,9,12,1,freehold,7646,55,170,9.78,2.3,14.96,1.43,5.44,40,1,0,1.33,-3.9,0.29,7800.0,0
+Chennai,OMR,600057,13.109023,80.35095,Independent House,1,452,12,23,28,1,freehold,6797,106,412,6.07,3.43,5.37,7.28,1.76,41,1,0,2.48,-0.2,0.1,9250.0,0
+Pune,Wakad,411004,18.639077,73.86609,Apartment,4,3482,5,2,9,1,leasehold,11286,153,340,5.72,3.25,4.54,4.38,7.52,47,0,0,0.62,-0.6,0.04,13950.0,0
+Bangalore,Whitefield,560050,12.885107,77.466029,Independent House,1,542,20,20,26,0,leasehold,14735,87,412,8.72,9.18,19.67,0.9,4.38,94,0,1,2.41,5.8,0.39,16650.0,0
+Hyderabad,Kondapur,500043,17.287666,78.604687,Independent House,2,1125,27,22,30,0,freehold,12354,107,281,2.9,9.79,5.03,4.74,7.91,54,0,0,1.05,9.0,0.31,14800.0,0
+Chennai,T Nagar,600008,12.941267,80.249618,Apartment,2,955,12,7,8,1,freehold,13270,94,88,4.17,4.53,13.05,6.11,4.26,66,1,0,0.88,8.9,0.16,18550.0,0
+Mumbai,Kandivali,400007,19.262653,72.899502,Apartment,3,2120,21,23,27,1,freehold,22539,56,246,8.25,9.63,1.76,3.98,7.64,43,0,0,0.66,-4.0,0.23,24400.0,0
+Mumbai,Thane,400065,18.931266,72.917497,Villa,2,968,23,7,11,1,freehold,21932,83,315,11.15,7.0,12.89,2.25,6.29,45,1,1,1.19,2.8,0.19,23850.0,0
+Chennai,Tambaram,600098,12.946764,80.386127,Villa,3,1320,24,13,20,1,freehold,10918,162,295,7.19,2.72,14.67,2.13,3.82,69,1,1,1.58,3.1,0.15,13250.0,0
+Hyderabad,Miyapur,500020,17.658066,78.301672,Independent House,2,1183,15,13,20,1,leasehold,11113,108,270,2.82,4.96,19.76,0.66,7.1,47,1,0,0.81,2.0,0.12,15150.0,0
+Bangalore,Hebbal,560091,12.995449,77.606547,Independent House,1,429,20,13,20,1,freehold,8565,102,343,5.19,10.75,1.05,5.36,1.35,78,1,0,0.93,5.8,0.38,10650.0,0
+Mumbai,Andheri,400015,19.208389,72.893319,Villa,3,1707,22,19,21,1,freehold,25859,52,444,2.32,6.69,13.99,4.06,4.36,64,1,1,1.98,13.3,0.35,35200.0,0
+Pune,Magarpatta,411025,18.63926,73.862846,Villa,2,1014,29,24,31,1,freehold,8759,135,20,5.29,1.9,15.59,3.4,3.45,58,1,0,0.77,-3.7,0.08,10950.0,0
+Hyderabad,Kondapur,500065,17.674242,78.480264,Apartment,2,990,6,2,5,1,freehold,11697,122,340,2.75,13.74,2.63,5.13,0.82,45,1,0,0.98,-0.1,0.25,15300.0,0
+Hyderabad,HITEC City,500013,17.204753,78.406432,Apartment,3,1981,18,2,4,0,freehold,5118,106,328,6.82,8.04,19.26,2.2,3.99,88,1,1,1.11,7.7,0.16,5650.0,0
+Bangalore,HSR Layout,560047,13.066031,77.513531,Apartment,3,1664,27,11,13,0,leasehold,14583,45,33,4.75,9.23,17.45,2.31,5.65,92,0,1,1.35,7.8,0.35,14800.0,0
+Chennai,Tambaram,600085,12.95638,80.395854,Villa,2,817,20,12,13,1,freehold,13279,69,330,9.6,7.53,14.91,6.37,2.92,70,0,1,1.02,-3.5,0.08,12400.0,0
+Chennai,Guindy,600101,13.157041,80.251391,Apartment,3,1809,25,3,8,1,leasehold,13648,53,478,9.03,6.97,2.76,5.33,2.08,53,0,0,0.62,14.8,0.04,15400.0,0
+Bangalore,Bellandur,560099,12.912143,77.615752,Independent House,3,1787,30,22,24,1,leasehold,18380,135,66,7.9,12.04,6.99,1.87,4.69,78,0,1,1.19,8.5,0.3,21700.0,0
+Hyderabad,Banjara Hills,500056,17.604224,78.38942,Apartment,2,1097,2,4,6,1,freehold,8082,39,313,6.93,5.83,17.14,7.64,4.7,40,1,0,1.64,-3.6,0.17,10800.0,0
+Hyderabad,Begumpet,500047,17.598759,78.67357,Apartment,2,1332,21,20,30,1,freehold,13819,127,181,6.44,2.6,18.89,6.71,4.1,69,0,1,0.71,7.3,0.33,16350.0,0
+Pune,Magarpatta,411011,18.492667,73.898067,Apartment,2,1080,27,23,33,1,leasehold,14110,84,380,1.75,14.51,1.65,6.5,1.39,85,0,0,1.87,-6.8,0.35,14700.0,0
+Mumbai,Borivali,400051,19.019641,72.944504,Apartment,1,411,17,13,19,1,freehold,23413,110,220,3.7,1.54,14.67,2.33,7.4,84,1,0,0.67,9.3,0.24,31350.0,0
+Pune,Hadapsar,411015,18.59639,73.815431,Villa,2,1294,9,5,9,1,freehold,6149,102,391,5.89,12.91,2.49,6.31,6.9,64,1,0,2.34,-5.8,0.39,7550.0,0
+Mumbai,Andheri,400016,19.292111,72.895029,Independent House,2,1244,4,21,28,1,freehold,24997,135,174,6.31,10.48,19.11,5.26,3.13,84,0,1,2.22,7.0,0.13,32700.0,0
+Hyderabad,Begumpet,500002,17.26,78.333055,Villa,2,1321,7,1,11,1,freehold,9484,34,426,5.12,9.1,7.99,8.0,5.68,59,0,0,1.08,8.4,0.35,12050.0,0
+Chennai,Velachery,600052,13.14386,80.105924,Independent House,2,1349,25,17,25,0,leasehold,14830,176,83,2.69,11.43,4.55,5.3,1.12,95,0,0,1.56,10.4,0.08,18350.0,0
+Mumbai,Chembur,400027,19.161056,72.726346,Villa,3,2171,24,2,4,0,freehold,23913,149,107,6.09,6.63,18.93,0.1,2.54,73,1,1,0.69,3.3,0.15,26850.0,0
+Bangalore,JP Nagar,560069,13.004236,77.606379,Independent House,2,845,7,2,6,1,leasehold,11526,44,328,2.89,8.51,12.04,2.29,5.89,67,0,1,0.95,6.9,0.09,14450.0,0
+Hyderabad,Madhapur,500033,17.538263,78.67608,Apartment,1,674,6,3,8,1,freehold,8156,105,308,7.12,10.03,16.5,4.88,3.47,49,1,1,1.2,14.2,0.12,10200.0,0
+Bangalore,Koramangala,560069,12.843996,77.564511,Apartment,2,1137,20,3,9,1,freehold,10397,67,160,3.88,0.64,7.85,7.75,3.15,46,0,0,1.51,12.1,0.25,14000.0,0
+Hyderabad,Madhapur,500068,17.37445,78.528863,Villa,3,1864,8,20,22,1,freehold,11382,56,196,1.33,12.19,13.72,6.33,4.5,94,1,1,1.64,-2.0,0.28,16400.0,0
+Mumbai,Powai,400019,19.05152,72.920627,Apartment,2,1179,22,25,29,1,freehold,27000,56,244,4.84,14.8,16.07,4.07,2.35,67,0,1,1.73,-6.0,0.14,28950.0,0
+Bangalore,Koramangala,560082,12.83179,77.618986,Apartment,2,969,18,2,4,1,freehold,16074,12,237,3.69,10.32,18.68,1.18,4.08,83,0,1,0.43,-3.6,0.34,16800.0,0
+Pune,Aundh,411023,18.560297,73.769012,Independent House,3,1977,30,17,27,0,freehold,8761,144,482,1.35,3.76,1.96,6.73,4.21,43,1,1,1.2,0.6,0.07,10150.0,0
+Mumbai,Kandivali,400016,19.016026,72.844937,Villa,2,1018,0,24,34,1,leasehold,33068,141,442,4.92,13.45,18.74,7.15,6.82,43,1,0,1.69,-0.4,0.16,41650.0,0
+Pune,Viman Nagar,411024,18.455847,73.770906,Apartment,2,1241,15,7,9,1,leasehold,12729,41,487,6.8,7.57,3.53,5.29,1.96,65,1,1,1.17,12.5,0.23,16100.0,0
+Bangalore,Koramangala,560057,13.062512,77.531807,Apartment,2,1162,23,14,15,1,leasehold,11251,38,117,4.03,4.63,3.11,3.43,2.78,42,0,0,2.39,14.1,0.39,14100.0,0
+Pune,Aundh,411016,18.565037,73.859964,Independent House,4,2260,10,25,32,1,leasehold,12370,43,76,4.63,14.39,15.96,1.1,2.88,40,0,0,1.82,-0.1,0.39,15250.0,0
+Pune,Aundh,411016,18.48684,73.797186,Villa,3,1553,19,5,14,1,freehold,7884,77,378,9.04,4.09,16.5,1.67,5.71,91,0,0,0.8,11.7,0.26,10400.0,0
+Mumbai,Thane,400016,18.952918,72.71151,Apartment,2,949,13,1,11,1,leasehold,24463,114,288,8.34,4.94,12.85,1.93,2.82,70,0,1,1.75,-1.0,0.13,27650.0,0
+Bangalore,Marathahalli,560092,12.96723,77.495952,Apartment,1,493,1,1,2,1,freehold,15734,81,485,7.84,9.29,8.9,2.09,4.03,61,1,0,0.6,-7.7,0.23,17700.0,0
+Mumbai,Goregaon,400047,19.196517,72.808415,Independent House,3,1841,19,12,16,1,freehold,24584,32,474,3.7,2.04,12.78,4.85,0.52,81,0,0,1.88,13.3,0.06,33100.0,0
+Chennai,Guindy,600044,12.990443,80.24226,Apartment,2,1346,23,5,6,1,freehold,10137,153,197,3.51,13.48,9.25,5.77,7.3,44,1,1,1.5,13.9,0.32,11150.0,0
+Mumbai,Chembur,400036,19.178682,72.73868,Apartment,3,1879,1,23,27,1,freehold,34436,146,465,2.05,7.95,1.96,3.56,4.17,75,1,1,1.68,-3.2,0.03,43050.0,0
+Chennai,OMR,600076,13.109017,80.363747,Independent House,3,1766,16,23,32,1,leasehold,10855,78,302,10.43,2.23,4.87,4.32,2.48,80,0,1,2.35,-1.8,0.32,12350.0,0
+Mumbai,Thane,400069,18.946474,72.894594,Independent House,4,3239,11,11,13,1,leasehold,20652,44,229,8.83,13.53,6.25,7.88,5.08,40,1,0,1.93,-1.6,0.12,23600.0,0
+Pune,Kharadi,411022,18.693629,73.855637,Independent House,1,454,23,24,31,1,freehold,9377,123,132,7.01,5.2,4.48,5.08,6.89,65,0,1,0.89,8.7,0.17,10200.0,0
+Hyderabad,Madhapur,500064,17.290757,78.374011,Apartment,3,1493,18,16,19,1,freehold,7669,55,438,10.52,6.22,12.35,0.65,0.76,55,1,1,0.61,4.1,0.3,9400.0,0
+Pune,Magarpatta,411004,18.513363,73.704143,Apartment,3,2081,26,21,22,1,freehold,10385,46,500,9.4,9.6,0.76,7.73,7.67,46,1,0,0.82,3.0,0.24,11700.0,0
+Hyderabad,Kondapur,500040,17.365878,78.361805,Apartment,2,1356,22,9,18,1,leasehold,6684,149,171,3.47,1.99,17.79,3.38,0.21,54,0,0,1.3,-4.6,0.27,7600.0,0
+Mumbai,Malad,400015,19.096728,72.99723,Apartment,1,452,30,10,16,0,freehold,23812,31,478,4.67,1.13,3.45,3.49,2.81,51,1,0,2.28,7.8,0.26,29200.0,0
+Bangalore,Marathahalli,560014,12.908437,77.549775,Villa,3,1571,25,23,25,1,leasehold,10435,177,95,9.86,5.14,8.12,5.8,6.33,70,0,0,1.61,14.1,0.13,13300.0,0
+Pune,Viman Nagar,411005,18.454562,73.777003,Villa,2,1306,13,16,23,1,freehold,8264,177,491,9.28,4.07,8.66,4.03,4.36,74,0,1,0.58,8.4,0.22,10950.0,0
+Mumbai,Bandra,400031,19.044684,72.760984,Apartment,1,585,17,16,19,1,freehold,23447,102,454,6.96,12.82,15.68,1.2,3.79,93,1,0,0.84,-2.8,0.31,28000.0,0
+Pune,Kothrud,411013,18.619924,73.839225,Villa,3,1680,1,23,25,1,freehold,8591,17,95,9.91,5.8,2.04,0.71,4.64,92,1,0,2.01,2.8,0.08,13050.0,0
+Chennai,Anna Nagar,600061,13.023457,80.201201,Independent House,3,2011,0,10,12,1,leasehold,6526,164,404,7.98,3.02,3.63,3.23,3.5,69,1,1,1.89,1.7,0.09,10550.0,0
+Pune,Kharadi,411013,18.693378,73.725027,Apartment,3,1710,19,2,6,1,leasehold,7264,129,264,0.81,5.04,13.02,6.64,1.49,91,1,1,0.81,-5.5,0.06,9500.0,0
+Chennai,Porur,600004,12.971859,80.148828,Apartment,3,1366,6,20,21,1,freehold,15038,61,346,7.07,13.97,5.19,0.77,4.65,42,1,0,0.5,-5.9,0.14,17300.0,0
+Bangalore,Indiranagar,560051,13.000086,77.494342,Villa,3,2043,11,5,7,1,leasehold,16250,35,277,7.64,12.21,3.43,4.74,3.18,77,0,1,0.74,7.7,0.06,18850.0,0
+Pune,Wakad,411007,18.642243,73.830844,Independent House,2,964,30,17,26,1,freehold,14573,97,249,6.26,11.89,7.11,2.95,6.88,67,0,1,0.9,14.9,0.25,17200.0,0
+Mumbai,Chembur,400064,18.938962,72.704483,Villa,3,1860,27,3,11,0,freehold,21686,51,54,9.03,4.56,7.58,0.8,1.6,89,1,1,2.47,14.5,0.31,27300.0,0
+Hyderabad,Kondapur,500016,17.68584,78.495304,Villa,2,1093,12,14,24,1,freehold,11008,141,452,6.32,9.56,6.62,0.76,3.42,68,1,0,1.7,6.8,0.3,13050.0,0
+Mumbai,Kandivali,400002,18.961825,72.731589,Villa,2,962,18,13,15,1,leasehold,33926,33,198,7.69,7.26,13.03,7.21,3.83,45,0,0,2.33,13.2,0.31,44000.0,0
+Mumbai,Malad,400043,18.925789,72.802727,Independent House,3,1797,6,23,31,1,freehold,29861,49,260,4.99,2.61,4.66,4.59,7.9,89,1,0,2.37,0.3,0.19,38850.0,0
+Hyderabad,Miyapur,500007,17.305746,78.309177,Independent House,4,2866,8,9,12,0,freehold,11636,30,172,5.29,13.17,9.3,3.42,1.87,56,0,0,0.59,12.7,0.16,15350.0,0
+Bangalore,Electronic City,560026,12.939711,77.52573,Villa,2,1348,22,6,13,1,freehold,14375,12,307,4.02,11.85,12.14,0.71,5.41,79,0,1,1.79,10.9,0.3,16050.0,0
+Bangalore,Whitefield,560020,13.1586,77.680146,Villa,3,2185,10,4,11,1,freehold,15381,42,344,5.05,7.02,19.4,0.87,1.91,52,1,0,1.66,-3.0,0.11,18100.0,0
+Mumbai,Chembur,400002,19.048103,72.809138,Villa,3,1614,16,4,12,1,freehold,25447,100,200,7.81,12.51,8.8,7.8,2.82,51,1,1,1.18,4.7,0.09,30350.0,0
+Hyderabad,Ameerpet,500037,17.622546,78.57542,Villa,2,1090,22,20,22,1,leasehold,6700,32,352,3.6,0.74,18.68,0.92,6.05,79,0,1,1.46,10.5,0.28,9350.0,0
+Hyderabad,Miyapur,500029,17.58844,78.520635,Apartment,2,1000,27,16,18,1,freehold,12601,115,484,10.19,12.4,14.22,5.96,0.26,63,0,1,0.96,7.1,0.14,13350.0,0
+Hyderabad,Miyapur,500001,17.650094,78.465823,Apartment,3,1326,4,12,21,1,freehold,10490,53,312,8.77,14.9,5.22,7.79,1.7,81,1,0,2.08,5.3,0.08,14550.0,0
+Hyderabad,Kondapur,500052,17.652086,78.506911,Villa,3,1536,3,23,26,1,freehold,11422,170,489,6.7,4.27,11.28,7.59,1.79,45,0,1,0.42,9.7,0.09,15450.0,0
+Chennai,Sholinganallur,600118,13.19172,80.271538,Apartment,4,3520,23,5,13,1,freehold,9056,71,354,3.54,13.52,6.29,4.33,2.11,89,1,1,1.78,-1.7,0.38,9100.0,0
+Pune,Magarpatta,411028,18.431026,73.791826,Independent House,2,925,3,5,10,1,freehold,7267,136,452,8.0,5.74,16.85,3.19,4.03,41,1,0,1.42,6.4,0.11,9200.0,0
+Hyderabad,Ameerpet,500041,17.516776,78.480351,Apartment,2,984,9,1,4,0,freehold,10616,98,267,5.61,14.93,12.2,0.14,4.27,56,0,0,1.67,4.3,0.22,11950.0,0
+Mumbai,Thane,400047,18.945915,72.765087,Villa,1,470,7,3,6,1,freehold,15013,99,382,5.5,8.5,6.24,5.99,4.07,72,1,0,0.93,-3.4,0.34,18500.0,0
+Bangalore,Bellandur,560014,13.033459,77.629935,Villa,2,969,25,7,15,1,freehold,17770,79,437,6.2,5.12,2.6,3.13,1.76,62,1,0,1.34,12.5,0.38,22850.0,0
+Bangalore,JP Nagar,560053,12.917389,77.648006,Independent House,2,1343,11,13,14,1,leasehold,15035,57,203,10.58,4.06,4.7,3.04,1.33,60,0,0,1.07,-7.7,0.15,16650.0,0
+Hyderabad,Secunderabad,500042,17.649372,78.524656,Villa,3,1590,19,7,16,1,freehold,6225,156,477,8.74,9.87,13.8,3.54,6.54,52,0,0,2.09,3.5,0.4,5900.0,0
+Hyderabad,Madhapur,500016,17.426393,78.540572,Independent House,3,1692,7,19,20,1,freehold,5076,128,165,9.6,2.4,19.35,0.39,4.36,73,0,1,1.75,-6.4,0.07,6500.0,0
+Hyderabad,Kukatpally,500036,17.358595,78.43833,Apartment,3,1869,24,11,19,1,freehold,12447,136,454,8.98,9.8,18.25,6.76,7.51,46,0,0,0.5,-7.8,0.07,10950.0,0
+Bangalore,Bellandur,560029,12.868077,77.457348,Villa,4,3671,28,18,19,1,leasehold,12254,21,76,2.84,1.2,6.43,2.18,5.57,90,1,1,1.87,13.3,0.25,17350.0,0
+Pune,Kothrud,411011,18.658568,73.850607,Villa,3,1952,14,22,24,1,freehold,13830,179,270,4.28,14.66,6.78,5.87,1.96,56,1,0,1.14,11.2,0.12,19000.0,0
+Mumbai,Bandra,400010,19.288706,72.71808,Apartment,2,1021,14,13,17,1,freehold,31350,145,283,5.67,12.95,15.33,2.56,3.74,49,0,0,0.86,0.4,0.39,35900.0,0
+Chennai,Sholinganallur,600026,13.134006,80.156386,Villa,2,1233,5,22,27,1,freehold,7672,47,256,1.79,13.2,15.03,2.0,7.17,51,1,0,1.4,4.2,0.16,12500.0,0
+Pune,Kharadi,411003,18.506328,73.742413,Villa,3,1814,13,17,23,0,freehold,7602,22,352,6.01,6.05,18.6,1.63,1.68,51,1,1,1.49,-5.5,0.05,7800.0,0
+Mumbai,Bandra,400029,18.946075,72.968518,Independent House,3,1572,7,3,12,1,freehold,32323,113,220,6.21,6.2,4.79,6.61,5.6,71,0,0,2.05,-0.0,0.14,38450.0,0
+Chennai,Anna Nagar,600094,12.900932,80.155524,Independent House,2,1288,23,10,14,1,freehold,8730,57,190,4.87,13.55,3.27,0.2,3.9,61,0,0,2.45,12.3,0.09,9600.0,0
+Pune,Magarpatta,411012,18.690862,73.816632,Villa,3,2194,7,16,18,0,freehold,10762,68,288,2.29,7.8,15.22,6.22,0.98,91,1,1,1.43,0.1,0.23,14850.0,0
+Hyderabad,Kukatpally,500047,17.429375,78.6311,Villa,3,2027,10,17,27,1,freehold,13508,173,30,2.88,2.64,8.5,1.84,7.95,62,1,0,0.91,9.0,0.39,19850.0,0
+Bangalore,HSR Layout,560096,12.83571,77.676194,Villa,2,910,30,9,18,1,freehold,16632,54,155,4.4,13.7,7.3,2.72,4.8,57,1,0,0.49,4.0,0.16,18800.0,0
+Chennai,T Nagar,600056,13.1386,80.269999,Villa,2,1095,3,1,9,1,freehold,8461,143,168,6.95,9.55,13.45,2.5,2.45,91,1,0,1.35,-3.0,0.34,10500.0,0
+Pune,Baner,411016,18.491746,73.786065,Independent House,1,400,1,9,12,1,freehold,14224,180,413,9.53,8.63,19.1,5.73,1.31,86,0,1,1.63,-6.1,0.11,15600.0,0
+Hyderabad,Begumpet,500032,17.605855,78.554818,Villa,2,1208,30,4,9,1,freehold,7839,154,243,6.6,10.34,6.79,4.67,5.53,52,1,0,1.27,-3.4,0.14,6650.0,0
+Bangalore,JP Nagar,560081,12.984462,77.455012,Villa,2,898,4,17,25,1,freehold,19225,101,259,9.06,5.64,9.6,7.7,3.8,75,0,1,0.59,-4.8,0.37,22000.0,0
+Mumbai,Chembur,400066,19.049244,72.886267,Independent House,2,1100,1,25,32,1,freehold,27165,142,255,1.57,12.67,2.15,2.23,7.89,46,1,0,2.13,5.0,0.29,36300.0,0
+Pune,Hinjewadi,411024,18.575385,73.802164,Independent House,2,854,22,7,16,1,freehold,14115,44,134,5.26,13.48,12.97,1.32,5.1,86,0,1,1.71,-3.4,0.05,13450.0,0
+Mumbai,Chembur,400016,19.107929,72.774162,Apartment,3,1785,0,17,25,1,leasehold,21827,113,267,10.49,14.75,16.5,6.75,4.46,92,1,0,1.31,6.6,0.1,30400.0,0
+Mumbai,Powai,400066,19.196666,72.864004,Villa,2,1291,9,10,12,1,freehold,33879,80,220,3.3,6.09,16.1,3.77,6.55,49,0,1,1.36,5.0,0.03,41950.0,0
+Bangalore,Whitefield,560083,13.060169,77.597157,Villa,2,843,29,12,15,1,freehold,12536,12,101,6.78,5.69,17.19,4.08,2.92,85,1,0,0.77,-4.5,0.27,12450.0,0
+Chennai,Porur,600059,13.114555,80.336009,Villa,2,1110,29,13,15,1,freehold,12168,130,330,7.22,10.06,11.73,7.43,6.25,73,1,0,1.87,5.5,0.24,13250.0,0
+Chennai,Guindy,600107,13.021132,80.113479,Independent House,3,1462,7,4,6,1,freehold,11302,69,415,4.47,12.22,14.79,1.97,7.22,51,1,1,2.34,-6.6,0.12,10950.0,0
+Pune,Hinjewadi,411015,18.629006,73.821307,Apartment,3,1478,10,4,12,1,leasehold,9272,60,149,9.32,7.62,13.74,1.88,5.99,67,0,0,1.62,6.5,0.28,10900.0,0
+Mumbai,Andheri,400018,19.257316,72.807868,Villa,2,1381,17,3,9,1,freehold,33044,145,274,10.07,3.26,4.55,6.64,4.11,62,0,0,1.32,6.4,0.35,40050.0,0
+Chennai,T Nagar,600017,13.134716,80.189468,Apartment,3,1810,7,2,12,1,freehold,10749,74,219,8.39,10.7,1.83,6.98,7.75,44,0,1,1.24,-6.7,0.29,9150.0,0
+Pune,Magarpatta,411016,18.681078,73.896987,Independent House,1,415,1,11,18,1,freehold,6973,45,124,6.78,8.43,14.81,7.4,5.37,43,0,1,0.55,13.8,0.36,8800.0,0
+Pune,Viman Nagar,411003,18.684972,73.81963,Independent House,3,1382,28,18,26,1,freehold,6683,36,38,2.21,7.7,4.89,2.87,3.93,90,0,0,2.36,-7.4,0.32,7100.0,0
+Mumbai,Kandivali,400049,19.172776,72.921377,Independent House,3,1793,1,13,20,1,freehold,25986,150,90,11.04,2.18,2.8,4.96,7.25,62,0,1,1.32,-6.7,0.12,29950.0,0
+Chennai,Adyar,600030,13.02392,80.325771,Independent House,2,1381,1,1,5,1,freehold,8076,122,112,7.51,4.6,6.63,4.86,7.15,58,0,1,1.41,-5.2,0.06,8850.0,0
+Bangalore,Hebbal,560027,12.997972,77.620566,Villa,3,2179,7,15,20,1,freehold,12795,177,145,5.01,8.14,5.72,5.61,4.13,43,1,1,1.88,6.3,0.13,16800.0,0
+Mumbai,Powai,400067,18.992214,72.922573,Apartment,4,2251,11,24,27,0,freehold,26427,176,411,7.85,7.08,2.73,4.04,0.46,57,1,1,2.14,-6.1,0.13,29550.0,0
+Chennai,Tambaram,600064,12.905655,80.214776,Villa,4,2090,7,7,14,1,freehold,6856,179,176,10.43,0.95,15.38,7.5,7.3,88,1,1,2.1,5.6,0.31,9800.0,0
+Bangalore,JP Nagar,560056,13.146297,77.634784,Independent House,2,858,25,4,13,1,freehold,19107,83,459,7.19,14.87,10.93,3.45,5.81,89,1,0,2.42,2.7,0.4,21750.0,0
+Mumbai,Powai,400002,19.01228,72.90478,Villa,1,443,7,25,34,1,freehold,13265,167,160,8.43,5.74,13.35,6.28,6.52,78,0,0,1.04,7.2,0.34,19550.0,0
+Mumbai,Borivali,400060,18.906907,72.702661,Apartment,3,1667,15,21,30,1,freehold,14606,80,479,3.89,9.35,6.62,0.61,1.6,89,1,1,2.23,-5.1,0.26,17850.0,0
+Mumbai,Chembur,400007,18.993069,72.89638,Apartment,3,2000,16,15,25,1,freehold,19469,25,385,9.58,14.88,19.52,0.23,6.79,94,1,0,1.66,0.0,0.06,23350.0,0
+Hyderabad,Madhapur,500066,17.238725,78.381617,Independent House,3,1680,26,22,29,0,freehold,9638,46,32,3.37,5.23,15.87,2.75,3.38,81,1,1,2.38,-1.2,0.04,11450.0,0
+Bangalore,Whitefield,560038,13.172123,77.673562,Apartment,3,1408,19,7,13,1,freehold,16326,158,384,4.97,5.49,4.69,6.66,0.45,86,0,1,2.0,6.9,0.38,19200.0,0
+Mumbai,Chembur,400065,19.299125,72.889097,Independent House,3,1728,17,24,26,1,freehold,13685,165,261,8.96,10.06,10.65,2.6,1.72,76,1,0,1.09,10.4,0.39,18300.0,0
+Mumbai,Borivali,400041,19.199275,72.734625,Apartment,2,1255,23,14,20,0,freehold,14504,102,354,2.35,7.52,4.99,6.31,1.99,92,0,0,2.03,1.4,0.25,17000.0,0
+Mumbai,Chembur,400034,19.218342,72.802472,Apartment,2,883,13,14,23,1,freehold,32730,60,480,7.72,3.11,9.35,1.42,3.47,88,1,0,0.67,-7.2,0.19,38250.0,0
+Mumbai,Bandra,400017,19.105959,72.858793,Villa,2,1232,11,5,12,1,freehold,21613,40,192,7.14,13.51,18.02,4.77,5.01,86,0,0,1.95,0.2,0.2,24550.0,0
+Hyderabad,HITEC City,500056,17.344646,78.490842,Apartment,2,987,23,25,35,1,leasehold,6372,48,478,5.52,0.61,12.06,5.42,3.74,60,1,0,1.47,5.5,0.38,8650.0,0
+Pune,Wakad,411010,18.547988,73.709658,Independent House,3,1837,18,17,24,1,freehold,8923,46,41,5.92,12.3,14.83,7.91,1.84,73,1,1,0.61,-1.4,0.07,10300.0,0
+Bangalore,Sarjapur,560057,12.889453,77.450796,Villa,1,454,29,8,13,1,freehold,16334,53,34,1.89,9.18,1.28,7.14,4.4,52,0,1,2.15,-7.4,0.11,14900.0,0
+Chennai,Tambaram,600094,13.033447,80.137854,Villa,3,1602,29,4,6,1,freehold,10309,32,462,9.87,2.48,5.93,5.38,7.75,91,0,0,1.93,-0.5,0.22,10600.0,0
+Bangalore,Sarjapur,560081,13.094209,77.601624,Apartment,3,2023,22,11,12,1,leasehold,16540,91,117,8.12,12.7,13.39,7.03,0.48,80,0,0,0.69,0.7,0.38,17750.0,0
+Mumbai,Worli,400061,18.960573,72.944161,Independent House,3,1808,9,5,9,1,freehold,28918,64,21,5.15,6.8,10.07,4.93,5.74,42,1,1,1.69,6.5,0.12,35500.0,0
+Bangalore,Sarjapur,560068,13.062776,77.454019,Villa,3,2160,7,10,18,1,freehold,17795,101,298,7.1,7.47,2.38,0.99,7.07,88,1,1,2.44,-0.5,0.28,21700.0,0
+Pune,Kothrud,411015,18.686895,73.832123,Villa,3,2013,12,23,26,1,freehold,14014,163,230,7.85,10.46,1.06,2.22,1.88,94,1,0,1.58,-0.6,0.28,18250.0,0
+Hyderabad,Ameerpet,500057,17.4126,78.40428,Apartment,3,1574,15,24,28,1,leasehold,10054,124,229,7.37,3.71,17.57,4.33,6.28,47,1,0,1.67,-7.5,0.3,12750.0,0
+Hyderabad,Madhapur,500043,17.656114,78.606737,Independent House,3,1364,20,2,11,1,freehold,7572,147,222,6.51,12.97,4.97,6.43,7.3,61,1,0,1.56,-2.3,0.04,7850.0,0
+Pune,Kharadi,411004,18.55045,73.858269,Apartment,2,960,9,10,11,1,freehold,10051,18,159,3.59,11.37,16.35,3.09,3.33,92,1,0,0.56,3.6,0.29,14400.0,0
+Hyderabad,Gachibowli,500002,17.571326,78.516679,Apartment,2,897,23,19,26,1,freehold,10114,92,237,4.24,7.93,0.96,2.26,1.78,56,1,1,1.01,-5.9,0.39,10900.0,0
+Chennai,Anna Nagar,600062,12.985327,80.310864,Independent House,2,4200,12,1,9,1,leasehold,14955,37,251,7.55,3.75,19.52,3.24,2.01,63,1,0,1.75,-0.4,0.33,18000.0,1
+Pune,Hinjewadi,411018,18.450777,73.872966,Independent House,2,1055,2,5,12,1,freehold,9808,25,412,3.65,7.65,8.53,5.95,6.71,42,1,1,2.23,-1.8,0.11,12500.0,1
+Chennai,Chromepet,600070,13.049945,80.387843,Apartment,2,1129,1,23,31,1,leasehold,7334,36,237,9.3,10.64,7.83,6.08,1.46,87,0,0,0.81,12.0,0.07,6250.0,1
