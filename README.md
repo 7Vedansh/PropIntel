@@ -14,8 +14,8 @@ All results are returned via a clean FastAPI backend and an interactive Streamli
 ## Quick Start
 ```bash
 # Clone the repo
-git clone <repo-url>
-cd propintel-ai
+git clone <https://github.com/7Vedansh/PropIntel.git>
+cd propintel
 
 # Setup environment
 python -m venv venv
@@ -37,7 +37,7 @@ streamlit run chatbot/app.py   # http://127.0.0.1:8501
 
 ## Project Structure
 ```
-propintel-ai/
+propintel/
 ├─ data/
 │  ├─ generate_data.py          # Synthetic dataset generator
 │  └─ synthetic_properties.csv  # 500‑row sample dataset
