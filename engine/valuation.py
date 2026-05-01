@@ -82,3 +82,48 @@ def get_model_info() -> Dict:
     if metadata_path.exists():
         return joblib.load(metadata_path)
     return {"model_type": "Unknown", "version": "1.0.0"}
+
+    def explain_valuation(features: dict, predicted_sqft: float) -> dict:
+    base = features['circle_rate_sqft']
+    adjustments = []
+    
+    # Show each adjustment with direction and amount
+    metro_impact = max(0, (6 - features['metro_distance_km']) * 380)
+    if metro_impact > 0:
+        adjustments.append({
+            "factor": f"Metro proximity ({features['metro_distance_km']}km)",
+            "impact_per_sqft": f"+₹{metro_impact:.0f}",
+            "direction": "positive"
+        })
+    
+    age_impact = features['age_years'] * 130
+    adjustments.append({
+        "factor": f"Property age ({features['age_years']} years)",
+        "impact_per_sqft": f"-₹{age_impact:.0f}",
+        "direction": "negative"
+    })
+    
+    if features.get('govt_project_nearby'):
+        adjustments.append({
+            "factor": "Announced govt infrastructure nearby",
+            "impact_per_sqft": "+₹950",
+            "direction": "positive"
+        })
+    
+    if features.get('npa_zone'):
+        adjustments.append({
+            "factor": "High NPA locality risk",
+            "impact_per_sqft": "-₹600",
+            "direction": "negative"
+        })
+    
+    distress_discount = round((1 - (features.get('absorption_rate', 0.15) / 0.40)) * 18, 1)
+    distress_discount = max(10, min(22, distress_discount))
+    
+    return {
+        "base_anchor": f"Circle Rate: ₹{base}/sqft",
+        "ml_adjustment": f"Market premium: +{((predicted_sqft/base)-1)*100:.1f}%",
+        "key_adjustments": adjustments,
+        "distress_logic": f"Distress discount: {distress_discount}% (derived from absorption rate {features.get('absorption_rate', 0.15)*100:.0f}%/month)",
+        "final_per_sqft": f"₹{predicted_sqft:.0f}/sqft"
+    }

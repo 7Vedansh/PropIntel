@@ -94,6 +94,8 @@ def get_sample_properties():
             "age_years": 8,
             "floor": 7,
             "total_floors": 14,
+            "ownership_type": "freehold",
+            "has_rera": 1,
             "metro_distance_km": 1.2,
             "it_park_distance_km": 3.5,
             "school_distance_km": 0.8,
@@ -114,6 +116,8 @@ def get_sample_properties():
             "age_years": 22,
             "floor": 3,
             "total_floors": 5,
+            "ownership_type": "leasehold",
+            "has_rera": 0,
             "metro_distance_km": 12.5,
             "it_park_distance_km": 18.0,
             "school_distance_km": 4.5,
@@ -134,6 +138,8 @@ def get_sample_properties():
             "age_years": 5,
             "floor": 8,
             "total_floors": 15,
+            "ownership_type": "freehold",
+            "has_rera": 1,
             "metro_distance_km": 0.8,
             "it_park_distance_km": 2.0,
             "school_distance_km": 0.5,
@@ -235,6 +241,19 @@ with st.form("property_form"):
             "Property Type",
             options=["apartment", "villa", "independent_house"],
             index=0
+        )
+        
+        ownership_type = st.selectbox(
+            "Ownership Type",
+            options=["freehold", "leasehold"],
+            index=0,
+            help="Freehold or leasehold ownership"
+        )
+        
+        has_rera = st.checkbox(
+            "RERA Registered",
+            value=bool(sample.get('has_rera', 1)),
+            help="Is the property RERA registered?"
         )
         
         sqft = st.number_input(
@@ -394,6 +413,8 @@ if submitted:
         "floor": floor,
         "total_floors": total_floors,
         "property_type": property_type,
+        "ownership_type": ownership_type,
+        "has_rera": 1 if has_rera else 0,
         "furnishing": "semi",
         "parking": 1,
         "metro_distance_km": metro_distance_km,
