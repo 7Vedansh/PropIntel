@@ -330,7 +330,7 @@ with st.form("property_form"):
         }
         
         circle_rate_sqft = st.number_input(
-            f"Circle Rate (₹/sqft) - {city}: {circle_rate_hints.get(city, '5,000 - 20,000')}",
+            f"Circle Rate (Rs. /sqft) - {city}: {circle_rate_hints.get(city, '5,000 - 20,000')}",
             min_value=1000.0,
             max_value=100000.0,
             value=float(sample.get('circle_rate_sqft', 8200)),

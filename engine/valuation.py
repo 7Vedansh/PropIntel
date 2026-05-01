@@ -23,14 +23,14 @@ def format_currency(amount: float) -> str:
         amount: Amount in rupees
         
     Returns:
-        Formatted string (e.g., "₹85,000", "₹8.5L", "₹1.2Cr")
+        Formatted string (e.g., "Rs. 85,000", "Rs. 8.5L", "Rs. 1.2Cr")
     """
     if amount < 100000:
-        return f"₹{amount:,.0f}"
+        return f"Rs. {amount:,.0f}"
     elif amount < 10000000:
-        return f"₹{amount/100000:.1f}L"
+        return f"Rs. {amount/100000:.1f}L"
     else:
-        return f"₹{amount/10000000:.2f}Cr"
+        return f"Rs. {amount/10000000:.2f}Cr"
 
 def predict_value(features: Dict) -> Dict:
     """

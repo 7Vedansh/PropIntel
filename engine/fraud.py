@@ -64,7 +64,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
             flags.append({
                 "code": "BELOW_STATUTORY_FLOOR",
                 "severity": "HIGH",
-                "message": f"Claimed price ₹{claimed_price:.0f}/sqft is {((1 - claimed_price/circle_rate_sqft)*100):.0f}% below circle rate of ₹{circle_rate_sqft:.0f}/sqft",
+                "message": f"Claimed price Rs. {claimed_price:.0f}/sqft is {((1 - claimed_price/circle_rate_sqft)*100):.0f}% below circle rate of Rs. {circle_rate_sqft:.0f}/sqft",
                 "recommendation": "Investigate reason for significant discount; verify no legal/structural issues"
             })
     
