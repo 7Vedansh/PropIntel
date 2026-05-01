@@ -18,6 +18,10 @@ from engine.valuation import predict_value, format_currency
 from engine.liquidity import compute_liquidity
 from engine.fraud import detect_fraud
 from engine.confidence import compute_confidence
+from engine.geocoder import geocode_address
+from engine.proximity import get_nearby_amenities, _fallback_distances
+from data.circle_rate_db import get_circle_rate
+from engine.liquidity_v2 import compute_liquidity_v2
 
 # Initialize FastAPI
 app = FastAPI(
@@ -41,6 +45,7 @@ app.add_middleware(
 class PropertyInput(BaseModel):
     """Input model for property assessment"""
     
+    address: str = Field(..., description="Full property address", example="A-101, Signature Towers")
     locality: str = Field(..., description="Property locality/area name", example="Baner")
     city: str = Field(..., description="City name", example="Pune")
     bhk: int = Field(..., ge=1, le=4, description="Number of bedrooms (1-4)", example=2)
@@ -273,39 +278,71 @@ def health_check():
         "api_version": "1.0.0"
     }
 
-@app.post("/assess", response_model=AssessmentResponse)
+@app.post("/assess")
 def assess_property(property_input: PropertyInput):
     """
-    Comprehensive property assessment endpoint
-    
-    Returns valuation, liquidity analysis, fraud detection, and lending recommendation
+    Comprehensive property assessment endpoint with real intelligence layers
     """
     try:
         # Convert input to dictionary
         features = property_input.dict()
+
+        # STEP 1: Geocode address → real lat/long
+        geo = geocode_address(features["address"], features["city"])
+        features["latitude"] = geo["latitude"]
+        features["longitude"] = geo["longitude"]
+
+        # STEP 2: Get real distances from OSM
+        if geo["found"]:
+            proximity = get_nearby_amenities(geo["latitude"], geo["longitude"])
+        else:
+            proximity = _fallback_distances()
         
-        # Run all intelligence engines
+        # Merge proximity into features
+        features.update(proximity)
+
+        # STEP 3: Get REAL circle rate for this specific locality
+        circle_data = get_circle_rate(
+            features["locality"], 
+            features["city"],
+            "residential" if features.get("property_type") != "commercial" else "commercial"
+        )
+        features["circle_rate_sqft"] = circle_data["circle_rate_sqft"]
+        features["locality_zone"] = circle_data["zone"]
+
+        # STEP 4: Run all engines with real data
         valuation = predict_value(features)
-        liquidity = compute_liquidity(features)
+        liquidity = compute_liquidity_v2(features, proximity)
         fraud_flags = detect_fraud(features)
         confidence = compute_confidence(features, fraud_flags)
+        
+        # Generate existing required features for UI compatibility
         key_drivers = generate_key_drivers(features, valuation)
         lender_rec = generate_lender_recommendation(valuation, liquidity, confidence, fraud_flags)
-        
-        # Property summary
-        property_summary = f"{features['bhk']}BHK, {features['sqft']:.0f}sqft, {features['locality']}, {features['city']}"
-        
-        return AssessmentResponse(
-            property_summary=property_summary,
-            valuation=valuation,
-            liquidity=liquidity,
-            confidence=confidence,
-            fraud_flags=fraud_flags,
-            key_drivers=key_drivers,
-            lender_recommendation=lender_rec,
-            generated_at=datetime.now().isoformat(),
-            model_version="1.0.0"
-        )
+        doc_verification = {"status": "Pending", "message": "Manual verification required"}
+
+        return {
+            "property_summary": f"{features['bhk']}BHK, "
+                               f"{features.get('sqft', 0)}sqft, "
+                               f"{features['locality']}, {features['city']}",
+            "location_resolved": {
+                "latitude": geo.get("latitude"),
+                "longitude": geo.get("longitude"),
+                "circle_rate_zone": circle_data["zone"],
+                "circle_rate_sqft": circle_data["circle_rate_sqft"],
+                "locality_found_in_db": circle_data["locality_found"]
+            },
+            "proximity_data": proximity,
+            "valuation": valuation,
+            "liquidity": liquidity,
+            "confidence": confidence,
+            "fraud_flags": fraud_flags,
+            "document_verification": doc_verification,
+            "key_drivers": key_drivers,
+            "lender_recommendation": lender_rec,
+            "generated_at": datetime.now().isoformat(),
+            "model_version": "2.0.0"
+        }
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Assessment error: {str(e)}")
