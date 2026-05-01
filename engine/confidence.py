@@ -19,7 +19,7 @@ def compute_confidence(features: Dict, fraud_flags: List[Dict]) -> Dict:
     
     # 1. Data Completeness Score (40% weight)
     critical_fields = [
-        'age_years', 'floor', 'builder_score', 'absorption_rate',
+        'age_years', 'floor_number', 'builder_score', 'absorption_rate',
         'metro_distance_km', 'circle_rate_sqft', 'price_trend_6m', 
         'supply_demand_ratio'
     ]
@@ -32,7 +32,7 @@ def compute_confidence(features: Dict, fraud_flags: List[Dict]) -> Dict:
             if field in ['govt_project_nearby', 'npa_zone']:
                 # Binary fields - any value is valid
                 complete_count += 1
-            elif value != 0 or field == 'floor':  # Floor can legitimately be 0
+            elif value != 0 or field == 'floor_number':  # Floor can legitimately be 0
                 complete_count += 1
     
     data_completeness = complete_count / len(critical_fields)

@@ -4,7 +4,7 @@ import time
 def geocode_address(address: str, city: str) -> dict:
     """
     Convert address to lat/long using OpenStreetMap Nominatim.
-    Completely free. No API key needed.
+    Includes timeout and error handling.
     """
     query = f"{address}, {city}, India"
     
@@ -16,19 +16,25 @@ def geocode_address(address: str, city: str) -> dict:
         "countrycodes": "in"
     }
     headers = {
-        "User-Agent": "PropIntelAI/1.0 (propintel@pict.edu)"  # Required by Nominatim
+        "User-Agent": "PropIntelAI/1.0 (propintel@pict.edu)"
     }
     
-    response = requests.get(url, params=params, headers=headers)
-    time.sleep(1)  # Nominatim rate limit: 1 request/second
-    
-    if response.status_code == 200 and response.json():
-        result = response.json()[0]
-        return {
-            "latitude": float(result["lat"]),
-            "longitude": float(result["lon"]),
-            "display_name": result["display_name"],
-            "found": True
-        }
-    
+    try:
+        response = requests.get(url, params=params, headers=headers, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        time.sleep(1)
+        
+        if data:
+            result = data[0]
+            return {
+                "latitude": float(result["lat"]),
+                "longitude": float(result["lon"]),
+                "display_name": result["display_name"],
+                "found": True
+            }
+    except (requests.RequestException, ValueError, KeyError, IndexError):
+        pass
+        
     return {"latitude": None, "longitude": None, "found": False}

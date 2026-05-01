@@ -5,6 +5,49 @@ Rule-based anomaly detection for property data validation
 
 from typing import Dict, List
 
+def assess_legal_risk(features: dict) -> dict:
+        risk_score = 0
+        flags = []
+        
+        if features.get('ownership_type') == 'leasehold':
+            risk_score += 30
+            flags.append({
+                "code": "LEASEHOLD_TITLE",
+                "severity": "HIGH",
+                "message": "Leasehold property — verify lease term remaining",
+                "recommendation": "Check lease expiry date. Avoid if < 30 years remaining."
+            })
+        
+        if not features.get('has_rera'):
+            risk_score += 20
+            flags.append({
+                "code": "NO_RERA_REGISTRATION",
+                "severity": "MEDIUM", 
+                "message": "Project not RERA registered",
+                "recommendation": "Higher title risk. Request additional ownership documents."
+            })
+        
+        if features.get('ownership_type') == 'disputed':
+            risk_score += 50
+            flags.append({
+                "code": "DISPUTED_TITLE",
+                "severity": "HIGH",
+                "message": "Disputed ownership detected",
+                "recommendation": "REJECT — do not proceed without legal clearance."
+            })
+        
+        legal_risk_grade = (
+            "HIGH" if risk_score >= 40 else
+            "MEDIUM" if risk_score >= 20 else
+            "LOW"
+        )
+        
+        return {
+            "legal_risk_score": risk_score,
+            "legal_risk_grade": legal_risk_grade,
+            "legal_flags": flags
+        }
+
 def detect_fraud(features: Dict) -> List[Dict]:
     """
     Detect potential fraud or data anomalies using rule-based checks
@@ -18,17 +61,17 @@ def detect_fraud(features: Dict) -> List[Dict]:
     flags = []
     
     # Extract features
-    bhk = features['bhk']
-    sqft = features['sqft']
-    circle_rate_sqft = features['circle_rate_sqft']
-    floor = features['floor']
-    total_floors = features['total_floors']
-    age_years = features['age_years']
-    builder_score = features['builder_score']
-    absorption_rate = features['absorption_rate']
-    price_trend_6m = features['price_trend_6m']
-    npa_zone = features['npa_zone']
-    supply_demand_ratio = features['supply_demand_ratio']
+    bhk = features.get('bhk')
+    sqft = features.get('carpet_area_sqft')
+    circle_rate_sqft = features.get('circle_rate_sqft')
+    floor = features.get('floor_number')
+    total_floors = features.get('total_floors')
+    age_years = features.get('age_years')
+    builder_score = features.get('builder_score')
+    absorption_rate = features.get('absorption_rate')
+    price_trend_6m = features.get('price_trend_6m')
+    npa_zone = features.get('npa_zone')
+    supply_demand_ratio = features.get('supply_demand_ratio')
     
     # RULE 1: Size Sanity Check
     size_ranges = {
@@ -38,7 +81,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
         4: (2000, 4000)
     }
     
-    if bhk in size_ranges:
+    if bhk in size_ranges and sqft is not None:
         min_sqft, max_sqft = size_ranges[bhk]
         
         if sqft > max_sqft * 2.2:
@@ -57,8 +100,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
             })
     
     # RULE 2: Price vs Circle Rate
-    # Valuation significantly below government rate is suspicious
-    if 'actual_price_sqft' in features:
+    if 'actual_price_sqft' in features and circle_rate_sqft is not None:
         claimed_price = features['actual_price_sqft']
         if claimed_price < circle_rate_sqft * 0.75:
             flags.append({
@@ -69,7 +111,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
             })
     
     # RULE 3: Floor vs Building Height
-    if floor > total_floors:
+    if floor is not None and total_floors is not None and floor > total_floors:
         flags.append({
             "code": "FLOOR_EXCEEDS_BUILDING",
             "severity": "HIGH",
@@ -78,7 +120,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
         })
     
     # RULE 4: Age vs Condition Consistency
-    if age_years < 3 and builder_score < 45:
+    if age_years is not None and builder_score is not None and age_years < 3 and builder_score < 45:
         flags.append({
             "code": "NEW_PROPERTY_LOW_BUILDER_SCORE",
             "severity": "MEDIUM",
@@ -87,7 +129,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
         })
     
     # RULE 5: Absorption vs Price Trend Conflict
-    if absorption_rate < 0.05 and price_trend_6m > 10:
+    if absorption_rate is not None and price_trend_6m is not None and absorption_rate < 0.05 and price_trend_6m > 10:
         flags.append({
             "code": "MARKET_SIGNAL_CONFLICT",
             "severity": "MEDIUM",
@@ -96,7 +138,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
         })
     
     # RULE 6: NPA Zone with High Demand Claims
-    if npa_zone == 1 and supply_demand_ratio < 0.6:
+    if npa_zone == 1 and supply_demand_ratio is not None and supply_demand_ratio < 0.6:
         flags.append({
             "code": "NPA_ZONE_DEMAND_CONFLICT",
             "severity": "MEDIUM",
@@ -105,7 +147,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
         })
     
     # RULE 7: Extreme Age
-    if age_years > 50:
+    if age_years is not None and age_years > 50:
         flags.append({
             "code": "VERY_OLD_PROPERTY",
             "severity": "LOW",
@@ -123,24 +165,12 @@ def detect_fraud(features: Dict) -> List[Dict]:
         })
     
     # RULE 9: Very High Floor
-    if floor > 15 and total_floors - floor > 10:
-        # High floor but not a top floor
+    if floor is not None and total_floors is not None and floor > 15 and total_floors - floor > 10:
         flags.append({
             "code": "HIGH_FLOOR_MIDDLE",
             "severity": "LOW",
             "message": f"High floor ({floor}) in very tall building ({total_floors} floors)",
             "recommendation": "Verify elevator access and premium justification"
-        
-        })
-
-    # Legal risk scoring
-    def assess_legal_risk(features: dict) -> dict:
-        risk_score = 0
-        flags = []
-        
-        if features.get('ownership_type') == 'leasehold':
-            risk_score += 30
-            flags.append({
                 "code": "LEASEHOLD_TITLE",
                 "severity": "HIGH",
                 "message": "Leasehold property — verify lease term remaining",
