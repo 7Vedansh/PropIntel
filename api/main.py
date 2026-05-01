@@ -57,7 +57,7 @@ class PropertyInput(BaseModel):
     parking: int = Field(default=1, ge=0, le=5, description="Number of parking spots", example=1)
     ownership_type: str = Field(default="freehold", description="Ownership type", example="freehold")
     has_rera: int = Field(default=1, ge=0, le=1, description="RERA registration (0/1)", example=1)
-    has_lift: Optional[bool] = Field(default=True, description="Lift availability", example=true)
+    has_lift: Optional[bool] = Field(default=True, description="Lift availability", example=True)
     metro_distance_km: Optional[float] = Field(None, ge=0.1, le=20, description="Distance to nearest metro (km)", example=1.2)
     it_park_distance_km: Optional[float] = Field(None, ge=0.1, le=30, description="Distance to IT park (km)", example=3.5)
     school_distance_km: Optional[float] = Field(None, ge=0.1, le=10, description="Distance to school (km)", example=0.8)
@@ -92,7 +92,7 @@ class PropertyInput(BaseModel):
                 "parking": 1,
                 "ownership_type": "freehold",
                 "has_rera": 1,
-                "has_lift": true,
+                "has_lift": True,
                 "metro_distance_km": 1.2,
                 "it_park_distance_km": 3.5,
                 "school_distance_km": 0.8,

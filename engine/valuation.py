@@ -123,7 +123,7 @@ def get_model_info() -> Dict:
         return joblib.load(metadata_path)
     return {"model_type": "Unknown", "version": "1.0.0"}
 
-    def explain_valuation(features: dict, predicted_sqft: float) -> dict:
+def explain_valuation(features: dict, predicted_sqft: float) -> dict:
     base = features['circle_rate_sqft']
     adjustments = []
     

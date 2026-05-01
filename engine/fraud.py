@@ -171,40 +171,7 @@ def detect_fraud(features: Dict) -> List[Dict]:
             "severity": "LOW",
             "message": f"High floor ({floor}) in very tall building ({total_floors} floors)",
             "recommendation": "Verify elevator access and premium justification"
-                "code": "LEASEHOLD_TITLE",
-                "severity": "HIGH",
-                "message": "Leasehold property — verify lease term remaining",
-                "recommendation": "Check lease expiry date. Avoid if < 30 years remaining."
-            })
-        
-        if not features.get('has_rera'):
-            risk_score += 20
-            flags.append({
-                "code": "NO_RERA_REGISTRATION",
-                "severity": "MEDIUM", 
-                "message": "Project not RERA registered",
-                "recommendation": "Higher title risk. Request additional ownership documents."
-            })
-        
-        if features.get('ownership_type') == 'disputed':
-            risk_score += 50
-            flags.append({
-                "code": "DISPUTED_TITLE",
-                "severity": "HIGH",
-                "message": "Disputed ownership detected",
-                "recommendation": "REJECT — do not proceed without legal clearance."
-            })
-        
-        legal_risk_grade = (
-            "HIGH" if risk_score >= 40 else
-            "MEDIUM" if risk_score >= 20 else
-            "LOW"
-        )
-        
-        return {
-            "legal_risk_score": risk_score,
-            "legal_risk_grade": legal_risk_grade,
-            "legal_flags": flags
-        }
-        
+        })
+
+    # End of fraud checks – return collected flags
     return flags
