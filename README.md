@@ -264,4 +264,4 @@ Interactive Swagger documentation.
 
 **Vedansh** - [GitHub](https://github.com/7Vedansh)
 
-Team TE-08, PICT Pune | Poonawalla Fincorp AI Hackathon
+Team Arjuna
