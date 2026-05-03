@@ -3,9 +3,26 @@
 **Collateral Intelligence Engine for NBFC Lending**
 
 An AI-powered system that transforms property collateral assessment from a 10-day manual process into a 2-second intelligent decision. Built for Indian NBFCs and lending institutions.
+<hr>
+<h2 align="center"> Languages & Frameworks & Tools</h2>
+<br>
+<p align="center">
+<code><img title="Python" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
+<code><img title="Machine Learning" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"></code>
+<code><img title="TensorFlow" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"></code>
+<code><img title="NumPy" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"></code>
+<code><img title="Pandas" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"></code>
+<code><img title="Scikit-Learn" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"></code>
+<code><img title="FastAPI" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"></code>
+<code><img title="Uvicorn" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
+<code><img title="Pydantic" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
+<code><img title="Streamlit" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"></code>
+<code><img title="Docker" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"></code>
+<code><img title="OpenStreetMap" height="35" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg"></code>
+<code><img title="Joblib" height="35" src="https://img.icons8.com/color/48/artificial-intelligence.png"></code>
 
----
-
+</p>
+<hr>
 ## Overview
 
 ### The Problem
@@ -166,29 +183,14 @@ PropIntel/
 | Decision consistency | Varies by valuator | Standardized AI output |
 | Scalability | Limited by manpower | Unlimited concurrent assessments |
 
----
-<hr>
-<h2 align="center"> Languages & Frameworks & Tools</h2>
-<br>
-<p align="center">
-<code><img title="Python" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
-<code><img title="Machine Learning" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"></code>
-<code><img title="TensorFlow" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"></code>
-<code><img title="NumPy" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"></code>
-<code><img title="Pandas" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"></code>
-<code><img title="Scikit-Learn" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"></code>
-<code><img title="FastAPI" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"></code>
-<code><img title="Uvicorn" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
-<code><img title="Pydantic" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
-<code><img title="Streamlit" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"></code>
-<code><img title="Docker" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"></code>
-<code><img title="OpenStreetMap" height="35" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg"></code>
-<code><img title="Tesseract OCR" height="35" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Tesseract_Logo.svg"></code>
-<code><img title="NLP" height="35" src="https://img.icons8.com/external-flat-juicy-fish/60/external-nlp-artificial-intelligence-flat-flat-juicy-fish.png"></code>
-<code><img title="Joblib" height="35" src="https://img.icons8.com/color/48/artificial-intelligence.png"></code>
 
-</p>
-<hr>
+<img width="1921" height="972" alt="image" src="https://github.com/user-attachments/assets/b9da085f-4cd9-40e7-94cf-7e79c61ede19" />
+<img width="1921" height="878" alt="image" src="https://github.com/user-attachments/assets/356a05c6-a1f4-4274-b6fb-8150a7592c1b" />
+<img width="1449" height="611" alt="image" src="https://github.com/user-attachments/assets/37c718fe-ca55-4427-a792-a09da5a8161e" />
+<img width="1226" height="636" alt="image" src="https://github.com/user-attachments/assets/b773bc34-5495-4006-b5ff-aaa71f1f2974" />
+<img width="1217" height="675" alt="image" src="https://github.com/user-attachments/assets/f769340b-19c2-47b3-aa0e-b16c27a2e897" />
+<img width="1188" height="679" alt="image" src="https://github.com/user-attachments/assets/e988b447-f1ec-4c8c-bdee-b284bf2d17de" />
+
 ## Author
 
 **Vedansh & Ameya** - [GitHub](https://github.com/7Vedansh)
