@@ -152,6 +152,80 @@ div.stDownloadButton > button:hover { background: var(--cglow) !important; }
 
 /* Number input buttons */
 button[data-testid="baseButton-secondary"] { background: var(--surface2) !important; border: 1px solid var(--border) !important; color: var(--muted) !important; }
+
+/* ════════════════════════════════════════ ANIMATIONS ════════════════════════════════════════ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: var(--progress-width, 100%); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orb {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.7; }
+}
+
+@keyframes flt {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.3; }
+  50% { transform: translateX(-50%) translateY(-5px); opacity: 0.6; }
+}
+
+@keyframes cardSlideIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 0 16px rgba(0, 212, 255, 0.4); }
+}
+
+/* Animation utility classes */
+.fade-in-up { animation: fadeInUp 0.6s ease-out; }
+.slide-in-left { animation: slideInLeft 0.6s ease-out; }
+.slide-in-right { animation: slideInRight 0.6s ease-out; }
+.scale-in { animation: scaleIn 0.5s ease-out; }
+.card-slide-in { animation: cardSlideIn 0.5s ease-out forwards; }
+.glow-pulse { animation: glowPulse 2s ease-in-out infinite; }
+
+.card-slide-in:nth-child(1) { animation-delay: 0ms; }
+.card-slide-in:nth-child(2) { animation-delay: 100ms; }
+.card-slide-in:nth-child(3) { animation-delay: 200ms; }
+.card-slide-in:nth-child(4) { animation-delay: 300ms; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -215,9 +289,11 @@ st.markdown(f"""
 # FORM HEADER
 # ══════════════════════════════════════════════════════════════════════════════
 st.markdown("""
-<div style="background:#0d0d12;padding:64px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);">
-  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.7;margin-bottom:10px;text-transform:uppercase;">Step 01 — Property Input</div>
-  <div style="font-family:'Playfair Display',Georgia,serif;font-size:34px;font-weight:400;color:#f0eeea;margin-bottom:8px;letter-spacing:-0.5px;">Enter Property Details</div>
+<div style="background:#0d0d12;padding:64px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);animation:fadeInUp 0.8s ease-out 0.3s both;">
+  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;
+    opacity:0.7;margin-bottom:10px;text-transform:uppercase;">Step 01 — Property Input</div>
+  <div style="font-family:'Playfair Display',Georgia,serif;font-size:34px;font-weight:400;color:#f0eeea;
+    margin-bottom:8px;letter-spacing:-0.5px;">Enter Property Details</div>
   <p style="font-size:14px;color:rgba(240,238,234,0.45);margin-bottom:36px;max-width:540px;line-height:1.7;">
     Enter the address and basic property details. Market signals, builder scores, and demand metrics are auto-computed by the intelligence engine.
   </p>
@@ -230,18 +306,24 @@ st.markdown("""
 with st.container():
     qc1, qc2, qc3, _ = st.columns([1.2, 1.4, 1.2, 8])
     with qc1:
-        if st.button("⚡ Baner 2BHK"):
+        if st.button("⚡ Baner 2BHK", key="btn_baner"):
             st.session_state.sample = "baner"; st.rerun()
     with qc2:
-        if st.button("⚠ Wagholi 3BHK"):
+        if st.button("⚠ Wagholi 3BHK", key="btn_wagholi"):
             st.session_state.sample = "wagholi"; st.rerun()
     with qc3:
-        if st.button("✕ Fraud Case"):
+        if st.button("✕ Fraud Case", key="btn_fraud"):
             st.session_state.sample = "fraud"; st.rerun()
+    
+st.markdown("<div style='height:12px'></div>", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # FORM
 # ══════════════════════════════════════════════════════════════════════════════
+st.markdown("""
+<div style="animation:fadeInUp 0.8s ease-out 0.4s both;">
+""", unsafe_allow_html=True)
+
 with st.form("assessment_form"):
     # Row 1: Address + Locality
     c1, c2 = st.columns([4, 1])
@@ -275,7 +357,9 @@ with st.form("assessment_form"):
     with o2:
         lift  = st.checkbox("Has Lift", value=bool(s.get("lift",True)))
 
-    submitted = st.form_submit_button("Analyse Collateral →")
+    submitted = st.form_submit_button("Analyse Collateral →", use_container_width=False)
+
+st.markdown("</div>", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # HANDLE SUBMISSION
@@ -293,7 +377,28 @@ if submitted:
         "govt_project_nearby": 0, "npa_zone": 0,
         "absorption_rate": 0.18, "supply_demand_ratio": 1.0, "price_trend_6m": 5.0,
     }
-    with st.spinner("Analysing across 6 intelligence layers..."):
+    
+    # Show advanced loading screen with 6 analysis layers
+    loading_html = """
+<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#050508;text-align:center;padding:60px 40px;">
+  <div style="position:relative;width:100%;max-width:500px;">
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:36px;color:#00d4ff;margin-bottom:8px;letter-spacing:-1px;animation:fadeInUp 0.6s ease-out;">Analysing Property</div>
+    <div style="font-size:14px;color:rgba(240,238,234,0.45);margin-bottom:48px;letter-spacing:0.5px;animation:fadeInUp 0.8s ease-out 0.2s both;">Running through 6 intelligence layers...</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="animation:fadeInUp 0.5s ease-out 0.2s forwards;display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(0,212,255,0.04);border-radius:6px;border:1px solid rgba(0,212,255,0.15);"><div style="width:20px;height:20px;border-radius:50%;background:#00d4ff;display:flex;align-items:center;justify-content:center;color:#000;font-size:10px;font-weight:bold;">1</div><span style="flex:1;text-align:left;font-size:12px;color:rgba(240,238,234,0.7);">Location & Geocoding</span><span style="font-size:11px;color:#00d4ff;font-family:'Space Mono',monospace;">●●●</span></div>
+      <div style="animation:fadeInUp 0.5s ease-out 0.4s forwards;display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(0,212,255,0.04);border-radius:6px;border:1px solid rgba(0,212,255,0.15);"><div style="width:20px;height:20px;border-radius:50%;background:#00d4ff;display:flex;align-items:center;justify-content:center;color:#000;font-size:10px;font-weight:bold;">2</div><span style="flex:1;text-align:left;font-size:12px;color:rgba(240,238,234,0.7);">Valuation Engine</span><span style="font-size:11px;color:#00d4ff;font-family:'Space Mono',monospace;">●●●</span></div>
+      <div style="animation:fadeInUp 0.5s ease-out 0.6s forwards;display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(0,212,255,0.04);border-radius:6px;border:1px solid rgba(0,212,255,0.15);"><div style="width:20px;height:20px;border-radius:50%;background:#00d4ff;display:flex;align-items:center;justify-content:center;color:#000;font-size:10px;font-weight:bold;">3</div><span style="flex:1;text-align:left;font-size:12px;color:rgba(240,238,234,0.7);">Liquidity Analysis</span><span style="font-size:11px;color:#00d4ff;font-family:'Space Mono',monospace;">●●●</span></div>
+      <div style="animation:fadeInUp 0.5s ease-out 0.8s forwards;display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(0,212,255,0.04);border-radius:6px;border:1px solid rgba(0,212,255,0.15);"><div style="width:20px;height:20px;border-radius:50%;background:#00d4ff;display:flex;align-items:center;justify-content:center;color:#000;font-size:10px;font-weight:bold;">4</div><span style="flex:1;text-align:left;font-size:12px;color:rgba(240,238,234,0.7);">Proximity Intelligence</span><span style="font-size:11px;color:#00d4ff;font-family:'Space Mono',monospace;">●●●</span></div>
+      <div style="animation:fadeInUp 0.5s ease-out 1s forwards;display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(0,212,255,0.04);border-radius:6px;border:1px solid rgba(0,212,255,0.15);"><div style="width:20px;height:20px;border-radius:50%;background:#00d4ff;display:flex;align-items:center;justify-content:center;color:#000;font-size:10px;font-weight:bold;">5</div><span style="flex:1;text-align:left;font-size:12px;color:rgba(240,238,234,0.7);">Fraud Detection</span><span style="font-size:11px;color:#00d4ff;font-family:'Space Mono',monospace;">●●●</span></div>
+      <div style="animation:fadeInUp 0.5s ease-out 1.2s forwards;display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(0,212,255,0.04);border-radius:6px;border:1px solid rgba(0,212,255,0.15);"><div style="width:20px;height:20px;border-radius:50%;background:#00d4ff;display:flex;align-items:center;justify-content:center;color:#000;font-size:10px;font-weight:bold;">6</div><span style="flex:1;text-align:left;font-size:12px;color:rgba(240,238,234,0.7);">Confidence Scoring</span><span style="font-size:11px;color:#00d4ff;font-family:'Space Mono',monospace;">●●●</span></div>
+    </div>
+    <div style="margin-top:36px;display:flex;justify-content:center;align-items:center;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:#00d4ff;animation:pulse 1.5s ease-in-out infinite;"></span><span style="font-size:12px;color:rgba(240,238,234,0.5);font-family:'Space Mono',monospace;">Processing analysis...</span></div>
+  </div>
+</div>
+"""
+    st.markdown(loading_html, unsafe_allow_html=True)
+    
+    with st.spinner("Running backend analysis..."):
         try:
             resp = requests.post(f"{API_URL}/assess", json=payload, timeout=60)
         except requests.exceptions.ConnectionError:
@@ -322,17 +427,18 @@ if st.session_state.results:
     _city     = fv.get("city", city)
     _own      = fv.get("own", own)
 
-    # Derive market intelligence from API response (no longer from user sliders)
-    _npa      = r.get("location_resolved", {}).get("circle_rate_zone", "") == "developing"
-    _sp_raw   = liq.get("supply_pressure", "60%")
-    _sp_val   = float(_sp_raw.replace("%","")) / 100.0 if isinstance(_sp_raw, str) else 0.6
-    _sdr      = 0.4 + _sp_val * 2.1  # Map supply pressure 0-100% to S/D ratio 0.4-2.5
-    _trend    = float(liq.get("absorption_rate_pct", "18%").replace("%","")) * 0.3 if liq.get("absorption_rate_pct") else 5.0
-
+    # Extract core results before deriving metrics
     val   = r["valuation"];  liq   = r["liquidity"]
     conf  = r["confidence"]; fraud = r["fraud_flags"]
     loc   = r["location_resolved"]; prox = r["proximity_data"]
     rec   = r["lender_recommendation"]; drivers = r.get("key_drivers", [])
+
+    # Derive market intelligence from API response (no longer from user sliders)
+    _npa      = loc.get("circle_rate_zone", "") == "developing"
+    _sp_raw   = liq.get("supply_pressure", "60%")
+    _sp_val   = float(_sp_raw.replace("%","")) / 100.0 if isinstance(_sp_raw, str) else 0.6
+    _sdr      = 0.4 + _sp_val * 2.1  # Map supply pressure 0-100% to S/D ratio 0.4-2.5
+    _trend    = float(liq.get("absorption_rate_pct", "18%").replace("%","")) * 0.3 if liq.get("absorption_rate_pct") else 5.0
 
     decision   = rec["decision"]
     dec_cls    = decision.lower()
@@ -520,85 +626,175 @@ if st.session_state.results:
 
     # ── RENDER RESULTS HEADER ─────────────────────────────────────────────────
     st.markdown(f"""
-<div style="background:#050508;padding:64px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);">
-  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.7;margin-bottom:10px;text-transform:uppercase;">Step 02 — Intelligence Report</div>
-  <div style="font-family:'Playfair Display',Georgia,serif;font-size:34px;font-weight:400;color:#f0eeea;margin-bottom:32px;letter-spacing:-0.5px;">{_bhk}BHK &middot; {_locality.title()}, {_city}</div>
+<div style="background:#050508;padding:40px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);">
+  <!-- BREADCRUMB NAVIGATION -->
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:32px;
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="width:24px;height:24px;border-radius:50%;background:rgba(0,212,255,0.15);
+        border:1px solid rgba(0,212,255,0.3);display:flex;align-items:center;justify-content:center;
+        color:#00d4ff;font-weight:bold;animation:fadeInUp 0.4s ease-out;">✓</span>
+      <span style="color:#00d4ff;">STEP 01: INPUT</span>
+    </div>
+    <span style="color:rgba(255,255,255,0.2);">→</span>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="width:24px;height:24px;border-radius:50%;background:#00d4ff;
+        display:flex;align-items:center;justify-content:center;color:#000;font-weight:bold;
+        animation:scaleIn 0.5s ease-out 0.2s both;">●</span>
+      <span style="color:#00d4ff;">STEP 02: REPORT</span>
+    </div>
+    <span style="color:rgba(255,255,255,0.2);">→</span>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.1);
+        border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;
+        color:rgba(240,238,234,0.45);font-weight:bold;">3</span>
+      <span style="color:rgba(240,238,234,0.45);">STEP 03: EXPORT</span>
+    </div>
+  </div>
 
-  <!-- DECISION BANNER -->
+  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;
+    opacity:0.7;margin-bottom:10px;text-transform:uppercase;animation:fadeInUp 0.5s ease-out 0.1s both;">
+    Step 02 — Intelligence Report
+  </div>
+  <div style="font-family:'Playfair Display',Georgia,serif;font-size:34px;font-weight:400;color:#f0eeea;
+    margin-bottom:32px;letter-spacing:-0.5px;animation:fadeInUp 0.6s ease-out 0.2s both;">
+    {_bhk}BHK &middot; {_locality.title()}, {_city}
+  </div>
+
+  <!-- QUICK DECISION BANNER -->
   <div style="max-width:920px;margin-bottom:32px;border-radius:8px;padding:28px 32px;
     display:flex;align-items:center;justify-content:space-between;
-    background:{dec_bg[decision]};border:1px solid {dec_bdr[decision]};">
+    background:{dec_bg[decision]};border:1px solid {dec_bdr[decision]};
+    animation:slideInUp 0.7s ease-out 0.3s both;">
     <div style="display:flex;align-items:center;gap:18px;">
-      <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;
-        background:{dec_dot[decision]};box-shadow:0 0 12px {dec_glow[decision]};"></div>
+      <div style="width:12px;height:12px;border-radius:50%;flex-shrink:0;
+        background:{dec_dot[decision]};box-shadow:0 0 16px {dec_glow[decision]};
+        animation:glowPulse 2s ease-in-out infinite;"></div>
       <div>
         <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;
-          text-transform:uppercase;color:{dec_dot[decision]};margin-bottom:4px;">{dec_labels[decision]}</div>
+          text-transform:uppercase;color:{dec_dot[decision]};margin-bottom:4px;">
+          {dec_labels[decision]}
+        </div>
         <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;">
           Safe Loan: {rec.get('safe_loan_display','—')}
         </div>
       </div>
     </div>
-    <div style="font-family:'Space Mono',monospace;font-size:11px;color:rgba(240,238,234,0.45);">
-      Confidence: {conf_pct} &nbsp;&middot;&nbsp; LTV: {rec.get('ltv_ratio','—')}
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:rgba(240,238,234,0.45);text-align:right;">
+      <div>Confidence: {conf_pct}</div>
+      <div>LTV: {rec.get('ltv_ratio','—')}</div>
     </div>
   </div>
 
   <!-- RISK PILLS -->
-  <div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:40px;">
+  <div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:40px;animation:fadeInUp 0.8s ease-out 0.4s both;">
     {pill(fraud_risk, f"Fraud Risk: {fraud_lbl}")}
     {pill(own_risk,   f"Legal Risk: {own_lbl}")}
     {pill(supply_risk,f"Supply Pressure: {supply_lbl}")}
     {pill(npa_risk,   f"NPA Zone: {npa_lbl}")}
   </div>
+</div>
 
-  <!-- METRIC CARDS -->
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:920px;margin-bottom:48px;">
-    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+<!-- METRICS CARDS WITH STAGGERED ANIMATION -->
+<div style="background:#050508;padding:0 56px 48px 56px;">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:920px;">
+    <div class="card-slide-in" style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);
+      border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;opacity:0;">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#00d4ff;"></div>
-      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Market Value</div>
-      <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#f0eeea;line-height:1.2;margin-bottom:6px;">{val.get('market_value_display','—')}</div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;
+        font-family:'Space Mono',monospace;margin-bottom:12px;">Market Value</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#f0eeea;
+        line-height:1.2;margin-bottom:6px;">{val.get('market_value_display','—')}</div>
       <div style="font-size:11px;color:rgba(240,238,234,0.45);">&#8377;{pps:,.0f} per sqft</div>
-      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;margin-top:6px;background:rgba(0,212,255,0.1);color:#00d4ff;">Distress: {val.get('distress_value_display','—')}</div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;
+        font-family:'Space Mono',monospace;text-transform:uppercase;margin-top:6px;
+        background:rgba(0,212,255,0.1);color:#00d4ff;">Distress: {val.get('distress_value_display','—')}</div>
     </div>
-    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+    
+    <div class="card-slide-in" style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);
+      border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;opacity:0;">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#00e5a0;"></div>
-      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Resale Index</div>
-      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;margin-bottom:4px;">{ri} <span style="font-size:14px;color:rgba(240,238,234,0.45)">/100</span></div>
-      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(0,229,160,0.1);color:#00e5a0;">{grade} Liquidity</div>
-      <div style="font-size:11px;color:rgba(240,238,234,0.45);margin-top:6px;">{liq.get('absorption_rate_pct','—')} monthly absorption</div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;
+        font-family:'Space Mono',monospace;margin-bottom:12px;">Resale Index</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;
+        line-height:1.1;margin-bottom:4px;">{ri} <span style="font-size:14px;color:rgba(240,238,234,0.45)">/100</span></div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;
+        font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(0,229,160,0.1);
+        color:#00e5a0;">{grade} Liquidity</div>
+      <div style="font-size:11px;color:rgba(240,238,234,0.45);margin-top:6px;">
+        {liq.get('absorption_rate_pct','—')} monthly absorption
+      </div>
     </div>
-    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+    
+    <div class="card-slide-in" style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);
+      border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;opacity:0;">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#f5a623;"></div>
-      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Time to Sell</div>
-      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;margin-bottom:4px;">{liq.get('time_to_sell_display','—')}</div>
-      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(245,166,35,0.1);color:#f5a623;">Expected Resale</div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;
+        font-family:'Space Mono',monospace;margin-bottom:12px;">Time to Sell</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;
+        line-height:1.1;margin-bottom:4px;">{liq.get('time_to_sell_display','—')}</div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;
+        font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(245,166,35,0.1);
+        color:#f5a623;">Expected Resale</div>
     </div>
-    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+    
+    <div class="card-slide-in" style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);
+      border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;opacity:0;">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:rgba(0,212,255,0.4);"></div>
-      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Confidence</div>
-      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;margin-bottom:4px;">{conf_pct}</div>
-      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(0,212,255,0.1);color:#00d4ff;">{conf_lbl}</div>
-      <div style="font-size:11px;color:rgba(240,238,234,0.45);margin-top:6px;">{conf.get('interpretation','')[:55]}...</div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;
+        font-family:'Space Mono',monospace;margin-bottom:12px;">Confidence</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;
+        line-height:1.1;margin-bottom:4px;">{conf_pct}</div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;
+        font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(0,212,255,0.1);
+        color:#00d4ff;">{conf_lbl}</div>
+      <div style="font-size:11px;color:rgba(240,238,234,0.45);margin-top:6px;">
+        {conf.get('interpretation','')[:55]}...
+      </div>
     </div>
   </div>
 </div>
 """, unsafe_allow_html=True)
 
     # ── PDF download ──────────────────────────────────────────────────────────
+    st.markdown(f"""
+<div style="background:#050508;padding:24px 56px;border-top:1px solid rgba(255,255,255,0.07);">
+  <div style="display:flex;align-items:center;gap:16px;animation:slideInLeft 1s ease-out 0.5s both;">
+    <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;
+      color:rgba(240,238,234,0.45);text-transform:uppercase;">STEP 03 – EXPORT</span>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,0.07);"></div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+    
     try:
         from datetime import datetime as _dt
         pdf_bytes = generate_pdf(r)
-        st.download_button(
-            "⬇  Export PDF Report",
-            data=pdf_bytes,
-            file_name=f"PropIntel_{_dt.now().strftime('%Y%m%d_%H%M')}.pdf",
-            mime="application/pdf"
-        )
+        col1, col2, col3 = st.columns([2, 1, 3])
+        with col1:
+            st.download_button(
+                "⬇  Export PDF Report",
+                data=pdf_bytes,
+                file_name=f"PropIntel_{_dt.now().strftime('%Y%m%d_%H%M')}.pdf",
+                mime="application/pdf"
+            )
+        with col2:
+            if st.button("🔄 New Analysis"):
+                st.session_state.results = None
+                st.session_state.sample = None
+                st.rerun()
     except Exception as e:
         st.warning(f"PDF unavailable: {e}")
 
     # ── TABS ──────────────────────────────────────────────────────────────────
+    st.markdown("""
+<div style="background:#050508;padding:36px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);
+  animation:fadeInUp 1.1s ease-out 0.6s both;">
+  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;
+    opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Detailed Analysis</div>
+</div>
+""", unsafe_allow_html=True)
+    
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
         "Valuation", "Liquidity", "Proximity", "Market Intelligence", "Future Growth", "Documents"
     ])
@@ -898,12 +1094,17 @@ if st.session_state.results:
 
     # ── FOOTER ────────────────────────────────────────────────────────────────
     st.markdown("""
-<div style="background:#0d0d12;border-top:1px solid rgba(255,255,255,0.07);padding:22px 56px;
-  display:flex;align-items:center;justify-content:space-between;">
-  <span style="font-family:'Playfair Display',Georgia,serif;font-size:15px;color:#f0eeea;">
-    <span style="color:#00d4ff">Prop</span>Intel AI
-  </span>
-  <span style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(240,238,234,0.35);letter-spacing:1px;">
+<div style="background:#0d0d12;border-top:1px solid rgba(255,255,255,0.07);padding:32px 56px;
+  display:flex;align-items:center;justify-content:space-between;margin-top:60px;
+  animation:fadeInUp 1.2s ease-out 0.7s both;">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span style="font-family:'Playfair Display',Georgia,serif;font-size:15px;color:#f0eeea;">
+      <span style="color:#00d4ff">Prop</span>Intel AI
+    </span>
+    <span style="font-size:11px;color:rgba(240,238,234,0.3);">v2.0</span>
+  </div>
+  <span style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(240,238,234,0.35);
+    letter-spacing:1px;">
     TEAM TE-08 &nbsp;·&nbsp; PICT PUNE &nbsp;·&nbsp; POONAWALLA FINCORP AI HACKATHON
   </span>
 </div>
