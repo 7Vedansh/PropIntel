@@ -4,9 +4,18 @@ Design: Playfair Display × DM Sans × Space Mono
 """
 
 import streamlit as st
+
+def render_html(html_str):
+    if not isinstance(html_str, str):
+        st.markdown(html_str, unsafe_allow_html=True)
+        return
+    # Strip leading whitespace to avoid markdown parsing as code blocks
+    cleaned = "\n".join(line.lstrip() for line in html_str.split("\n"))
+    st.markdown(cleaned, unsafe_allow_html=True)
 import requests
 import sys
 from pathlib import Path
+from textwrap import dedent
 sys.path.append(str(Path(__file__).parent))
 from components.python_report import generate_pdf
 
@@ -22,7 +31,7 @@ API_URL = "http://localhost:8000"
 # ══════════════════════════════════════════════════════════════════════════════
 # GLOBAL CSS
 # ══════════════════════════════════════════════════════════════════════════════
-st.markdown("""
+render_html("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400&display=swap');
 
@@ -51,7 +60,7 @@ html, body, [class*="css"], .stApp {
   color: var(--white) !important;
   font-family: var(--fb) !important;
 }
-.block-container { padding: 0 !important; max-width: 100% !important; }
+.block-container { padding: 0 100px !important; max-width: 100% !important; }
 [data-testid="stToolbar"], footer, #MainMenu { display: none !important; }
 header { background: transparent !important; }
 section[data-testid="stSidebar"] { display: none !important; }
@@ -227,7 +236,7 @@ button[data-testid="baseButton-secondary"] { background: var(--surface2) !import
 .card-slide-in:nth-child(3) { animation-delay: 200ms; }
 .card-slide-in:nth-child(4) { animation-delay: 300ms; }
 </style>
-""", unsafe_allow_html=True)
+""")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # SESSIONS STATE
@@ -257,7 +266,7 @@ except Exception:
 
 sc = "#00e5a0" if api_ok else "#ff4757"
 
-st.markdown(f"""
+render_html(f"""
 <div style="min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
   position:relative;background:var(--black);text-align:center;padding:60px 40px;overflow:hidden;">
   <div style="position:absolute;width:520px;height:520px;border-radius:50%;
@@ -283,12 +292,12 @@ st.markdown(f"""
     font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;
     color:rgba(255,255,255,0.22);animation:flt 2s ease-in-out infinite;">SCROLL DOWN</div>
 </div>
-""", unsafe_allow_html=True)
+""")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # FORM HEADER
 # ══════════════════════════════════════════════════════════════════════════════
-st.markdown("""
+render_html("""
 <div style="background:#0d0d12;padding:64px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);animation:fadeInUp 0.8s ease-out 0.3s both;">
   <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;
     opacity:0.7;margin-bottom:10px;text-transform:uppercase;">Step 01 — Property Input</div>
@@ -298,7 +307,7 @@ st.markdown("""
     Enter the address and basic property details. Market signals, builder scores, and demand metrics are auto-computed by the intelligence engine.
   </p>
 </div>
-""", unsafe_allow_html=True)
+""")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # QUICK FILL BUTTONS
@@ -315,14 +324,14 @@ with st.container():
         if st.button("✕ Fraud Case", key="btn_fraud"):
             st.session_state.sample = "fraud"; st.rerun()
     
-st.markdown("<div style='height:12px'></div>", unsafe_allow_html=True)
+render_html("<div style='height:12px'></div>")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # FORM
 # ══════════════════════════════════════════════════════════════════════════════
-st.markdown("""
+render_html("""
 <div style="animation:fadeInUp 0.8s ease-out 0.4s both;">
-""", unsafe_allow_html=True)
+""")
 
 with st.form("assessment_form"):
     # Row 1: Address + Locality
@@ -332,7 +341,7 @@ with st.form("assessment_form"):
     with c2:
         locality = st.text_input("Locality / Area", value=s.get("locality",""), placeholder="e.g. Baner")
 
-    st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+    render_html("<div style='height:8px'></div>")
 
     # Row 2: Main config
     g1, g2, g3 = st.columns(3)
@@ -347,7 +356,7 @@ with st.form("assessment_form"):
         fl   = st.number_input("Floor Number", 0, 60, value=int(s.get("floor",7)))
         tfl  = st.number_input("Total Floors", 1, 60, value=int(s.get("tfloor",14)))
 
-    st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+    render_html("<div style='height:8px'></div>")
 
     # Row 3: Ownership + Lift
     o1, o2 = st.columns(2)
@@ -359,7 +368,7 @@ with st.form("assessment_form"):
 
     submitted = st.form_submit_button("Analyse Collateral →", use_container_width=False)
 
-st.markdown("</div>", unsafe_allow_html=True)
+render_html("</div>")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # HANDLE SUBMISSION
@@ -396,7 +405,7 @@ if submitted:
   </div>
 </div>
 """
-    st.markdown(loading_html, unsafe_allow_html=True)
+    render_html(loading_html)
     
     with st.spinner("Running backend analysis..."):
         try:
@@ -625,7 +634,7 @@ if st.session_state.results:
     bd = conf.get("breakdown", {})
 
     # ── RENDER RESULTS HEADER ─────────────────────────────────────────────────
-    st.markdown(f"""
+    render_html(f"""
 <div style="background:#050508;padding:40px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);">
   <!-- BREADCRUMB NAVIGATION -->
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:32px;
@@ -754,10 +763,10 @@ if st.session_state.results:
     </div>
   </div>
 </div>
-""", unsafe_allow_html=True)
+""")
 
     # ── PDF download ──────────────────────────────────────────────────────────
-    st.markdown(f"""
+    render_html(f"""
 <div style="background:#050508;padding:24px 56px;border-top:1px solid rgba(255,255,255,0.07);">
   <div style="display:flex;align-items:center;gap:16px;animation:slideInLeft 1s ease-out 0.5s both;">
     <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;
@@ -765,7 +774,7 @@ if st.session_state.results:
     <div style="flex:1;height:1px;background:rgba(255,255,255,0.07);"></div>
   </div>
 </div>
-""", unsafe_allow_html=True)
+""")
     
     try:
         from datetime import datetime as _dt
@@ -787,13 +796,13 @@ if st.session_state.results:
         st.warning(f"PDF unavailable: {e}")
 
     # ── TABS ──────────────────────────────────────────────────────────────────
-    st.markdown("""
+    render_html("""
 <div style="background:#050508;padding:36px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);
   animation:fadeInUp 1.1s ease-out 0.6s both;">
   <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;
     opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Detailed Analysis</div>
 </div>
-""", unsafe_allow_html=True)
+""")
     
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
         "Valuation", "Liquidity", "Proximity", "Market Intelligence", "Future Growth", "Documents"
@@ -801,7 +810,7 @@ if st.session_state.results:
 
     # ── TAB 1: VALUATION ──────────────────────────────────────────────────────
     with tab1:
-        st.markdown(f"""
+        render_html(f"""
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;">
   <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
     <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Valuation Breakdown</div>
@@ -829,12 +838,12 @@ if st.session_state.results:
     </div>
   </div>
 </div>
-""", unsafe_allow_html=True)
+""")
 
     # ── TAB 2: LIQUIDITY ──────────────────────────────────────────────────────
     with tab2:
         liq_score_col = "#00e5a0" if ri>=70 else "#f5a623" if ri>=40 else "#ff4757"
-        st.markdown(f"""
+        render_html(f"""
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;">
   <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
     <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Liquidity Factor Breakdown</div>
@@ -868,7 +877,7 @@ if st.session_state.results:
     </div>
   </div>
 </div>
-""", unsafe_allow_html=True)
+""")
 
     # ── TAB 3: PROXIMITY ─────────────────────────────────────────────────────
     with tab3:
@@ -877,7 +886,7 @@ if st.session_state.results:
         zone = loc.get("circle_rate_zone","—").replace("_"," ").title()
         found_msg = "Locality verified in database" if loc.get("locality_found_in_db") else "Using city-level average"
         found_col = "#00e5a0" if loc.get("locality_found_in_db") else "#f5a623"
-        st.markdown(f"""
+        render_html(f"""
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;">
   <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
     <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Infrastructure Distances</div>
@@ -912,7 +921,7 @@ if st.session_state.results:
     </div>
   </div>
 </div>
-""", unsafe_allow_html=True)
+""")
 
     # ── TAB 4: MARKET INTELLIGENCE ──────────────────────────────────────────────
     with tab4:
@@ -961,7 +970,7 @@ if st.session_state.results:
         _npa_status = "Flagged" if any("npa" in d.lower() for d in drivers) else "Clear"
         _npa_col = "#ff4757" if _npa_status == "Flagged" else "#00e5a0"
 
-        st.markdown(f"""
+        render_html(f"""
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;">
   <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
     <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">AI-Computed Market Signals</div>
@@ -1046,14 +1055,14 @@ if st.session_state.results:
     </div>
   </div>
 </div>
-""", unsafe_allow_html=True)
+""")
 
     # ── TAB 5: FUTURE GROWTH ──────────────────────────────────────────────────
     with tab5:
-        st.markdown(f"""
+        render_html(f"""
 <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Growth Catalysts &amp; Outlook</div>
 {growth_html}
-""", unsafe_allow_html=True)
+""")
 
     # ── TAB 6: DOCUMENTS ─────────────────────────────────────────────────────
     with tab6:
@@ -1061,7 +1070,7 @@ if st.session_state.results:
             f'<div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.07);font-size:12px;color:rgba(240,238,234,0.45);">&#8250; {n.strip().lstrip("-").lstrip("*").strip()}</div>'
             for n in rec.get("notes",[])[:5] if n.strip()
         )
-        st.markdown(f"""
+        render_html(f"""
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin-bottom:24px;">
   <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
     <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Required Documents Checklist</div>
@@ -1088,12 +1097,12 @@ if st.session_state.results:
     </div>
   </div>
 </div>
-""", unsafe_allow_html=True)
+""")
         with st.expander("Raw API Response (debug)"):
             st.json(r)
 
     # ── FOOTER ────────────────────────────────────────────────────────────────
-    st.markdown("""
+    render_html("""
 <div style="background:#0d0d12;border-top:1px solid rgba(255,255,255,0.07);padding:32px 56px;
   display:flex;align-items:center;justify-content:space-between;margin-top:60px;
   animation:fadeInUp 1.2s ease-out 0.7s both;">
@@ -1108,4 +1117,4 @@ if st.session_state.results:
     TEAM TE-08 &nbsp;·&nbsp; PICT PUNE &nbsp;·&nbsp; POONAWALLA FINCORP AI HACKATHON
   </span>
 </div>
-""", unsafe_allow_html=True)
+""")
