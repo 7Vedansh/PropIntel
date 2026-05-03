@@ -40,86 +40,7 @@ What took 10 days and manual effort now takes under 2 seconds.
 
 ---
 
-## System Architecture
-
-```
-                          PropIntel AI Architecture
-                          ========================
-
-  +----------+         +----------------+         +-------------------+
-  |  Loan    |  HTTP   |   FastAPI      |  Call   |   Intelligence    |
-  |  Officer | ------> |   Backend      | ------> |   Engines          |
-  +----------+         |   (api/)       |         |                   |
-                       +----------------+         |  +-------------+ |
-  +----------+         |                |         |  | Valuation   | |
-  | Streamlit| <------ |  /assess       | <------ |  | (GB Model)  | |
-  | Dashboard|  JSON   |  endpoint      |  results|  +-------------+ |
-  +----------+         |                |         |  | Liquidity   | |
-                       |  Geocoder      |         |  | (10-factor) | |
-                       |  Proximity      |         |  +-------------+ |
-                       |  Circle Rate DB |         |  | Fraud       | |
-                       +----------------+         |  | (9 rules)   | |
-                                                   |  +-------------+ |
-                                                   |  | Confidence  | |
-                                                   |  | (3-signal)  | |
-                                                   |  +-------------+ |
-                                                   +-------------------+
-```
-
 ---
-
-## Workflow
-
-```
-Step 1: User enters property address + basic details
-            |
-Step 2: Address geocoded to lat/long (5-strategy fallback)
-            |
-Step 3: Proximity distances computed (Overpass -> Nominatim -> Fallback)
-            |
-Step 4: Circle rate looked up from government database
-            |
-Step 5: Feature engineering assembles all inputs
-            |
-Step 6: Valuation model predicts market + distress value
-            |
-Step 7: Liquidity engine computes resale index + time-to-sell
-            |
-Step 8: Fraud engine runs 9 anomaly detection rules
-            |
-Step 9: Confidence engine scores data quality + signal agreement
-            |
-Step 10: Decision engine generates Approve/Review/Reject + safe loan amount
-```
-
----
-
-## UI Overview
-
-The Streamlit dashboard provides a premium dark-themed interface:
-
-1. **Input Section** - Address, BHK, area, age, floor, ownership, and lift status. Market signals are auto-computed by the intelligence engine.
-2. **Decision Banner** - Clear Approve / Review / Reject with safe loan amount and LTV ratio.
-3. **Metric Cards** - Market Value, Resale Index, Time to Sell, and Confidence Score.
-4. **Risk Pills** - Fraud risk, legal risk, supply pressure, and NPA zone status at a glance.
-5. **Tabbed Details** - Valuation breakdown, liquidity factors, proximity distances, market intelligence (auto-computed builder score, absorption rate, supply pressure, price trend), growth catalysts, and document checklist.
-6. **PDF Export** - Download a formatted two-page lender assessment report.
-
----
-
-## Business Impact
-
-| Metric | Before | After |
-|---|---|---|
-| Assessment time | 7-10 days | < 2 seconds |
-| Cost per assessment | ~10,000 INR | Near zero (marginal compute) |
-| Fraud detection | Manual spot-checks | Automated 9-rule engine |
-| Liquidity insight | None | Resale index + time-to-sell |
-| Decision consistency | Varies by valuator | Standardized AI output |
-| Scalability | Limited by manpower | Unlimited concurrent assessments |
-
----
-
 ## Installation and Setup
 
 ```bash
@@ -149,6 +70,43 @@ streamlit run app/main.py
 ```
 
 The API documentation is available at `http://localhost:8000/docs` once the backend is running.
+
+---
+
+
+## System Architecture
+
+
+<img width="1672" height="941" alt="adc8ceeb-b166-4a9f-95ac-bdae329e3aac" src="https://github.com/user-attachments/assets/0f9008cd-1a15-46ef-bf08-37aac4cd7700" />
+
+
+
+
+---
+
+## Workflow
+
+```
+Step 1: User enters property address + basic details
+            |
+Step 2: Address geocoded to lat/long (5-strategy fallback)
+            |
+Step 3: Proximity distances computed (Overpass -> Nominatim -> Fallback)
+            |
+Step 4: Circle rate looked up from government database
+            |
+Step 5: Feature engineering assembles all inputs
+            |
+Step 6: Valuation model predicts market + distress value
+            |
+Step 7: Liquidity engine computes resale index + time-to-sell
+            |
+Step 8: Fraud engine runs 9 anomaly detection rules
+            |
+Step 9: Confidence engine scores data quality + signal agreement
+            |
+Step 10: Decision engine generates Approve/Review/Reject + safe loan amount
+```
 
 ---
 
@@ -194,72 +152,43 @@ PropIntel/
 └── README.md
 ```
 
----
 
-## Model Performance
-
-| Model | MAPE | RMSE | R2 |
-|---|---|---|---|
-| Circle Rate Baseline | 10.4% | 1761 | 0.95 |
-| Linear Regression | 4.6% | 772 | 0.99 |
-| Random Forest | 8.2% | 1448 | 0.97 |
-| **Gradient Boosting (selected)** | **7.1%** | **1326** | **0.97** |
-
-Gradient Boosting was selected for its balance of accuracy and stability on financial data, avoiding overfitting risks present in the linear model.
 
 ---
+## Business Impact
 
-## API Reference
-
-### `POST /assess`
-
-Full property assessment with all intelligence layers.
-
-**Request body** (simplified - market signals are auto-derived):
-
-```json
-{
-  "address": "Survey No 45, Baner Road",
-  "locality": "baner",
-  "city": "Pune",
-  "bhk": 2,
-  "carpet_area_sqft": 1200,
-  "age_years": 8,
-  "floor_number": 7,
-  "total_floors": 14,
-  "ownership_type": "freehold",
-  "has_lift": true
-}
-```
-
-**Response** includes: valuation, liquidity, confidence, fraud flags, proximity data, key drivers, and lender recommendation.
-
-### `GET /health`
-
-Health check with model status and API version.
-
-### `GET /market/{pincode}`
-
-Market data lookup by pincode (absorption rate, demand level, comparable count).
-
-### `GET /docs`
-
-Interactive Swagger documentation.
+| Metric | Before | After |
+|---|---|---|
+| Assessment time | 7-10 days | < 2 seconds |
+| Cost per assessment | ~10,000 INR | Near zero (marginal compute) |
+| Fraud detection | Manual spot-checks | Automated 9-rule engine |
+| Liquidity insight | None | Resale index + time-to-sell |
+| Decision consistency | Varies by valuator | Standardized AI output |
+| Scalability | Limited by manpower | Unlimited concurrent assessments |
 
 ---
+<hr>
+<h2 align="center"> Languages & Frameworks & Tools</h2>
+<br>
+<p align="center">
+<code><img title="Python" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
+<code><img title="Machine Learning" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"></code>
+<code><img title="TensorFlow" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"></code>
+<code><img title="NumPy" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"></code>
+<code><img title="Pandas" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"></code>
+<code><img title="Scikit-Learn" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"></code>
+<code><img title="FastAPI" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"></code>
+<code><img title="Uvicorn" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
+<code><img title="Pydantic" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></code>
+<code><img title="Streamlit" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"></code>
+<code><img title="Docker" height="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"></code>
+<code><img title="OpenStreetMap" height="35" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg"></code>
+<code><img title="Tesseract OCR" height="35" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Tesseract_Logo.svg"></code>
+<code><img title="NLP" height="35" src="https://img.icons8.com/external-flat-juicy-fish/60/external-nlp-artificial-intelligence-flat-flat-juicy-fish.png"></code>
+<code><img title="Joblib" height="35" src="https://img.icons8.com/color/48/artificial-intelligence.png"></code>
 
-## Future Improvements
-
-- **Real-time APIs** - Integrate live property listing feeds for dynamic price trends
-- **Enhanced ML Models** - XGBoost/LightGBM with hyperparameter tuning on larger datasets
-- **Production Deployment** - Docker Compose with Redis caching, rate limiting, and CI/CD
-- **Multi-city Expansion** - Extend circle rate database and locality intelligence to Tier-2 cities
-- **Time-series Forecasting** - LSTM/Prophet models for price trend prediction
-- **Document OCR** - Automated RERA and encumbrance certificate verification
-- **Audit Trail** - Database-backed assessment history for regulatory compliance
-
----
-
+</p>
+<hr>
 ## Author
 
 **Vedansh & Ameya** - [GitHub](https://github.com/7Vedansh)
