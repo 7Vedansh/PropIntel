@@ -262,6 +262,6 @@ Interactive Swagger documentation.
 
 ## Author
 
-**Vedansh** - [GitHub](https://github.com/7Vedansh)
+**Vedansh & Ameya** - [GitHub](https://github.com/7Vedansh)
 
 Team Arjuna
