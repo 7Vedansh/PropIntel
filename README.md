@@ -183,12 +183,17 @@ PropIntel/
 | Decision consistency | Varies by valuator | Standardized AI output |
 | Scalability | Limited by manpower | Unlimited concurrent assessments |
 
-
+## Input Property Details
 <img width="1921" height="972" alt="image" src="https://github.com/user-attachments/assets/b9da085f-4cd9-40e7-94cf-7e79c61ede19" />
+## Report Generated
 <img width="1921" height="878" alt="image" src="https://github.com/user-attachments/assets/356a05c6-a1f4-4274-b6fb-8150a7592c1b" />
+## Valuation Analysis
 <img width="1449" height="611" alt="image" src="https://github.com/user-attachments/assets/37c718fe-ca55-4427-a792-a09da5a8161e" />
+## Liquidity Analysis
 <img width="1226" height="636" alt="image" src="https://github.com/user-attachments/assets/b773bc34-5495-4006-b5ff-aaa71f1f2974" />
+## Proximity Analysis
 <img width="1217" height="675" alt="image" src="https://github.com/user-attachments/assets/f769340b-19c2-47b3-aa0e-b16c27a2e897" />
+## Market Intelligence Analysis
 <img width="1188" height="679" alt="image" src="https://github.com/user-attachments/assets/e988b447-f1ec-4c8c-bdee-b284bf2d17de" />
 
 ## Author
