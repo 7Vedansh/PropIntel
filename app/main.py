@@ -1,0 +1,780 @@
+"""
+PropIntel AI — Premium NBFC Intelligence Dashboard
+Design: Playfair Display × DM Sans × Space Mono
+"""
+
+import streamlit as st
+import requests
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent))
+from components.python_report import generate_pdf
+
+st.set_page_config(
+    page_title="PropIntel AI",
+    page_icon="🏠",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+API_URL = "http://localhost:8000"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# GLOBAL CSS
+# ══════════════════════════════════════════════════════════════════════════════
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400&display=swap');
+
+:root {
+  --black:    #050508;
+  --surface:  #0d0d12;
+  --surface2: #13131a;
+  --border:   rgba(255,255,255,0.07);
+  --border2:  rgba(255,255,255,0.12);
+  --cyan:     #00d4ff;
+  --cdim:     rgba(0,212,255,0.15);
+  --cglow:    rgba(0,212,255,0.06);
+  --white:    #f0eeea;
+  --muted:    rgba(240,238,234,0.45);
+  --green:    #00e5a0;
+  --amber:    #f5a623;
+  --red:      #ff4757;
+  --fd: 'Playfair Display', Georgia, serif;
+  --fb: 'DM Sans', sans-serif;
+  --fm: 'Space Mono', monospace;
+}
+
+/* Reset & base */
+html, body, [class*="css"], .stApp {
+  background: var(--black) !important;
+  color: var(--white) !important;
+  font-family: var(--fb) !important;
+}
+.block-container { padding: 0 !important; max-width: 100% !important; }
+[data-testid="stToolbar"], footer, #MainMenu { display: none !important; }
+header { background: transparent !important; }
+section[data-testid="stSidebar"] { display: none !important; }
+
+/* ── Widget overrides ── */
+.stTextInput label, .stNumberInput label, .stSelectbox label,
+.stSlider label, .stCheckbox label {
+  font-family: var(--fm) !important;
+  font-size: 9.5px !important;
+  letter-spacing: 2px !important;
+  color: rgba(240,238,234,0.4) !important;
+  text-transform: uppercase !important;
+}
+.stTextInput input, .stNumberInput input {
+  background: var(--surface2) !important;
+  border: 1px solid var(--border2) !important;
+  border-radius: 6px !important;
+  color: var(--white) !important;
+  font-family: var(--fb) !important;
+  font-size: 13px !important;
+}
+.stTextInput input::placeholder { color: rgba(240,238,234,0.22) !important; }
+.stTextInput input:focus, .stNumberInput input:focus {
+  border-color: rgba(0,212,255,0.4) !important;
+  box-shadow: none !important;
+}
+.stSelectbox > div > div {
+  background: var(--surface2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  color: var(--white) !important;
+}
+.stCheckbox span { color: var(--muted) !important; font-size: 13px !important; }
+
+/* Buttons */
+div.stButton > button, div.stFormSubmitButton > button {
+  background: transparent !important;
+  border: 1px solid var(--cyan) !important;
+  color: var(--cyan) !important;
+  font-family: var(--fb) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  padding: 12px 32px !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.2s !important;
+}
+div.stButton > button:hover, div.stFormSubmitButton > button:hover {
+  background: var(--cdim) !important;
+}
+div.stDownloadButton > button {
+  background: transparent !important;
+  border: 1px solid rgba(0,212,255,0.35) !important;
+  color: var(--cyan) !important;
+  font-family: var(--fm) !important;
+  font-size: 10px !important;
+  border-radius: 4px !important;
+  padding: 8px 18px !important;
+  letter-spacing: 1px !important;
+}
+div.stDownloadButton > button:hover { background: var(--cglow) !important; }
+
+/* Sliders */
+.stSlider [data-baseweb="slider"] div[role="slider"] { background: var(--cyan) !important; }
+
+/* Tabs */
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+  background: transparent !important;
+  border-bottom: 1px solid var(--border) !important;
+  gap: 0 !important;
+}
+[data-testid="stTabs"] [data-baseweb="tab"] {
+  background: transparent !important;
+  color: var(--muted) !important;
+  font-family: var(--fm) !important;
+  font-size: 10px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  padding: 12px 22px !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+}
+[data-testid="stTabs"] [aria-selected="true"] {
+  color: var(--cyan) !important;
+  border-bottom: 2px solid var(--cyan) !important;
+}
+[data-testid="stTabs"] [data-baseweb="tab-panel"] {
+  background: transparent !important;
+  padding-top: 24px !important;
+}
+
+/* Expander */
+[data-testid="stExpander"] { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 6px !important; }
+[data-testid="stExpander"] summary { color: var(--muted) !important; font-family: var(--fm) !important; font-size: 10px !important; letter-spacing: 1px !important; }
+
+/* Form container */
+[data-testid="stForm"] { border: none !important; background: transparent !important; padding: 0 !important; }
+
+/* Number input buttons */
+button[data-testid="baseButton-secondary"] { background: var(--surface2) !important; border: 1px solid var(--border) !important; color: var(--muted) !important; }
+</style>
+""", unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SESSIONS STATE
+# ══════════════════════════════════════════════════════════════════════════════
+def _ss(k, v):
+    if k not in st.session_state: st.session_state[k] = v
+
+_ss("results", None)
+_ss("sample", None)
+_ss("form_vals", {})
+
+SAMPLES = {
+    "baner":   {"address":"Survey No 45, Baner Road","locality":"baner","city":"Pune","bhk":2,"sqft":1200,"age":8,"floor":7,"tfloor":14,"lift":True,"rera":True,"builder":78,"govt":True,"npa":False,"abs":0.23,"sdr":0.85,"trend":7.5,"own":"Freehold"},
+    "wagholi": {"address":"Near Wagholi Chowk","locality":"wagholi","city":"Pune","bhk":3,"sqft":1450,"age":18,"floor":2,"tfloor":5,"lift":False,"rera":False,"builder":48,"govt":False,"npa":True,"abs":0.09,"sdr":1.9,"trend":-2.0,"own":"Freehold"},
+    "fraud":   {"address":"Plot 12, Kothrud","locality":"kothrud","city":"Pune","bhk":2,"sqft":4800,"age":3,"floor":1,"tfloor":4,"lift":False,"rera":False,"builder":42,"govt":False,"npa":True,"abs":0.12,"sdr":1.5,"trend":1.0,"own":"Disputed"},
+}
+s = SAMPLES.get(st.session_state.sample, {})
+
+# ══════════════════════════════════════════════════════════════════════════════
+# HERO
+# ══════════════════════════════════════════════════════════════════════════════
+try:
+    health = requests.get(f"{API_URL}/health", timeout=2).json()
+    api_ok, api_ver = True, health.get("api_version","2.0.0")
+except Exception:
+    api_ok, api_ver = False, "—"
+
+sc = "#00e5a0" if api_ok else "#ff4757"
+
+st.markdown(f"""
+<div style="min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;background:var(--black);text-align:center;padding:60px 40px;overflow:hidden;">
+  <div style="position:absolute;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle at 40% 40%,rgba(0,212,255,0.08) 0%,rgba(0,212,255,0.03) 40%,transparent 70%);
+    border:1px solid rgba(0,212,255,0.08);top:50%;left:50%;transform:translate(-50%,-50%);
+    animation:orb 6s ease-in-out infinite;pointer-events:none;"></div>
+  <style>
+    @keyframes orb{{0%,100%{{transform:translate(-50%,-50%) scale(1);opacity:1;}}50%{{transform:translate(-50%,-50%) scale(1.04);opacity:0.7;}}}}
+    @keyframes flt{{0%,100%{{transform:translateX(-50%) translateY(0);opacity:0.3;}}50%{{transform:translateX(-50%) translateY(-5px);opacity:0.6;}}}}
+  </style>
+  <div style="position:relative;z-index:2;">
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:72px;font-weight:700;letter-spacing:-2px;line-height:1;margin-bottom:12px;">
+      <span style="color:#00d4ff">Prop</span><span style="color:rgba(240,238,234,0.5)">Intel</span><span style="color:rgba(240,238,234,0.85)"> AI</span>
+    </div>
+    <p style="font-size:15px;color:var(--muted);letter-spacing:0.5px;margin-bottom:36px;font-weight:300;">
+      <span style="color:#00d4ff;opacity:0.85">Collateral Valuation</span> &nbsp;·&nbsp; Liquidity Intelligence &nbsp;·&nbsp; <span style="color:#00d4ff;opacity:0.85">Risk Assessment</span>
+    </p>
+    <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:{sc};">
+      ● &nbsp;API v{api_ver} &nbsp;{'Online' if api_ok else 'Offline — check backend'}
+    </p>
+  </div>
+  <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+    font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;
+    color:rgba(255,255,255,0.22);animation:flt 2s ease-in-out infinite;">SCROLL DOWN</div>
+</div>
+""", unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FORM HEADER
+# ══════════════════════════════════════════════════════════════════════════════
+st.markdown("""
+<div style="background:#0d0d12;padding:64px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);">
+  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.7;margin-bottom:10px;text-transform:uppercase;">Step 01 — Property Input</div>
+  <div style="font-family:'Playfair Display',Georgia,serif;font-size:34px;font-weight:400;color:#f0eeea;margin-bottom:8px;letter-spacing:-0.5px;">Enter Property Details</div>
+  <p style="font-size:14px;color:rgba(240,238,234,0.45);margin-bottom:36px;max-width:540px;line-height:1.7;">
+    Enter the full address and property details. The system auto-calculates distances, circle rates, and all market signals.
+  </p>
+</div>
+""", unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# QUICK FILL BUTTONS
+# ══════════════════════════════════════════════════════════════════════════════
+with st.container():
+    qc1, qc2, qc3, _ = st.columns([1.2, 1.4, 1.2, 8])
+    with qc1:
+        if st.button("⚡ Baner 2BHK"):
+            st.session_state.sample = "baner"; st.rerun()
+    with qc2:
+        if st.button("⚠ Wagholi 3BHK"):
+            st.session_state.sample = "wagholi"; st.rerun()
+    with qc3:
+        if st.button("✕ Fraud Case"):
+            st.session_state.sample = "fraud"; st.rerun()
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FORM
+# ══════════════════════════════════════════════════════════════════════════════
+with st.form("assessment_form"):
+    # Row 1: Address + Locality
+    c1, c2 = st.columns([4, 1])
+    with c1:
+        address = st.text_input("Full Address", value=s.get("address",""), placeholder="e.g. Survey No 45, Baner Road, Baner, Pune")
+    with c2:
+        locality = st.text_input("Locality / Area", value=s.get("locality",""), placeholder="e.g. Baner")
+
+    st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+
+    # Row 2: Main config
+    g1, g2, g3 = st.columns(3)
+    with g1:
+        bhk  = st.selectbox("BHK Configuration", [1,2,3,4], index=[1,2,3,4].index(s.get("bhk",2)))
+        sqft = st.number_input("Carpet Area (sqft)", 200, 8000, value=int(s.get("sqft",1200)), step=50)
+    with g2:
+        city = st.selectbox("City", ["Pune","Mumbai","Bangalore","Hyderabad","Chennai"],
+                            index=["Pune","Mumbai","Bangalore","Hyderabad","Chennai"].index(s.get("city","Pune")))
+        age  = st.number_input("Property Age (years)", 0, 50, value=int(s.get("age",8)))
+    with g3:
+        fl   = st.number_input("Floor Number", 0, 60, value=int(s.get("floor",7)))
+        tfl  = st.number_input("Total Floors", 1, 60, value=int(s.get("tfloor",14)))
+
+    st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+
+    # Row 3: Ownership + flags
+    o1, o2, o3 = st.columns(3)
+    with o1:
+        own_opts = ["Freehold","Leasehold","Disputed"]
+        own = st.selectbox("Ownership Type", own_opts, index=own_opts.index(s.get("own","Freehold")))
+    with o2:
+        rera  = st.checkbox("RERA Registered",     value=bool(s.get("rera",True)))
+        lift  = st.checkbox("Has Lift",            value=bool(s.get("lift",True)))
+        govt  = st.checkbox("Govt Project Nearby", value=bool(s.get("govt",False)))
+        npa   = st.checkbox("High NPA Zone",       value=bool(s.get("npa",False)))
+    with o3:
+        bscore = st.slider("Builder Score",         40, 95,  value=int(s.get("builder",70)))
+        absorp = st.slider("Absorption Rate",        0.03, 0.40, value=float(s.get("abs",0.18)), format="%.2f")
+        sdr    = st.slider("Supply / Demand Ratio", 0.3,  2.5,  value=float(s.get("sdr",1.0)),  format="%.1f")
+        trend  = st.slider("6-Month Price Trend %", -10.0,15.0, value=float(s.get("trend",5.0)), format="%.1f")
+
+    submitted = st.form_submit_button("Analyse Collateral →")
+
+# ══════════════════════════════════════════════════════════════════════════════
+# HANDLE SUBMISSION
+# ══════════════════════════════════════════════════════════════════════════════
+if submitted:
+    if not address.strip() or not locality.strip():
+        st.error("Please enter both Address and Locality.")
+        st.stop()
+    payload = {
+        "address": address, "locality": locality, "city": city,
+        "bhk": bhk, "carpet_area_sqft": sqft, "age_years": age,
+        "floor_number": fl, "total_floors": tfl, "property_type": "apartment",
+        "ownership_type": own.lower(), "has_rera": 1 if rera else 0,
+        "has_lift": lift, "builder_score": bscore,
+        "govt_project_nearby": 1 if govt else 0, "npa_zone": 1 if npa else 0,
+        "absorption_rate": absorp, "supply_demand_ratio": sdr, "price_trend_6m": trend,
+    }
+    with st.spinner("Analysing across 6 intelligence layers..."):
+        try:
+            resp = requests.post(f"{API_URL}/assess", json=payload, timeout=60)
+        except requests.exceptions.ConnectionError:
+            st.error("Cannot reach API server. Is the backend running?"); st.stop()
+    if resp.status_code == 422:
+        st.error(f"Validation error: {resp.json().get('detail','unknown')}"); st.stop()
+    elif resp.status_code != 200:
+        st.error(f"Assessment failed (HTTP {resp.status_code}): {resp.text[:200]}"); st.stop()
+    # Store results AND form context
+    st.session_state.results = resp.json()
+    st.session_state.form_vals = {
+        "bhk": bhk, "locality": locality, "city": city, "sqft": sqft,
+        "npa": npa, "sdr": sdr, "own": own, "trend": trend,
+    }
+
+# ══════════════════════════════════════════════════════════════════════════════
+# RESULTS
+# ══════════════════════════════════════════════════════════════════════════════
+if st.session_state.results:
+    r   = st.session_state.results
+    fv  = st.session_state.form_vals
+
+    # Restore context (use stored values or current widget values as fallback)
+    _bhk      = fv.get("bhk", bhk)
+    _locality = fv.get("locality", locality)
+    _city     = fv.get("city", city)
+    _npa      = fv.get("npa", npa)
+    _sdr      = fv.get("sdr", sdr)
+    _own      = fv.get("own", own)
+    _trend    = fv.get("trend", trend)
+
+    val   = r["valuation"];  liq   = r["liquidity"]
+    conf  = r["confidence"]; fraud = r["fraud_flags"]
+    loc   = r["location_resolved"]; prox = r["proximity_data"]
+    rec   = r["lender_recommendation"]; drivers = r.get("key_drivers", [])
+
+    decision   = rec["decision"]
+    dec_cls    = decision.lower()
+    dec_labels = {"APPROVE":"Approved for Lending","REVIEW":"Manual Review Required","REJECT":"Do Not Proceed"}
+    ri         = liq.get("resale_index", 0)
+    grade      = liq.get("grade","—")
+    grade_col  = "#00e5a0" if grade=="HIGH" else "#f5a623" if grade=="MEDIUM" else "#ff4757"
+    pps        = val.get("price_per_sqft", 0)
+    conf_pct   = conf.get("percentage","—")
+    conf_lbl   = conf.get("label","—")
+    conf_col   = "#00e5a0" if conf_lbl=="HIGH" else "#f5a623" if conf_lbl=="MEDIUM" else "#ff4757"
+    trend_col  = "#00e5a0" if _trend >= 0 else "#ff4757"
+    trend_str  = f"+{_trend:.1f}%" if _trend >= 0 else f"{_trend:.1f}%"
+
+    # Decision banner colours
+    dec_bg  = {"APPROVE":"rgba(0,229,160,0.05)","REVIEW":"rgba(245,166,35,0.05)","REJECT":"rgba(255,71,87,0.05)"}
+    dec_bdr = {"APPROVE":"rgba(0,229,160,0.2)","REVIEW":"rgba(245,166,35,0.2)","REJECT":"rgba(255,71,87,0.2)"}
+    dec_dot = {"APPROVE":"#00e5a0","REVIEW":"#f5a623","REJECT":"#ff4757"}
+    dec_glow= {"APPROVE":"rgba(0,229,160,0.4)","REVIEW":"rgba(245,166,35,0.4)","REJECT":"rgba(255,71,87,0.4)"}
+
+    # Risk pills
+    high_fraud   = sum(1 for f in fraud if f.get("severity")=="HIGH")
+    fraud_risk   = "high" if high_fraud else "med" if fraud else "low"
+    fraud_lbl    = "High" if high_fraud else "Medium" if fraud else "Low"
+    supply_risk  = "high" if _sdr>1.5 else "med" if _sdr>1.0 else "low"
+    supply_lbl   = "High" if _sdr>1.5 else "Medium" if _sdr>1.0 else "Low"
+    npa_risk, npa_lbl = ("high","Flagged") if _npa else ("low","Clear")
+    own_risk, own_lbl = ("high","Disputed") if _own=="Disputed" else ("low","Clear")
+
+    pill_colors = {"low":("rgba(0,229,160,0.05)","rgba(0,229,160,0.2)","#00e5a0"),
+                   "med":("rgba(245,166,35,0.05)","rgba(245,166,35,0.2)","#f5a623"),
+                   "high":("rgba(255,71,87,0.05)","rgba(255,71,87,0.2)","#ff4757")}
+
+    def pill(risk, label):
+        bg, bd, c = pill_colors[risk]
+        return (f'<span style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;'
+                f'border-radius:100px;font-size:10px;font-family:\'Space Mono\',monospace;'
+                f'letter-spacing:1px;border:1px solid {bd};background:{bg};color:{c};margin-right:8px;">'
+                f'<span style="width:6px;height:6px;border-radius:50%;background:{c};display:inline-block;"></span>'
+                f'{label}</span>')
+
+    # Proximity helper
+    def pdot(dist, good, warn):
+        if dist is None: return "#888", "N/A"
+        return ("#00e5a0" if dist<good else "#f5a623" if dist<warn else "#ff4757"), f"{dist:.1f} km"
+
+    amenities = [
+        ("Metro Station",        prox.get("distance_to_metro_km"),    2, 5),
+        ("Highway / Expressway", prox.get("distance_to_highway_km"),  2, 5),
+        ("Hospital",             prox.get("distance_to_hospital_km"), 1, 3),
+        ("School",               prox.get("distance_to_school_km"),   1, 2),
+        ("Shopping Mall",        prox.get("distance_to_mall_km"),     3, 6),
+        ("IT Park",              prox.get("distance_to_it_park_km"),  3, 8),
+    ]
+
+    prox_html = "".join(
+        f'<div style="display:flex;align-items:center;justify-content:space-between;'
+        f'padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.07);">'
+        f'<span style="font-size:13px;color:rgba(240,238,234,0.45);">{lbl}</span>'
+        f'<div style="display:flex;align-items:center;gap:10px;">'
+        f'<span style="font-family:\'Space Mono\',monospace;font-size:13px;color:#f0eeea;">{pdot(d,g,w)[1]}</span>'
+        f'<span style="width:7px;height:7px;border-radius:50%;background:{pdot(d,g,w)[0]};display:inline-block;"></span>'
+        f'</div></div>'
+        for lbl, d, g, w in amenities
+    )
+
+    # Factor bars
+    factors_html = ""
+    for f in liq.get("factor_breakdown", []):
+        sc2 = f.get("score", 0)
+        bc  = "#00d4ff" if sc2>=70 else "#f5a623" if sc2>=40 else "#ff4757"
+        factors_html += (
+            f'<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">'
+            f'<span style="font-size:12px;color:rgba(240,238,234,0.45);width:130px;flex-shrink:0;">{f.get("factor","")}</span>'
+            f'<div style="flex:1;height:3px;background:rgba(255,255,255,0.06);border-radius:2px;">'
+            f'<div style="height:3px;width:{sc2}%;background:{bc};border-radius:2px;"></div></div>'
+            f'<span style="font-family:\'Space Mono\',monospace;font-size:11px;color:rgba(240,238,234,0.45);width:28px;text-align:right;">{sc2}</span>'
+            f'</div>'
+        )
+
+    # Val chain
+    cr = loc.get("circle_rate_sqft", 0)
+    chain_html = (
+        f'<div style="display:flex;justify-content:space-between;padding:11px 14px;'
+        f'background:rgba(255,255,255,0.02);border-radius:4px;margin-bottom:2px;">'
+        f'<span style="font-size:12px;color:rgba(240,238,234,0.45);">Circle Rate (IGR 2025-26)</span>'
+        f'<span style="font-family:\'Space Mono\',monospace;font-size:12px;color:#00d4ff;">&#8377;{cr:,.0f}/sqft</span>'
+        f'</div>'
+    )
+    for d in drivers:
+        val_color = "#00e5a0" if d.startswith("+") else "#ff4757" if d.startswith("-") else "#00d4ff"
+        chain_html += (
+            f'<div style="display:flex;justify-content:space-between;padding:11px 14px;'
+            f'background:rgba(255,255,255,0.02);border-radius:4px;margin-bottom:2px;">'
+            f'<span style="font-size:12px;color:rgba(240,238,234,0.45);">{d[1:].strip()}</span>'
+            f'<span style="font-family:\'Space Mono\',monospace;font-size:12px;color:{val_color};">{d[0]}</span>'
+            f'</div>'
+        )
+    chain_html += f'<div style="height:1px;background:rgba(255,255,255,0.12);margin:6px 0;"></div>'
+    chain_html += (
+        f'<div style="display:flex;justify-content:space-between;padding:11px 14px;'
+        f'background:rgba(0,212,255,0.04);border-radius:4px;">'
+        f'<span style="font-size:12px;color:#f0eeea;font-weight:500;">Final Market Rate</span>'
+        f'<span style="font-family:\'Space Mono\',monospace;font-size:14px;color:#f0eeea;">&#8377;{pps:,.0f}/sqft</span>'
+        f'</div>'
+    )
+
+    # Sparkline
+    bases = [55,58,56,62,66,71,78]
+    heights = [min(95,max(20,h+(_trend*1.2))) for h in bases]
+    spark_html = "".join(
+        f'<div style="flex:1;border-radius:2px 2px 0 0;height:{h:.0f}%;'
+        f'background:{"#00d4ff" if i==6 else "rgba(0,212,255,0.2)"}"></div>'
+        for i, h in enumerate(heights)
+    )
+
+    # Liquidity bullets
+    bullets_html = "".join(
+        f'<div style="margin-bottom:7px;font-size:12px;line-height:1.6;'
+        f'color:{"#f5a623" if ld.startswith("!") else "#00e5a0"};">&#8250; {ld}</div>'
+        for ld in liq.get("liquidity_drivers",[])
+    )
+
+    # Documents
+    docs = ["Sale Deed / Agreement to Sale","Encumbrance Certificate (past 13 years)",
+            "Property Tax Receipt (latest)","RERA Registration Certificate",
+            "Builder NOC & Approved Building Plan","Occupancy Certificate",
+            "Photo ID & Address Proof of Borrower","Bank Statements (last 6 months)"]
+    docs_html = "".join(
+        f'<div style="display:flex;align-items:center;gap:10px;padding:10px 0;'
+        f'border-bottom:1px solid rgba(255,255,255,0.07);font-size:13px;color:rgba(240,238,234,0.45);">'
+        f'<div style="width:16px;height:16px;border:1px solid rgba(255,255,255,0.12);'
+        f'border-radius:3px;flex-shrink:0;"></div>{doc}</div>'
+        for doc in docs
+    )
+
+    # Growth cards
+    growth_items = [
+        ("&#128407;", "Metro Connectivity Impact",
+         "Metro proximity (within 2km) consistently drives 12-18% residential appreciation. "
+         "Properties in this micro-market benefit from reduced commute and improved livability scores.",
+         "+10-15% over 18 months"),
+        ("&#127959;", "Infrastructure Development Premium",
+         f"Government-announced projects in adjacent zones historically precede 8-12% appreciation. "
+         f"Smart city upgrades compound this effect.",
+         "+6-10% over 24 months"),
+        ("&#128188;", f"IT Employment Hub Tailwind — {_city}",
+         f"Growing IT workforce demand in {_city} continues to fuel residential demand in "
+         f"well-connected micro-markets near employment hubs.",
+         "Sustained positive outlook over 12 months"),
+    ]
+    growth_html = "".join(
+        f'<div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;'
+        f'padding:20px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start;">'
+        f'<div style="width:36px;height:36px;border-radius:6px;background:rgba(0,212,255,0.15);'
+        f'display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">{ico}</div>'
+        f'<div><div style="font-size:13px;color:#f0eeea;margin-bottom:4px;font-weight:500;">{title}</div>'
+        f'<div style="font-size:12px;color:rgba(240,238,234,0.45);line-height:1.6;">{desc}</div>'
+        f'<div style="font-family:\'Space Mono\',monospace;font-size:11px;color:#00e5a0;margin-top:6px;">'
+        f'Estimated impact: {impact}</div></div></div>'
+        for ico, title, desc, impact in growth_items
+    )
+
+    # Fraud flags
+    fraud_html = ""
+    if not fraud:
+        fraud_html = ('<div style="padding:14px;background:rgba(0,229,160,0.04);border-radius:6px;'
+                     'border:1px solid rgba(0,229,160,0.15);font-size:12px;color:#00e5a0;">'
+                     '&#10003; No fraud indicators detected. All data signals are internally consistent.</div>')
+    else:
+        for flag in fraud:
+            sev = flag.get("severity","LOW")
+            fc  = {"HIGH":"#ff4757","MEDIUM":"#f5a623","LOW":"#00d4ff"}.get(sev,"#00d4ff")
+            fraud_html += (
+                f'<div style="padding:14px;background:rgba(255,255,255,0.02);border-radius:6px;'
+                f'border-left:3px solid {fc};margin-bottom:8px;">'
+                f'<div style="font-family:\'Space Mono\',monospace;font-size:10px;color:{fc};'
+                f'letter-spacing:1px;margin-bottom:4px;">{sev} — {flag.get("code","")}</div>'
+                f'<div style="font-size:12px;color:rgba(240,238,234,0.45);line-height:1.6;">{flag.get("message","")}</div>'
+                f'</div>'
+            )
+
+    # Confidence breakdown
+    bd = conf.get("breakdown", {})
+
+    # ── RENDER RESULTS HEADER ─────────────────────────────────────────────────
+    st.markdown(f"""
+<div style="background:#050508;padding:64px 56px 0 56px;border-top:1px solid rgba(255,255,255,0.07);">
+  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.7;margin-bottom:10px;text-transform:uppercase;">Step 02 — Intelligence Report</div>
+  <div style="font-family:'Playfair Display',Georgia,serif;font-size:34px;font-weight:400;color:#f0eeea;margin-bottom:32px;letter-spacing:-0.5px;">{_bhk}BHK &middot; {_locality.title()}, {_city}</div>
+
+  <!-- DECISION BANNER -->
+  <div style="max-width:920px;margin-bottom:32px;border-radius:8px;padding:28px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+    background:{dec_bg[decision]};border:1px solid {dec_bdr[decision]};">
+    <div style="display:flex;align-items:center;gap:18px;">
+      <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;
+        background:{dec_dot[decision]};box-shadow:0 0 12px {dec_glow[decision]};"></div>
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;
+          text-transform:uppercase;color:{dec_dot[decision]};margin-bottom:4px;">{dec_labels[decision]}</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;">
+          Safe Loan: {rec.get('safe_loan_display','—')}
+        </div>
+      </div>
+    </div>
+    <div style="font-family:'Space Mono',monospace;font-size:11px;color:rgba(240,238,234,0.45);">
+      Confidence: {conf_pct} &nbsp;&middot;&nbsp; LTV: {rec.get('ltv_ratio','—')}
+    </div>
+  </div>
+
+  <!-- RISK PILLS -->
+  <div style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:40px;">
+    {pill(fraud_risk, f"Fraud Risk: {fraud_lbl}")}
+    {pill(own_risk,   f"Legal Risk: {own_lbl}")}
+    {pill(supply_risk,f"Supply Pressure: {supply_lbl}")}
+    {pill(npa_risk,   f"NPA Zone: {npa_lbl}")}
+  </div>
+
+  <!-- METRIC CARDS -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:920px;margin-bottom:48px;">
+    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#00d4ff;"></div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Market Value</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#f0eeea;line-height:1.2;margin-bottom:6px;">{val.get('market_value_display','—')}</div>
+      <div style="font-size:11px;color:rgba(240,238,234,0.45);">&#8377;{pps:,.0f} per sqft</div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;margin-top:6px;background:rgba(0,212,255,0.1);color:#00d4ff;">Distress: {val.get('distress_value_display','—')}</div>
+    </div>
+    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#00e5a0;"></div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Resale Index</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;margin-bottom:4px;">{ri} <span style="font-size:14px;color:rgba(240,238,234,0.45)">/100</span></div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(0,229,160,0.1);color:#00e5a0;">{grade} Liquidity</div>
+      <div style="font-size:11px;color:rgba(240,238,234,0.45);margin-top:6px;">{liq.get('absorption_rate_pct','—')} monthly absorption</div>
+    </div>
+    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#f5a623;"></div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Time to Sell</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;margin-bottom:4px;">{liq.get('time_to_sell_display','—')}</div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(245,166,35,0.1);color:#f5a623;">Expected Resale</div>
+    </div>
+    <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:24px 20px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:rgba(0,212,255,0.4);"></div>
+      <div style="font-size:10px;letter-spacing:2px;color:rgba(240,238,234,0.45);text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:12px;">Confidence</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;color:#f0eeea;line-height:1.1;margin-bottom:4px;">{conf_pct}</div>
+      <div style="display:inline-block;font-size:9px;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;font-family:'Space Mono',monospace;text-transform:uppercase;background:rgba(0,212,255,0.1);color:#00d4ff;">{conf_lbl}</div>
+      <div style="font-size:11px;color:rgba(240,238,234,0.45);margin-top:6px;">{conf.get('interpretation','')[:55]}...</div>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+    # ── PDF download ──────────────────────────────────────────────────────────
+    try:
+        from datetime import datetime as _dt
+        pdf_bytes = generate_pdf(r)
+        st.download_button(
+            "⬇  Export PDF Report",
+            data=pdf_bytes,
+            file_name=f"PropIntel_{_dt.now().strftime('%Y%m%d_%H%M')}.pdf",
+            mime="application/pdf"
+        )
+    except Exception as e:
+        st.warning(f"PDF unavailable: {e}")
+
+    # ── TABS ──────────────────────────────────────────────────────────────────
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "Valuation", "Liquidity", "Proximity", "Future Growth", "Documents"
+    ])
+
+    # ── TAB 1: VALUATION ──────────────────────────────────────────────────────
+    with tab1:
+        st.markdown(f"""
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;">
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Valuation Breakdown</div>
+    {chain_html}
+  </div>
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">6-Month Price Trend — {_locality.title()}</div>
+    <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:16px;">
+      <span style="font-family:'Playfair Display',Georgia,serif;font-size:32px;color:#f0eeea;">{trend_str}</span>
+      <span style="font-size:12px;color:{trend_col};">{'appreciation' if _trend>=0 else 'depreciation'}</span>
+    </div>
+    <div style="display:flex;align-items:flex-end;gap:3px;height:40px;margin-top:8px;">{spark_html}</div>
+    <div style="display:flex;justify-content:space-between;margin-top:8px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(240,238,234,0.45);">
+      <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+    </div>
+    <div style="margin-top:24px;">
+      <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:12px;">Market Heat — {_city}</div>
+      <div style="display:flex;gap:4px;">
+        <div style="height:28px;border-radius:3px;flex:1;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;background:rgba(255,71,87,0.08);color:#ff4757;">LOW</div>
+        <div style="height:28px;border-radius:3px;flex:1;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;background:rgba(245,166,35,0.08);color:#f5a623;">MID</div>
+        <div style="height:28px;border-radius:3px;flex:1;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.3);">{_locality.upper()} &#9658;</div>
+        <div style="height:28px;border-radius:3px;flex:1;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;background:rgba(0,229,160,0.08);color:#00e5a0;">PRIME</div>
+        <div style="height:28px;border-radius:3px;flex:1;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:9px;background:rgba(0,229,160,0.15);color:#00e5a0;">TOP</div>
+      </div>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+    # ── TAB 2: LIQUIDITY ──────────────────────────────────────────────────────
+    with tab2:
+        liq_score_col = "#00e5a0" if ri>=70 else "#f5a623" if ri>=40 else "#ff4757"
+        st.markdown(f"""
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;">
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Liquidity Factor Breakdown</div>
+    {factors_html}
+  </div>
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Liquidity Summary</div>
+    <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:20px;">
+      <span style="font-family:'Playfair Display',Georgia,serif;font-size:48px;color:{liq_score_col};">{ri}</span>
+      <span style="font-size:14px;color:rgba(240,238,234,0.45);">/100 &middot; {grade}</span>
+    </div>
+    {bullets_html}
+    <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.02);border-radius:6px;">
+      <div style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:12px;">Confidence Signals</div>
+      <div style="margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:11px;color:rgba(240,238,234,0.45);">
+          <span>Data Completeness</span><span style="font-family:'Space Mono',monospace;">{bd.get('data_completeness',0)*100:.0f}%</span>
+        </div>
+        <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;">
+          <div style="height:3px;width:{bd.get('data_completeness',0)*100:.0f}%;background:#00d4ff;border-radius:2px;"></div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:11px;color:rgba(240,238,234,0.45);">
+          <span>Signal Agreement</span><span style="font-family:'Space Mono',monospace;">{bd.get('signal_agreement',0)*100:.0f}%</span>
+        </div>
+        <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;">
+          <div style="height:3px;width:{bd.get('signal_agreement',0)*100:.0f}%;background:#00e5a0;border-radius:2px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+    # ── TAB 3: PROXIMITY ─────────────────────────────────────────────────────
+    with tab3:
+        lat = loc.get("latitude"); lon = loc.get("longitude")
+        coords = f"{lat:.5f}° N, {lon:.5f}° E" if lat and lon else "Geocoding unavailable"
+        zone = loc.get("circle_rate_zone","—").replace("_"," ").title()
+        found_msg = "Locality verified in database" if loc.get("locality_found_in_db") else "Using city-level average"
+        found_col = "#00e5a0" if loc.get("locality_found_in_db") else "#f5a623"
+        st.markdown(f"""
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;">
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Infrastructure Distances</div>
+    {prox_html}
+    <div style="display:flex;gap:16px;margin-top:16px;font-size:10px;font-family:'Space Mono',monospace;color:rgba(240,238,234,0.45);">
+      <span><span style="color:#00e5a0">●</span> &lt;2km ideal</span>
+      <span><span style="color:#f5a623">●</span> 2–6km moderate</span>
+      <span><span style="color:#ff4757">●</span> &gt;6km weak</span>
+    </div>
+  </div>
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Location Intelligence</div>
+    <div style="margin-bottom:16px;padding:16px;background:rgba(0,212,255,0.04);border-radius:6px;border:1px solid rgba(0,212,255,0.1);">
+      <div style="font-size:10px;color:rgba(240,238,234,0.45);margin-bottom:4px;font-family:'Space Mono',monospace;">RESOLVED LOCATION</div>
+      <div style="font-size:15px;color:#f0eeea;margin-bottom:2px;">{_locality.title()}, {_city}</div>
+      <div style="font-size:11px;color:#00d4ff;font-family:'Space Mono',monospace;">{coords}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+      <div style="padding:14px;background:rgba(255,255,255,0.02);border-radius:6px;">
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);font-family:'Space Mono',monospace;margin-bottom:6px;">CIRCLE RATE</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:20px;color:#00d4ff;">&#8377;{cr:,.0f}</div>
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);">per sqft &middot; {zone}</div>
+      </div>
+      <div style="padding:14px;background:rgba(255,255,255,0.02);border-radius:6px;">
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);font-family:'Space Mono',monospace;margin-bottom:6px;">MARKET RATE</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:20px;color:#f0eeea;">&#8377;{pps:,.0f}</div>
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);">per sqft avg</div>
+      </div>
+    </div>
+    <div style="padding:10px 14px;background:rgba(0,229,160,0.05);border-radius:6px;border:1px solid rgba(0,229,160,0.15);font-size:11px;color:{found_col};">
+      &#8250; {found_msg} &nbsp;&middot;&nbsp; {zone} zone
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+    # ── TAB 4: FUTURE GROWTH ──────────────────────────────────────────────────
+    with tab4:
+        st.markdown(f"""
+<div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Growth Catalysts &amp; Outlook</div>
+{growth_html}
+""", unsafe_allow_html=True)
+
+    # ── TAB 5: DOCUMENTS ─────────────────────────────────────────────────────
+    with tab5:
+        notes_html = "".join(
+            f'<div style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.07);font-size:12px;color:rgba(240,238,234,0.45);">&#8250; {n.strip().lstrip("-").lstrip("*").strip()}</div>'
+            for n in rec.get("notes",[])[:5] if n.strip()
+        )
+        st.markdown(f"""
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin-bottom:24px;">
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Required Documents Checklist</div>
+    {docs_html}
+  </div>
+  <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:20px;">Lender Summary</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
+      <div style="padding:14px;background:rgba(255,255,255,0.02);border-radius:6px;">
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);font-family:'Space Mono',monospace;margin-bottom:6px;">SAFE LOAN</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#00e5a0;">{rec.get('safe_loan_display','—')}</div>
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);">at {rec.get('ltv_ratio','70%')} LTV</div>
+      </div>
+      <div style="padding:14px;background:rgba(255,255,255,0.02);border-radius:6px;">
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);font-family:'Space Mono',monospace;margin-bottom:6px;">DISTRESS RECOVERY</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#f5a623;">{rec.get('distress_recovery_assured','—')}</div>
+        <div style="font-size:10px;color:rgba(240,238,234,0.45);">assured minimum</div>
+      </div>
+    </div>
+    {notes_html}
+    <div style="margin-top:20px;">
+      <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#00d4ff;opacity:0.6;text-transform:uppercase;margin-bottom:12px;">Fraud / Anomaly Check</div>
+      {fraud_html}
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+        with st.expander("Raw API Response (debug)"):
+            st.json(r)
+
+    # ── FOOTER ────────────────────────────────────────────────────────────────
+    st.markdown("""
+<div style="background:#0d0d12;border-top:1px solid rgba(255,255,255,0.07);padding:22px 56px;
+  display:flex;align-items:center;justify-content:space-between;">
+  <span style="font-family:'Playfair Display',Georgia,serif;font-size:15px;color:#f0eeea;">
+    <span style="color:#00d4ff">Prop</span>Intel AI
+  </span>
+  <span style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(240,238,234,0.35);letter-spacing:1px;">
+    TEAM TE-08 &nbsp;·&nbsp; PICT PUNE &nbsp;·&nbsp; POONAWALLA FINCORP AI HACKATHON
+  </span>
+</div>
+""", unsafe_allow_html=True)
