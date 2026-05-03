@@ -151,7 +151,7 @@ class LenderReport(FPDF):
         self.set_xy(14, 287.5)
         self.set_font("Helvetica", "", 5.5)
         self._ink(C_MUTED)
-        self.cell(0, 3.5, "PropIntel AI v2.0  |  Team TE-08, PICT Pune  |  Poonawalla Fincorp AI Hackathon  |  CONFIDENTIAL - FOR LENDER USE ONLY")
+        self.cell(0, 3.5, "PropIntel AI v2.0  |  Team Arjuna  |  Poonawalla Fincorp AI Hackathon  |  CONFIDENTIAL - FOR LENDER USE ONLY")
         self.set_xy(0, 287.5)
         self.cell(196, 3.5, f"Page {self.page_no()}", align="R")
 
