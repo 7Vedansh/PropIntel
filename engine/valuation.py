@@ -80,8 +80,40 @@ def predict_value(features: Dict) -> Dict:
     # Ensure model is loaded lazily
     model, feature_names = _load_model()
 
-    # Prepare feature array in correct order, using defaults for missing keys
-    feature_array = np.array([[features.get(f, 0) for f in feature_names]])
+    # Mapping from legacy model feature names → standardized API field names
+    # This bridges the gap between train.py (sqft, floor) and api schemas
+    # (carpet_area_sqft, floor_number)
+    LEGACY_TO_STANDARD = {
+        'sqft': 'carpet_area_sqft',
+        'floor': 'floor_number',
+    }
+
+    # Sensible defaults when a feature value is None or missing
+    FEATURE_DEFAULTS = {
+        'bhk': 2, 'sqft': 1000, 'carpet_area_sqft': 1000,
+        'age_years': 10, 'floor': 5, 'floor_number': 5,
+        'total_floors': 12, 'metro_distance_km': 5.0,
+        'it_park_distance_km': 5.0, 'school_distance_km': 1.5,
+        'hospital_distance_km': 2.0, 'circle_rate_sqft': 8000,
+        'absorption_rate': 0.15, 'builder_score': 65,
+        'govt_project_nearby': 0, 'npa_zone': 0,
+        'supply_demand_ratio': 1.0, 'price_trend_6m': 0.0,
+        'has_lift': 1, 'has_rera': 1,
+    }
+
+    def _resolve_feature(name):
+        """Look up a feature value, trying the legacy name then the
+        standardized name, and falling back to a safe default."""
+        val = features.get(name)
+        if val is None:
+            alt = LEGACY_TO_STANDARD.get(name)
+            if alt:
+                val = features.get(alt)
+        if val is None:
+            val = FEATURE_DEFAULTS.get(name, 0)
+        return float(val)
+
+    feature_array = np.array([[_resolve_feature(f) for f in feature_names]])
 
     # Predict price per sqft
     predicted_price_sqft = model.predict(feature_array)[0]

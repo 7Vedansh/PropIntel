@@ -141,6 +141,31 @@ def compute_liquidity_v2(features: dict, proximity: dict) -> dict:
         {"factor": "Social Infrastructure", "score": round(f8_social * 100),     "weight": "5%"},
     ]
 
+    import math
+
+    # Calculate hazard rate (lambda) for Survival Analysis
+    # Base lambda from monthly absorption
+    # A = absorption rate (e.g. 0.22 means 22% sell in 30 days)
+    # 1 - A = e^(-lambda * 30) => lambda = -ln(1 - A) / 30
+    base_lambda = -math.log(1.0 - min(0.9, max(0.01, absorption))) / 30.0
+    
+    # Adjust lambda based on NPA and Supply-Demand
+    npa_penalty = 0.6 if features.get("npa_zone") == 1 else 1.0
+    sd_ratio = features.get("supply_demand_ratio", 1.0)
+    # High supply (ratio > 1) reduces lambda (slower sale), low supply (ratio < 1) increases lambda
+    sd_multiplier = 1.0 / max(0.5, sd_ratio)
+    
+    adjusted_lambda = base_lambda * npa_penalty * sd_multiplier
+    
+    # Generate Survival Curve (Kaplan-Meier style probability of sale)
+    survival_curve = []
+    for days in [15, 30, 60, 90, 120, 180]:
+        prob = 1.0 - math.exp(-adjusted_lambda * days)
+        survival_curve.append({
+            "days": days,
+            "prob_sold": round(prob, 3)
+        })
+
     return {
         "resale_index": resale_index,
         "grade": grade,
@@ -152,13 +177,14 @@ def compute_liquidity_v2(features: dict, proximity: dict) -> dict:
         "supply_pressure": f"{supply_pressure * 100:.0f}%",
         "factor_breakdown": factor_breakdown,
         "liquidity_drivers": _get_liquidity_narrative(
-            grade, locality, metro_dist, absorption, supply_pressure
-        )
+            grade, locality, metro_dist, absorption, supply_pressure, features.get("npa_zone"), sd_ratio
+        ),
+        "survival_curve": survival_curve
     }
 
 
 def _get_liquidity_narrative(grade, locality, metro_dist, 
-                              absorption, supply_pressure) -> list:
+                              absorption, supply_pressure, npa_zone, sd_ratio) -> list:
     drivers = []
     
     if absorption > 0.22:
@@ -173,9 +199,12 @@ def _get_liquidity_narrative(grade, locality, metro_dist,
     elif metro_dist > 5:
         drivers.append(f"⚠️ No metro within 5km — limited transit connectivity")
 
-    if supply_pressure > 0.75:
-        drivers.append("⚠️ High supply pressure — many competing listings")
-    elif supply_pressure < 0.45:
-        drivers.append("✅ Low supply — limited competition from other sellers")
+    if sd_ratio > 1.2:
+        drivers.append(f"⚠️ High supply-demand ratio ({sd_ratio}) — buyer's market")
+    elif sd_ratio < 0.8:
+        drivers.append(f"✅ Low supply-demand ratio ({sd_ratio}) — seller's market")
+
+    if npa_zone == 1:
+        drivers.append("⚠️ High NPA area — restricted financing may delay sale")
 
     return drivers

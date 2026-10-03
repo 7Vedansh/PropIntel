@@ -1,32 +1,26 @@
 """
 PropIntel AI — Geocoder Module
 ================================
-Converts free‑text Indian property addresses to latitude/longitude.
+Converts free-text Indian property addresses to latitude/longitude.
 
-Strategy (tried in order, never crashes):
-  1️⃣ Nominatim (full → locality → pincode)
-  2️⃣ Photon API (Komoot)
-  3️⃣ Locality coordinate database
-  4️⃣ Pincode centroid database
-  5️⃣ City‑center fallback
-
-A hard overall timeout (~25 s) ensures the FastAPI endpoint stays within the
-client's timeout deadline.
+Phase 2 Integration:
+  - Zero synchronous time.sleep() calls.
+  - Uses httpx for asynchronous requests.
+  - Hierarchy: Nominatim → Photon → Locality DB → Pincode → City Center
 """
 
-import requests
-import time
+import httpx
 import re
-import json
-from typing import Optional
+import asyncio
+import time
+from typing import Optional, Dict, Any
 
-# ────────────────────────────────────── Constants & Data ──────────────────────────────────────
-TIMEOUT = 5  # seconds per external request (reduced for latency)
-HEADERS = {"User-Agent": "PropIntelAI/2.0 (propintel@pict.edu)"}
+TIMEOUT = 5.0
+HEADERS = {"User-Agent": "PropIntelAI/2.1 (propintel@pict.edu)"}
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 PHOTON_URL = "https://photon.komoot.io/api/"
 
-# Locality coordinates (GPS‑verified) – shortened for brevity
+# Locality coordinates (GPS-verified)
 LOCALITY_COORDINATES = {
     # Pune
     "koregaon park": {"lat": 18.5362, "lon": 73.8938},
@@ -98,15 +92,11 @@ CONFIDENCE_MAP = {
     "city_center_fallback": "low",
 }
 
-# ────────────────────────────────────── Helper Functions ──────────────────────────────────────
-
 def extract_pincode(address: str) -> str:
-    """Return the first 6‑digit pincode in the address or an empty string."""
     m = re.search(r"\b\d{6}\b", address)
     return m.group(0) if m else ""
 
 def extract_locality_from_address(address: str, city: str) -> str:
-    """Return the first matching locality name or its alias, else empty string."""
     parts = [p.strip().lower() for p in address.split(',')]
     for part in parts:
         if part in LOCALITY_COORDINATES:
@@ -123,7 +113,6 @@ def extract_locality_from_address(address: str, city: str) -> str:
     return ""
 
 def normalize_address(address: str, city: str) -> str:
-    """Strip noisy tokens and ensure a trailing ', India'."""
     cleaned = address.strip()
     cleaned = re.sub(r"\b(?:flat|floor|unit|apt|apartment|room|office)\s*(?:no\.?\s*)?\d+[a-zA-Z]?\b", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\b(?:survey|plot|s\.?\s*no\.?|gat)\s*(?:no\.?\s*)?\d+[a-zA-Z/\-]*\b", "", cleaned, flags=re.IGNORECASE)
@@ -133,9 +122,7 @@ def normalize_address(address: str, city: str) -> str:
         cleaned = f"{cleaned}, India"
     return cleaned
 
-# ────────────────────────────────────── Nominatim (Method 1) ──────────────────────────────────────
-
-def _nominatim_query(query: str) -> Optional[dict]:
+async def _nominatim_query(client: httpx.AsyncClient, query: str) -> Optional[Dict[str, Any]]:
     params = {
         "q": query,
         "format": "json",
@@ -144,52 +131,44 @@ def _nominatim_query(query: str) -> Optional[dict]:
         "addressdetails": 1,
     }
     try:
-        resp = requests.get(NOMINATIM_URL, params=params, headers=HEADERS, timeout=TIMEOUT)
+        resp = await client.get(NOMINATIM_URL, params=params)
         resp.raise_for_status()
         data = resp.json()
-        time.sleep(1)  # Nominatim rate‑limit
         if data:
             return {
                 "latitude": float(data[0]["lat"]),
                 "longitude": float(data[0]["lon"]),
                 "display_address": data[0].get("display_name", ""),
             }
-    except (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, IndexError, ValueError):
-        pass
-    # pause even on failure to respect the policy
-    try:
-        time.sleep(1)
     except Exception:
         pass
     return None
 
-def _try_nominatim(address: str, city: str) -> Optional[dict]:
-    # 1️⃣ Full address
+async def _try_nominatim(client: httpx.AsyncClient, address: str, city: str) -> Optional[Dict[str, Any]]:
+    # Instead of sleep, we rely on asynchronous execution and timeouts
     full = f"{address}, India"
-    r = _nominatim_query(full)
+    r = await _nominatim_query(client, full)
     if r:
         r["geocode_source"] = "nominatim_full_address"
         return r
-    # 2️⃣ Locality + city
+    
     loc = extract_locality_from_address(address, city)
     if loc:
-        r = _nominatim_query(f"{loc}, {city}, India")
+        r = await _nominatim_query(client, f"{loc}, {city}, India")
         if r:
             r["geocode_source"] = "nominatim_locality"
             r["matched_locality"] = loc
             return r
-    # 3️⃣ Pincode
+            
     pin = extract_pincode(address)
     if pin:
-        r = _nominatim_query(f"pincode {pin}, India")
+        r = await _nominatim_query(client, f"pincode {pin}, India")
         if r:
             r["geocode_source"] = "nominatim_pincode"
             return r
     return None
 
-# ────────────────────────────────────── Photon (Method 2) ──────────────────────────────────────
-
-def _try_photon(address: str, city: str) -> Optional[dict]:
+async def _try_photon(client: httpx.AsyncClient, address: str, city: str) -> Optional[Dict[str, Any]]:
     loc = extract_locality_from_address(address, city)
     query = f"{loc}, {city}, India" if loc else f"{address}, {city}, India"
     params = {
@@ -199,7 +178,7 @@ def _try_photon(address: str, city: str) -> Optional[dict]:
         "bbox": "68.0,6.0,97.0,37.0",
     }
     try:
-        resp = requests.get(PHOTON_URL, params=params, timeout=TIMEOUT)
+        resp = await client.get(PHOTON_URL, params=params)
         resp.raise_for_status()
         data = resp.json()
         feats = data.get("features", [])
@@ -212,13 +191,11 @@ def _try_photon(address: str, city: str) -> Optional[dict]:
                 "display_address": feats[0].get("properties", {}).get("name", ""),
                 "matched_locality": loc,
             }
-    except (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, IndexError, ValueError):
+    except Exception:
         pass
     return None
 
-# ────────────────────────────────────── Locality DB (Method 3) ──────────────────────────────────────
-
-def _try_locality_database(address: str, city: str) -> Optional[dict]:
+def _try_locality_database(address: str, city: str) -> Optional[Dict[str, Any]]:
     addr_low = address.lower()
     for loc in sorted(LOCALITY_COORDINATES, key=len, reverse=True):
         if loc in addr_low:
@@ -244,9 +221,7 @@ def _try_locality_database(address: str, city: str) -> Optional[dict]:
                 }
     return None
 
-# ────────────────────────────────────── Pincode centroid (Method 4) ──────────────────────────────────────
-
-def _try_pincode_centroid(address: str) -> Optional[dict]:
+def _try_pincode_centroid(address: str) -> Optional[Dict[str, Any]]:
     pin = extract_pincode(address)
     if pin and pin in PINCODE_CENTROIDS:
         lat, lon = PINCODE_CENTROIDS[pin]
@@ -259,9 +234,7 @@ def _try_pincode_centroid(address: str) -> Optional[dict]:
         }
     return None
 
-# ────────────────────────────────────── City‑center fallback (Method 5) ──────────────────────────────────────
-
-def _city_center_fallback(city: str) -> dict:
+def _city_center_fallback(city: str) -> Dict[str, Any]:
     lat, lon = CITY_CENTERS.get(city.strip().lower(), (18.5204, 73.8567))
     return {
         "latitude": lat,
@@ -271,42 +244,27 @@ def _city_center_fallback(city: str) -> dict:
         "display_address": f"{city.title()}, India",
     }
 
-# ────────────────────────────────────── Main function ──────────────────────────────────────
-
-def geocode_address(address: str, city: str) -> dict:
-    """Return coordinates with metadata. Never returns None for lat/lon."""
-    start = time.time()
-    max_total = 25  # seconds – leaves margin for FastAPI client timeout
+async def geocode_address(address: str, city: str) -> Dict[str, Any]:
+    """Asynchronous, non-blocking coordinate lookup."""
     result = None
-
-    # 1️⃣ Nominatim
-    try:
-        result = _try_nominatim(address, city)
-    except Exception as e:
-        print(f"[geocoder] Nominatim error: {e}")
-
-    # 2️⃣ Photon
-    if not result and (time.time() - start) < max_total:
-        try:
-            result = _try_photon(address, city)
-        except Exception as e:
-            print(f"[geocoder] Photon error: {e}")
-
-    # 3️⃣ Locality DB
-    if not result and (time.time() - start) < max_total:
-        try:
-            result = _try_locality_database(address, city)
-        except Exception as e:
-            print(f"[geocoder] Locality DB error: {e}")
-
-    # 4️⃣ Pincode centroid
-    if not result and (time.time() - start) < max_total:
-        try:
-            result = _try_pincode_centroid(address)
-        except Exception as e:
-            print(f"[geocoder] Pincode centroid error: {e}")
-
-    # 5️⃣ Fallback
+    
+    async with httpx.AsyncClient(timeout=TIMEOUT, headers=HEADERS) as client:
+        # 1. Nominatim
+        result = await _try_nominatim(client, address, city)
+        
+        # 2. Photon
+        if not result:
+            result = await _try_photon(client, address, city)
+            
+    # 3. Locality DB (Fallback)
+    if not result:
+        result = _try_locality_database(address, city)
+        
+    # 4. Pincode Centroid (Fallback)
+    if not result:
+        result = _try_pincode_centroid(address)
+        
+    # 5. City Center (Fallback)
     if not result:
         result = _city_center_fallback(city)
 

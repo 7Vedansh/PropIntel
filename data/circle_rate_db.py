@@ -93,6 +93,8 @@ CITY_DEFAULTS = {
 }
 
 
+import difflib
+
 def get_circle_rate(locality: str, city: str, 
                     property_type: str = "residential") -> dict:
     """
@@ -114,16 +116,29 @@ def get_circle_rate(locality: str, city: str,
             "source": "igrmaharashtra.gov.in"
         }
     
-    # Fuzzy match — check if locality name is contained
-    for key in city_db:
-        if key in locality_lower or locality_lower in key:
-            data = city_db[key]
+    # Fuzzy match using difflib
+    if city_db:
+        matches = difflib.get_close_matches(locality_lower, city_db.keys(), n=1, cutoff=0.7)
+        if matches:
+            best_match = matches[0]
+            data = city_db[best_match]
             return {
                 "circle_rate_sqft": data[property_type],
                 "zone": data["zone"],
                 "locality_found": True,
-                "source": "igrmaharashtra.gov.in (fuzzy match)"
+                "source": f"igrmaharashtra.gov.in (fuzzy match: {best_match})"
             }
+        
+        # Substring fallback just in case
+        for key in city_db:
+            if key in locality_lower or locality_lower in key:
+                data = city_db[key]
+                return {
+                    "circle_rate_sqft": data[property_type],
+                    "zone": data["zone"],
+                    "locality_found": True,
+                    "source": f"igrmaharashtra.gov.in (substring match: {key})"
+                }
     
     # City default fallback
     default = CITY_DEFAULTS.get(city_lower, {"residential": 8000, 
@@ -135,3 +150,4 @@ def get_circle_rate(locality: str, city: str,
         "locality_found": False,
         "source": "city_average_fallback"
     }
+

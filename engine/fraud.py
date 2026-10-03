@@ -62,9 +62,9 @@ def detect_fraud(features: Dict) -> List[Dict]:
     
     # Extract features
     bhk = features.get('bhk')
-    sqft = features.get('carpet_area_sqft')
+    sqft = features.get('carpet_area_sqft') or features.get('sqft')
     circle_rate_sqft = features.get('circle_rate_sqft')
-    floor = features.get('floor_number')
+    floor = features.get('floor_number') or features.get('floor')
     total_floors = features.get('total_floors')
     age_years = features.get('age_years')
     builder_score = features.get('builder_score')

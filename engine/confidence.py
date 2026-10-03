@@ -18,30 +18,36 @@ def compute_confidence(features: Dict, fraud_flags: List[Dict]) -> Dict:
     """
     
     # 1. Data Completeness Score (40% weight)
+    # Binary fields where 0 is a legitimate value
+    BINARY_FIELDS = {'govt_project_nearby', 'npa_zone', 'has_rera'}
+    # Fields where 0 is a legitimate value (ground floor)
+    ZERO_VALID_FIELDS = {'floor_number'}
+
     critical_fields = [
         'age_years', 'floor_number', 'builder_score', 'absorption_rate',
-        'metro_distance_km', 'circle_rate_sqft', 'price_trend_6m', 
-        'supply_demand_ratio'
+        'metro_distance_km', 'circle_rate_sqft', 'price_trend_6m',
+        'supply_demand_ratio', 'govt_project_nearby', 'npa_zone'
     ]
-    
+
     complete_count = 0
     for field in critical_fields:
         value = features.get(field)
-        # Check if field exists and is not null/zero (except where zero is valid)
         if value is not None:
-            if field in ['govt_project_nearby', 'npa_zone']:
-                # Binary fields - any value is valid
+            if field in BINARY_FIELDS or field in ZERO_VALID_FIELDS:
+                # Any value (including 0) counts as present
                 complete_count += 1
-            elif value != 0 or field == 'floor_number':  # Floor can legitimately be 0
+            elif value != 0:
                 complete_count += 1
-    
+
     data_completeness = complete_count / len(critical_fields)
     
     # 2. Signal Agreement Score (30% weight)
     # Check if market signals are consistent
-    absorption_rate = features.get('absorption_rate', 0.15)
-    price_trend_6m = features.get('price_trend_6m', 0)
-    supply_demand_ratio = features.get('supply_demand_ratio', 1.0)
+    # Use 'or' fallback because dict.get(key, default) returns None when
+    # the key IS present but set to None (from Pydantic optional fields)
+    absorption_rate = features.get('absorption_rate') or 0.15
+    price_trend_6m = features.get('price_trend_6m') or 0
+    supply_demand_ratio = features.get('supply_demand_ratio') or 1.0
     
     # Normalize absorption rate to market average (0.15)
     absorption_ratio = absorption_rate / 0.15

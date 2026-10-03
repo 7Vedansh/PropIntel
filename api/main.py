@@ -1,33 +1,54 @@
 """
 PropIntel AI - FastAPI Backend
 RESTful API for property valuation and intelligence
+
+Phase 1 refactor:
+  • Centralized schemas from api/schemas.py
+  • Fixed /health endpoint (was crashing with ImportError)
+  • Integrated assess_legal_risk() into assessment pipeline
+  • Eliminated duplicate feature aliasing
+  • Standardized on carpet_area_sqft / floor_number everywhere
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, Field, validator
 from typing import Optional, List, Dict
 from datetime import datetime
+import logging
 import sys
 from pathlib import Path
 
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
 
-# Updated imports
-from engine.valuation import predict_value, format_currency
+# Centralized schemas
+from api.schemas import PropertyAssessmentInput
+
+# Engine imports
+from engine.l3_valuation import predict_value, format_currency
 from engine.liquidity_v2 import compute_liquidity_v2
-from engine.fraud import detect_fraud
+from engine.l4_legal import assess_legal_risk
+from engine.l5_fraud import detect_fraud
 from engine.confidence import compute_confidence
 from engine.geocoder import geocode_address
 from engine.proximity import get_nearby_amenities, _fallback_distances
+from engine.l6_decision import generate_lender_recommendation
+from engine.l7_portfolio import compute_portfolio_stress_test
+from engine.memo_writer import generate_underwriting_memo
 from data.circle_rate_db import get_circle_rate
+
+# ── Structured logging ──
+logger = logging.getLogger("propintel.api")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
+)
 
 # Initialize FastAPI
 app = FastAPI(
     title="PropIntel AI",
     description="AI-Powered Property Collateral Valuation & Liquidity Intelligence Engine",
-    version="2.0.0",
+    version="2.1.0",
     docs_url="/docs",
     redoc_url="/redoc"
 )
@@ -41,73 +62,17 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-# Pydantic Models
-class PropertyInput(BaseModel):
-    """Input model for property assessment"""
-    address: str = Field(..., description="Full property address", example="A-101, Signature Towers")
-    locality: str = Field(..., description="Property locality/area name", example="Baner")
-    city: str = Field(..., description="City name", example="Pune")
-    bhk: int = Field(..., ge=1, le=4, description="Number of bedrooms (1-4)", example=2)
-    carpet_area_sqft: float = Field(..., ge=100, le=10000, description="Carpet area in square feet", example=1200)
-    age_years: int = Field(..., ge=0, le=80, description="Property age in years", example=8)
-    floor_number: int = Field(..., ge=0, le=60, description="Floor number", example=7)
-    total_floors: int = Field(..., ge=1, le=60, description="Total floors in building", example=14)
-    property_type: str = Field(default="apartment", description="Property type", example="apartment")
-    furnishing: str = Field(default="semi", description="Furnishing status", example="semi")
-    parking: int = Field(default=1, ge=0, le=5, description="Number of parking spots", example=1)
-    ownership_type: str = Field(default="freehold", description="Ownership type", example="freehold")
-    has_rera: int = Field(default=1, ge=0, le=1, description="RERA registration (0/1)", example=1)
-    has_lift: Optional[bool] = Field(default=True, description="Lift availability", example=True)
-    metro_distance_km: Optional[float] = Field(None, ge=0.1, le=20, description="Distance to nearest metro (km)", example=1.2)
-    it_park_distance_km: Optional[float] = Field(None, ge=0.1, le=30, description="Distance to IT park (km)", example=3.5)
-    school_distance_km: Optional[float] = Field(None, ge=0.1, le=10, description="Distance to school (km)", example=0.8)
-    hospital_distance_km: Optional[float] = Field(None, ge=0.1, le=15, description="Distance to hospital (km)", example=1.5)
-    circle_rate_sqft: Optional[float] = Field(None, ge=1000, le=100000, description="Government circle rate per sqft", example=8200)
-    absorption_rate: Optional[float] = Field(None, ge=0.01, le=0.99, description="Monthly absorption rate (0-1)", example=0.22)
-    builder_score: int = Field(..., ge=0, le=100, description="Builder RERA reputation score", example=78)
-    govt_project_nearby: int = Field(..., ge=0, le=1, description="Government project announced (0/1)", example=1)
-    npa_zone: int = Field(default=0, ge=0, le=1, description="High NPA zone flag (0/1)", example=0)
-    supply_demand_ratio: float = Field(..., ge=0.1, le=5.0, description="Supply to demand ratio", example=0.85)
-    price_trend_6m: float = Field(..., ge=-20, le=30, description="6-month price trend (%)", example=6.5)
+# ═══════════════════════════════════════════════════════════════════════════════
+# BACKWARD-COMPATIBLE ALIAS
+# ═══════════════════════════════════════════════════════════════════════════════
+# The old PropertyInput name is kept as an alias so existing dashboard code
+# that may import it directly does not break.
+PropertyInput = PropertyAssessmentInput
 
-    @validator('floor_number')
-    def floor_must_not_exceed_total(cls, v, values):
-        if 'total_floors' in values and v > values['total_floors']:
-            raise ValueError('floor_number cannot exceed total_floors')
-        return v
+# ═══════════════════════════════════════════════════════════════════════════════
+# HELPER FUNCTIONS
+# ═══════════════════════════════════════════════════════════════════════════════
 
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "address": "A-101, Signature Towers",
-                "locality": "Baner",
-                "city": "Pune",
-                "bhk": 2,
-                "carpet_area_sqft": 1200,
-                "age_years": 8,
-                "floor_number": 7,
-                "total_floors": 14,
-                "property_type": "apartment",
-                "furnishing": "semi",
-                "parking": 1,
-                "ownership_type": "freehold",
-                "has_rera": 1,
-                "has_lift": True,
-                "metro_distance_km": 1.2,
-                "it_park_distance_km": 3.5,
-                "school_distance_km": 0.8,
-                "hospital_distance_km": 1.5,
-                "circle_rate_sqft": 8200,
-                "absorption_rate": 0.22,
-                "builder_score": 78,
-                "govt_project_nearby": 1,
-                "npa_zone": 0,
-                "supply_demand_ratio": 0.85,
-                "price_trend_6m": 6.5
-            }
-        }
-
-# Helper Functions
 def generate_key_drivers(features: Dict, valuation: Dict) -> List[str]:
     drivers = []
     # Metro proximity (use standardized field)
@@ -163,71 +128,18 @@ def generate_key_drivers(features: Dict, valuation: Dict) -> List[str]:
             drivers.append("+4% IT employment hub proximity")
     return drivers[:6]
 
-def generate_lender_recommendation(
-    valuation: Dict,
-    liquidity: Dict,
-    confidence: Dict,
-    fraud_flags: List[Dict]
-) -> Dict:
-    market_value_min = valuation['market_value_min']
-    distress_value_min = valuation['distress_value_min']
-    confidence_score = confidence['score']
-    resale_index = liquidity['resale_index']
+# The logic for generate_lender_recommendation is now strictly decoupled into engine/l6_decision.py
 
-    safe_loan_amount = market_value_min * 0.70
 
-    high_severity_flags = len([f for f in fraud_flags if f['severity'] == 'HIGH'])
-    medium_severity_flags = len([f for f in fraud_flags if f['severity'] == 'MEDIUM'])
+# ═══════════════════════════════════════════════════════════════════════════════
+# API ENDPOINTS
+# ═══════════════════════════════════════════════════════════════════════════════
 
-    if high_severity_flags > 0 or confidence_score < 0.60 or resale_index < 40:
-        risk_level = "HIGH"
-        decision = "REJECT"
-    elif medium_severity_flags > 0 or confidence_score < 0.80 or resale_index < 60:
-        risk_level = "MEDIUM"
-        decision = "REVIEW"
-    else:
-        risk_level = "LOW"
-        decision = "APPROVE"
-
-    notes = []
-    if decision == "APPROVE":
-        notes.append(f"Property shows strong fundamentals with {confidence['label']} confidence")
-        notes.append(f"Liquidity grade: {liquidity['grade']} - Expected resale in {liquidity['time_to_sell_display']}")
-        notes.append(f"Distress recovery assured: {format_currency(distress_value_min)} minimum")
-    elif decision == "REVIEW":
-        notes.append("Manual review recommended due to:")
-        if confidence_score < 0.80:
-            notes.append(f"  • Moderate confidence level ({confidence['percentage']})")
-        if medium_severity_flags > 0:
-            notes.append(f"  • {medium_severity_flags} medium-severity anomaly flag(s)")
-        if 40 <= resale_index < 60:
-            notes.append(f"  • Medium liquidity (resale index: {resale_index})")
-        notes.append("Recommend physical inspection and enhanced due diligence")
-    else:
-        notes.append("Not recommended for lending due to:")
-        if high_severity_flags > 0:
-            notes.append(f"  • {high_severity_flags} high-severity fraud flag(s)")
-        if confidence_score < 0.60:
-            notes.append(f"  • Low confidence score ({confidence['percentage']})")
-        if resale_index < 40:
-            notes.append(f"  • Poor liquidity (resale index: {resale_index})")
-
-    return {
-        "safe_loan_amount": round(safe_loan_amount, 0),
-        "safe_loan_display": format_currency(safe_loan_amount),
-        "ltv_ratio": "70%",
-        "distress_recovery_assured": format_currency(distress_value_min),
-        "risk_level": risk_level,
-        "decision": decision,
-        "notes": notes
-    }
-
-# API Endpoints
 @app.get("/")
 def root():
     return {
         "service": "PropIntel AI",
-        "version": "2.0.0",
+        "version": "2.1.0",
         "status": "operational",
         "endpoints": {
             "assessment": "/assess",
@@ -239,43 +151,63 @@ def root():
 
 @app.get("/health")
 def health_check():
+    """Health-check endpoint — verifies that the ML model is loadable."""
     try:
-        from engine.valuation import model
-        model_status = "loaded" if model is not None else "not_loaded"
+        from engine.l3_valuation import _load_models
+        models, feature_names = _load_models()
+        model_status = "loaded" if models is not None else "not_loaded"
+        feature_count = len(feature_names) if feature_names else 0
     except Exception as e:
         model_status = f"error: {str(e)}"
+        feature_count = 0
     return {
         "status": "healthy",
         "timestamp": datetime.now().isoformat(),
         "model_status": model_status,
-        "api_version": "2.0.0"
+        "feature_count": feature_count,
+        "api_version": "2.1.0"
     }
 
 @app.post("/assess")
-def assess_property(property_input: PropertyInput):
-    """Comprehensive property assessment endpoint with real intelligence layers"""
-    try:
-        # Convert input to dictionary
-        features = property_input.dict()
+async def assess_property(property_input: PropertyAssessmentInput):
+    """Comprehensive property assessment endpoint with real intelligence layers.
 
-        # STEP 1: Geocode address → real lat/long
-        geo = geocode_address(features["address"], features["city"])
+    Executes Layers 1–6 of the PropIntel engine pipeline:
+      L1  Geocoding & proximity distance computation
+      L2  Circle rate & locality zone lookup
+      L3  ML valuation (market + distress ranges)
+      L4  Legal risk assessment (ownership, RERA, title)
+      L5  Fraud / anomaly detection (9 rules)
+      L6  Confidence scoring & lender recommendation
+    """
+    try:
+        # Convert input to dictionary using standardized field names
+        features = property_input.model_dump()
+        logger.info(
+            "Assessment started | locality=%s city=%s bhk=%s sqft=%s",
+            features["locality"], features["city"],
+            features["bhk"], features["carpet_area_sqft"],
+        )
+
+        # ── STEP 1: Geocode address → real lat/long ──
+        geo = await geocode_address(features["address"], features["city"])
         features["latitude"] = geo.get("latitude")
         features["longitude"] = geo.get("longitude")
 
-        # STEP 2: Get real distances from OSM (with fallback)
+        # ── STEP 2: Get distances from geospatial engine (with fallback) ──
         if geo.get("found"):
-            proximity = get_nearby_amenities(geo["latitude"], geo["longitude"]).copy()
+            proximity = await get_nearby_amenities(geo["latitude"], geo["longitude"])
+            proximity = proximity.copy()
         else:
             proximity = _fallback_distances()
-        # Merge proximity and map to standardized distance fields
-        features.update(proximity)
-        features["metro_distance_km"] = proximity.get("distance_to_metro_km")
-        features["it_park_distance_km"] = proximity.get("distance_to_it_park_km")
-        features["school_distance_km"] = proximity.get("distance_to_school_km")
-        features["hospital_distance_km"] = proximity.get("distance_to_hospital_km")
 
-        # STEP 3: Get REAL circle rate for this specific locality
+        # Map proximity keys to standardized feature names used by all engines
+        features["metro_distance_km"] = proximity.get("distance_to_metro_km", 5.0)
+        features["it_park_distance_km"] = proximity.get("distance_to_it_park_km", 5.0)
+        features["school_distance_km"] = proximity.get("distance_to_school_km", 1.5)
+        features["hospital_distance_km"] = proximity.get("distance_to_hospital_km", 2.0)
+
+        # ── STEP 3: Get circle rate for this locality ──
         circle_data = get_circle_rate(
             features["locality"],
             features["city"],
@@ -284,31 +216,40 @@ def assess_property(property_input: PropertyInput):
         features["circle_rate_sqft"] = circle_data["circle_rate_sqft"]
         features["locality_zone"] = circle_data["zone"]
 
-        # Ensure valuation engine receives expected key 'sqft'
-        if "carpet_area_sqft" in features:
-            features["sqft"] = features["carpet_area_sqft"]
-        # Ensure fraud engine receives expected keys
-        if "floor_number" in features:
-            features["floor"] = features["floor_number"]
-        if "carpet_area_sqft" in features:
-            features["sqft"] = features["carpet_area_sqft"]
-
-        # STEP 4: Run all engines with real data
+        # ── STEP 4: Run all engine layers ──
         valuation = predict_value(features)
         liquidity = compute_liquidity_v2(features, proximity)
         fraud_flags = detect_fraud(features)
+        legal_risk = assess_legal_risk(features)
         confidence = compute_confidence(features, fraud_flags)
 
-        # Generate UI‑compatible helpers
+        # ── STEP 5: Generate decision outputs ──
         key_drivers = generate_key_drivers(features, valuation)
-        lender_rec = generate_lender_recommendation(valuation, liquidity, confidence, fraud_flags)
+        lender_rec = generate_lender_recommendation(
+            valuation, liquidity, confidence, fraud_flags, legal_risk,
+        )
         doc_verification = {"status": "Pending", "message": "Manual verification required"}
+        
+        # ── Phase 7: Generate AI Underwriter Memo ──
+        memo = generate_underwriting_memo(
+            features=features,
+            valuation=valuation,
+            liquidity=liquidity,
+            confidence=confidence,
+            legal_risk=legal_risk,
+            lender_rec=lender_rec
+        )
 
-        return {
-            "property_summary": f"{features['bhk']}BHK, {features.get('carpet_area_sqft', 0)}sqft, {features['locality']}, {features['city']}",
+        # ── Build backward-compatible response ──
+        response = {
+            "property_summary": (
+                f"{features['bhk']}BHK, {features.get('carpet_area_sqft', 0)}sqft, "
+                f"{features['locality']}, {features['city']}"
+            ),
             "location_resolved": {
                 "latitude": geo.get("latitude"),
                 "longitude": geo.get("longitude"),
+                "geocode_source": geo.get("geocode_source", ""),
                 "circle_rate_zone": circle_data["zone"],
                 "circle_rate_sqft": circle_data["circle_rate_sqft"],
                 "locality_found_in_db": circle_data["locality_found"]
@@ -318,14 +259,69 @@ def assess_property(property_input: PropertyInput):
             "liquidity": liquidity,
             "confidence": confidence,
             "fraud_flags": fraud_flags,
+            "legal_risk": legal_risk,
             "document_verification": doc_verification,
             "key_drivers": key_drivers,
             "lender_recommendation": lender_rec,
+            "underwriter_memo": memo,
             "generated_at": datetime.now().isoformat(),
-            "model_version": "2.0.0"
+            "model_version": "2.1.0"
         }
+
+        logger.info(
+            "Assessment complete | decision=%s confidence=%s resale_index=%s",
+            lender_rec["decision"], confidence["score"],
+            liquidity["resale_index"],
+        )
+        return response
+
     except Exception as e:
+        logger.exception("Assessment error")
         raise HTTPException(status_code=500, detail=f"Assessment error: {str(e)}")
+
+@app.post("/api/v1/documents/ingest-and-extract")
+async def ingest_and_extract_document(
+    file: UploadFile = File(...),
+    claims_json: str = Form(..., description="JSON string of property claims")
+):
+    """
+    Phase 6: Document Ingestion, OCR & Discrepancy Pipeline
+    Uploads a property document (PDF/Image), runs OCR, extracts ground truth,
+    and returns a Discrepancy Matrix against the borrower's claims.
+    """
+    import json
+    from pipeline.ocr_engine import process_document
+    from pipeline.entity_extractor import extract_entities
+    from pipeline.reconciliation import generate_discrepancy_matrix
+    
+    try:
+        # Parse claims
+        claims = json.loads(claims_json)
+        
+        # Read file bytes
+        file_bytes = await file.read()
+        
+        # 1. OCR / Layout Parser
+        raw_text = process_document(file_bytes, file.filename, file.content_type)
+        
+        # 2. Entity Extraction
+        extracted_data = extract_entities(raw_text)
+        
+        # 3. Reconciliation
+        matrix = generate_discrepancy_matrix(claims, extracted_data)
+        
+        return {
+            "filename": file.filename,
+            "ocr_status": "SUCCESS",
+            "extracted_ground_truth": extracted_data,
+            "discrepancy_matrix": matrix.model_dump()
+        }
+        
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=400, detail="Invalid JSON in claims_json")
+    except Exception as e:
+        logger.exception("Document processing error")
+        raise HTTPException(status_code=500, detail=f"Document processing failed: {str(e)}")
 
 @app.get("/market/{pincode}")
 def get_market_data(pincode: str):
@@ -344,6 +340,19 @@ def get_market_data(pincode: str):
         "data_freshness": "Updated weekly",
         "note": "Mock data for demonstration"
     }
+
+@app.post("/api/v1/portfolio/stress-test")
+async def portfolio_stress_test(portfolio: List[Dict]):
+    """
+    Phase 7: Portfolio Risk & Stress-Testing Engine
+    Receives a list of property loans and returns macroeconomic shock LGDs.
+    """
+    try:
+        results = compute_portfolio_stress_test(portfolio)
+        return results
+    except Exception as e:
+        logger.exception("Portfolio stress test error")
+        raise HTTPException(status_code=500, detail=f"Stress test error: {str(e)}")
 
 @app.get("/model/info")
 def get_model_info():
