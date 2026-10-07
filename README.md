@@ -206,4 +206,4 @@ PropIntel/
 <br>
 **[GitHub](https://github.com/7Vedansh)**
 
-Team Arjuna
+LexVeritas
