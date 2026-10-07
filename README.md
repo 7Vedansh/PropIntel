@@ -197,7 +197,8 @@ PropIntel/
 <img width="1188" height="679" alt="image" src="https://github.com/user-attachments/assets/e988b447-f1ec-4c8c-bdee-b284bf2d17de" />
 
 ## Author
-
+Team LexVeritas:
+<br>
 **Vedansh**
 <br>
 **Sarthak**
@@ -206,4 +207,3 @@ PropIntel/
 <br>
 **[GitHub](https://github.com/7Vedansh)**
 
-LexVeritas
