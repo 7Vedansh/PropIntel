@@ -198,6 +198,8 @@ PropIntel/
 
 ## Author
 
-**Vedansh & Ameya** - [GitHub](https://github.com/7Vedansh)
+**Vedansh
+Sarthak
+Ameya** - [GitHub](https://github.com/7Vedansh)
 
 Team Arjuna
