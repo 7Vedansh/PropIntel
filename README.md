@@ -205,6 +205,5 @@ PropIntel/
 **Sarthak**
 <br>
 **Ameya** 
-<br>
-**[GitHub](https://github.com/7Vedansh)**
+
 
